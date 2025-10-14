@@ -21,15 +21,30 @@ description:
       tecnologica in maggiore efficienza, efficacia e soddisfazione per cittadini e imprese.
       La piattaforma presenta una struttura modulare, con funzionalità integrate e completamente interoperabili grazie all’utilizzo di API.
     screenshots:
-      - https://raw.githubusercontent.com/comunedimesagne/SEP/main/screen/Atti2.PNG
-      - https://raw.githubusercontent.com/comunedimesagne/SEP/main/screen/Atti3.PNG
-      - https://raw.githubusercontent.com/comunedimesagne/SEP/main/screen/Protocollo2.PNG
-      - https://raw.githubusercontent.com/comunedimesagne/SEP/main/screen/Protocollo3.PNG
+      - https://github.com/CittametropolitanaRomaCapitale/SEP/blob/main/pi/screenshot/PI_dettaglio_protocollo.png
+      - https://github.com/CittametropolitanaRomaCapitale/SEP/blob/main/pi/screenshot/PI_configurazioni.png
+      - https://github.com/CittametropolitanaRomaCapitale/SEP/blob/main/pi/screenshot/PI_lista_PEC.png
+      - https://github.com/CittametropolitanaRomaCapitale/SEP/blob/main/pi/screenshot/PI_lista_protocolli.png
+      - https://github.com/CittametropolitanaRomaCapitale/SEP/blob/main/pi/screenshot/PI_ricerca_avanzata_protocolli.png
+      - https://github.com/CittametropolitanaRomaCapitale/SEP/blob/main/pi/screenshot/PI_titolario.png
+      - https://github.com/CittametropolitanaRomaCapitale/SEP/blob/main/sso/screenshot/SSO_dettaglio_permessi_utente.png
+      - https://github.com/CittametropolitanaRomaCapitale/SEP/blob/main/sso/screenshot/SSO_lista_uffici.png
+      - https://github.com/CittametropolitanaRomaCapitale/SEP/blob/main/sso/screenshot/SSO_dettaglio_uffici.png
+      - https://github.com/CittametropolitanaRomaCapitale/SEP/blob/main/sso/screenshot/SSO_lista_utenti.png
+      - https://github.com/CittametropolitanaRomaCapitale/SEP/blob/main/sso/screenshot/SSO_dettaglio_utente.png
 
-      - screen/Atti2.PNG
-      - screen/Atti3.PNG
-      - screen/Protocollo2.PNG
-      - screen/Protocollo3.PNG
+      - pi/screenshot/PI_dettaglio_protocollo.png
+      - pi/screenshot/PI_configurazioni.png
+      - pi/screenshot/PI_lista_PEC.png
+      - pi/screenshot/PI_lista_protocolli.png
+      - pi/screenshot/PI_ricerca_avanzata_protocolli.png
+      - pi/screenshot/PI_titolario.png
+      - sso/screenshot/SSO_dettaglio_permessi_utente.png
+      - sso/screenshot/SSO_lista_uffici.png
+      - sso/screenshot/SSO_dettaglio_uffici.png
+      - sso/screenshot/SSO_lista_utenti.png
+      - sso/screenshot/SSO_dettaglio_utente.png
+      
 
     developmentStatus: stable
     usedBy:
