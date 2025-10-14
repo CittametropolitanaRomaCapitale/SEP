@@ -1,0 +1,8 @@
+mutation updateAnacGruppoInvitato(
+  $id: BigInteger
+  $data: GruppoInvitatoAnacInputInput
+) {
+  aggiornaGruppoInvitatoAnac(id: $id, data: $data) {
+    id
+  }
+}

@@ -1,0 +1,18 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+
+    <changeSet id="create_pec_escluse_risposta_automatica_table" author="michela carnevale">
+        <createTable tableName="pec_escluse_risposta_automatica">
+            <column name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="indirizzo" type="VARCHAR(255)"/>
+            <column name="ts_creation" type="TIMESTAMP"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="default_value_ts_creation_pec_escluse" author="michela carnevale">
+        <addDefaultValue tableName="pec_escluse_risposta_automatica" columnName="ts_creation" defaultValueComputed="CURRENT_TIMESTAMP"/>
+    </changeSet>
+</databaseChangeLog>

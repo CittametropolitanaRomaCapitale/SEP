@@ -1,0 +1,21 @@
+fragment determina on Determina {
+  ...determina_base
+  riferimentiContabili {
+    ...riferimenti_contabili
+  }
+  documenti {
+    ...documento
+  }
+  validazione {
+    ...validazione_tab_dto
+  }
+  proprietaOffuscate {
+    ...proprieta_offuscata
+  }
+  attribuzioniOrizzontali {
+    ...attribuzioni_orizzontali
+  }
+  note {
+    ...nota_determina
+  }
+}

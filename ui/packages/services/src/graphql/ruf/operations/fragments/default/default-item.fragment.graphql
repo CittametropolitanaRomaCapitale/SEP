@@ -1,0 +1,8 @@
+fragment DefaultItem on DefaultLista {
+  id
+  cdr
+  nomeCampo
+  descrizione
+  tipoLista
+  attivo
+}

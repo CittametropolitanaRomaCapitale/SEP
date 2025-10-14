@@ -1,0 +1,16 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+
+    <!-- Aggiunge due nuova colonne imap_host e imap_port nella tabella pe_configurazione -->
+    <changeSet author="Gioacchino De Fusco" id="add_imap_columns">
+        <addColumn tableName="PE_CONFIGURAZIONE">
+            <column name="imap_host" type="VARCHAR(255)"/>
+        </addColumn>
+        <addColumn tableName="PE_CONFIGURAZIONE">
+            <column name="imap_port" type="INT"/>
+        </addColumn>
+    </changeSet>
+</databaseChangeLog>

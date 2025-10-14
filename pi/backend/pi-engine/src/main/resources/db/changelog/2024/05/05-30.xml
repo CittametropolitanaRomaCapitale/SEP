@@ -1,0 +1,183 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+
+    <changeSet id="add_table_attachment_content_type" author="Salvatore Versienti">
+        <createTable tableName="attachment_content_type">
+            <column name="id" type="BIGINT">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="type" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="extension" type="VARCHAR(255)">
+                <constraints nullable="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="insert_attachment_content_types" author="Salvatore Versienti">
+        <insert tableName="attachment_content_type">
+            <column name="id" valueNumeric="1"/>
+            <column name="type" value="text/plain"/>
+            <column name="extension" value=".txt"/>
+        </insert>
+        <insert tableName="attachment_content_type">
+            <column name="id" valueNumeric="2"/>
+            <column name="type" value="text/html"/>
+            <column name="extension" value=".html"/>
+        </insert>
+        <insert tableName="attachment_content_type">
+            <column name="id" valueNumeric="3"/>
+            <column name="type" value="text/css"/>
+            <column name="extension" value=".css"/>
+        </insert>
+        <insert tableName="attachment_content_type">
+            <column name="id" valueNumeric="4"/>
+            <column name="type" value="text/xml"/>
+            <column name="extension" value=".xml"/>
+        </insert>
+        <insert tableName="attachment_content_type">
+            <column name="id" valueNumeric="5"/>
+            <column name="type" value="image/jpeg"/>
+            <column name="extension" value=".jpeg"/>
+        </insert>
+        <insert tableName="attachment_content_type">
+            <column name="id" valueNumeric="6"/>
+            <column name="type" value="image/jpeg"/>
+            <column name="extension" value=".jpg"/>
+        </insert>
+        <insert tableName="attachment_content_type">
+            <column name="id" valueNumeric="7"/>
+            <column name="type" value="image/png"/>
+            <column name="extension" value=".png"/>
+        </insert>
+        <insert tableName="attachment_content_type">
+            <column name="id" valueNumeric="8"/>
+            <column name="type" value="image/gif"/>
+            <column name="extension" value=".gif"/>
+        </insert>
+        <insert tableName="attachment_content_type">
+            <column name="id" valueNumeric="9"/>
+            <column name="type" value="image/bmp"/>
+            <column name="extension" value=".bmp"/>
+        </insert>
+        <insert tableName="attachment_content_type">
+            <column name="id" valueNumeric="10"/>
+            <column name="type" value="audio/mpeg"/>
+            <column name="extension" value=".mp3"/>
+        </insert>
+        <insert tableName="attachment_content_type">
+            <column name="id" valueNumeric="11"/>
+            <column name="type" value="audio/wav"/>
+            <column name="extension" value=".wav"/>
+        </insert>
+        <insert tableName="attachment_content_type">
+            <column name="id" valueNumeric="12"/>
+            <column name="type" value="audio/midi"/>
+            <column name="extension" value=".midi"/>
+        </insert>
+        <insert tableName="attachment_content_type">
+            <column name="id" valueNumeric="13"/>
+            <column name="type" value="video/mp4"/>
+            <column name="extension" value=".mp4"/>
+        </insert>
+        <insert tableName="attachment_content_type">
+            <column name="id" valueNumeric="14"/>
+            <column name="type" value="video/mpeg"/>
+            <column name="extension" value=".mpeg"/>
+        </insert>
+        <insert tableName="attachment_content_type">
+            <column name="id" valueNumeric="15"/>
+            <column name="type" value="video/quicktime"/>
+            <column name="extension" value=".mov"/>
+        </insert>
+        <insert tableName="attachment_content_type">
+            <column name="id" valueNumeric="16"/>
+            <column name="type" value="video/x-msvideo"/>
+            <column name="extension" value=".avi"/>
+        </insert>
+        <insert tableName="attachment_content_type">
+            <column name="id" valueNumeric="17"/>
+            <column name="type" value="application/pdf"/>
+            <column name="extension" value=".pdf"/>
+        </insert>
+        <insert tableName="attachment_content_type">
+            <column name="id" valueNumeric="18"/>
+            <column name="type" value="application/msword"/>
+            <column name="extension" value=".doc"/>
+        </insert>
+        <insert tableName="attachment_content_type">
+            <column name="id" valueNumeric="19"/>
+            <column name="type" value="application/vnd.ms-excel"/>
+            <column name="extension" value=".xls"/>
+        </insert>
+        <insert tableName="attachment_content_type">
+            <column name="id" valueNumeric="20"/>
+            <column name="type" value="application/vnd.openxmlformats-officedocument.wordprocessingml.document"/>
+            <column name="extension" value=".docx"/>
+        </insert>
+        <insert tableName="attachment_content_type">
+            <column name="id" valueNumeric="21"/>
+            <column name="type" value="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"/>
+            <column name="extension" value=".xlsx"/>
+        </insert>
+        <insert tableName="attachment_content_type">
+            <column name="id" valueNumeric="22"/>
+            <column name="type" value="application/rtf"/>
+            <column name="extension" value=".rtf"/>
+        </insert>
+        <insert tableName="attachment_content_type">
+            <column name="id" valueNumeric="23"/>
+            <column name="type" value="application/json"/>
+            <column name="extension" value=".json"/>
+        </insert>
+        <insert tableName="attachment_content_type">
+            <column name="id" valueNumeric="24"/>
+            <column name="type" value="application/xml"/>
+            <column name="extension" value=".xml"/>
+        </insert>
+        <insert tableName="attachment_content_type">
+            <column name="id" valueNumeric="25"/>
+            <column name="type" value="application/x-pkcs7-signature"/>
+            <column name="extension" value=".p7s"/>
+        </insert>
+        <insert tableName="attachment_content_type">
+            <column name="id" valueNumeric="26"/>
+            <column name="type" value="application/pkcs7-signature"/>
+            <column name="extension" value=".p7s"/>
+        </insert>
+        <insert tableName="attachment_content_type">
+            <column name="id" valueNumeric="27"/>
+            <column name="type" value="message/rfc822"/>
+            <column name="extension" value=".eml"/>
+        </insert>
+        <insert tableName="attachment_content_type">
+            <column name="id" valueNumeric="28"/>
+            <column name="type" value="text/csv"/>
+            <column name="extension" value=".csv"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="insert_new_attachment_content_types" author="Salvatore Versienti">
+        <insert tableName="attachment_content_type">
+            <column name="id" valueNumeric="29"/>
+            <column name="type" value="text/x-java-source"/>
+            <column name="extension" value=".java"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="set_varchar_statoInvio_emailDirection" author="Simone">
+        <dropColumn tableName="email" columnName="stato"/>
+        <dropColumn tableName="email" columnName="email_direction"/>
+        <addColumn tableName="email">
+            <column name="stato_invio" type="varchar(255)"/>
+        </addColumn>
+        <addColumn tableName="email">
+            <column name="email_direction" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+
+</databaseChangeLog>

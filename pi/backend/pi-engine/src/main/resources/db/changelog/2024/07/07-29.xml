@@ -1,0 +1,18 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="add_column_stato_protocollo_and_ts-2024-07-29" author="Simone" >
+        <addColumn tableName="referenti_protocollo">
+            <column name="stato_protocollo" type="varchar(255)"/>
+        </addColumn>
+        <addColumn tableName="referenti_protocollo">
+            <column name="ts_stato_protocollo" type="timestamp"/>
+        </addColumn>
+    </changeSet>
+
+</databaseChangeLog>
+
+

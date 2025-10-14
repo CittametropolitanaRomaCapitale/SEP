@@ -1,0 +1,5 @@
+mutation updateGppForm($id: BigInteger, $data: FormGppInputInput) {
+  aggiornaFormGpp(id: $id, data: $data) {
+    id
+  }
+}

@@ -1,0 +1,12 @@
+-- tutti gli utenti
+query getAllUsers {
+  getAllUsers {
+    id
+    nome
+    cognome
+    idUtenteLastOperation
+    tsCreation
+    tsStartVali
+    metaType
+  }
+}

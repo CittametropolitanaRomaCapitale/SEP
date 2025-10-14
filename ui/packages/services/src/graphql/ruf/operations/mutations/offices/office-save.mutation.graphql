@@ -1,0 +1,5 @@
+mutation saveOffice($data: UfficioDtoInput) {
+  salvaUfficio(data: $data) {
+    id
+  }
+}

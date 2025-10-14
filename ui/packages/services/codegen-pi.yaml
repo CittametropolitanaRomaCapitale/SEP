@@ -1,0 +1,10 @@
+schema: './src/graphql/pi/schemas/**.graphql'
+documents: './src/graphql/pi/operations/**/*.graphql'
+generates:
+  ./src/app/piapi/generated.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-rtk-query:
+          importBaseApiFrom: './baseApi'
+          exportHooks: true

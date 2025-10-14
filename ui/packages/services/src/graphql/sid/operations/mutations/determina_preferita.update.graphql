@@ -1,0 +1,5 @@
+mutation updateDeterminaPreferita($determina_id: BigInteger) {
+  toggleDeterminaPreferita(determina_id: $determina_id) {
+    id
+  }
+}

@@ -1,0 +1,5 @@
+mutation updateSoggetto($id: BigInteger, $data: SoggettoInputInput) {
+  aggiornaSoggetto(id: $id, data: $data) {
+    id
+  }
+}

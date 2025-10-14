@@ -1,0 +1,1656 @@
+type AllegatiOutputDTO {
+  allegati: [AllegatoDTO]
+  pageCount: BigInteger!
+  totalResults: BigInteger!
+}
+
+type Allegato {
+  collocazioneTelematica: String
+  dimensione: BigInteger
+  discarded: Boolean
+  estensione: String
+  id: BigInteger
+  idEmail: BigInteger
+  idOriginal: BigInteger
+  idUtente: String
+  idUtenteLastOperation: String
+  impronta: String
+  isMain: Boolean
+  metaType: String
+  nome: String
+  oggetto: String
+  protocollo: Protocollo
+  riferimentoMinio: String
+  tipoDocumento: String
+  titolario: Titolario
+  "ISO-8601"
+  tsCreation: DateTime
+  "ISO-8601"
+  tsStartVali: DateTime
+}
+
+type AllegatoDTO {
+  collocazioneTelematica: String
+  dimensione: BigInteger!
+  discarded: Boolean!
+  estensione: String
+  id: BigInteger!
+  idEmail: BigInteger!
+  idOriginal: BigInteger!
+  idUtente: String
+  idUtenteLastOperation: String
+  impronta: String
+  main: Boolean!
+  nome: String
+  oggetto: String
+  riferimentoMinio: String
+  tipoDocumento: String
+  "ISO-8601"
+  tsCreation: DateTime
+  "ISO-8601"
+  tsStartVali: DateTime
+}
+
+type Anagrafica {
+  cancellato: Boolean!
+  cap: String
+  certificato: Boolean!
+  cfPiva: String
+  citta: String
+  cognome: String
+  dirty: Boolean!
+  email: String
+  fax: String
+  id: BigInteger
+  idIpaInad: String
+  impronta: String
+  indirizzo: String
+  metaType: String
+  nome: String
+  note: String
+  pec: String
+  pecToUseForRecipient: String
+  personaFisica: Boolean!
+  personaGiuridica: Boolean!
+  provincia: String
+  ragioneSociale: String
+  telefono: String
+  "ISO-8601"
+  tsCreation: DateTime
+  "ISO-8601"
+  tsStartVali: DateTime
+}
+
+type AnagraficaDTO {
+  cancellato: Boolean!
+  cap: String
+  certificato: Boolean!
+  cfPiva: String
+  citta: String
+  cognome: String
+  email: String
+  fax: String
+  gruppi: [GruppoDTO]
+  id: BigInteger
+  idIpaInad: String
+  impronta: String
+  indirizzo: String
+  nome: String
+  note: String
+  pec: String
+  provincia: String
+  ragioneSociale: String
+  telefono: String
+  "ISO-8601"
+  tsCreation: DateTime
+  "ISO-8601"
+  tsStartVali: DateTime
+}
+
+type AnagraficaDTOList {
+  anagraficaList: [AnagraficaDTO]
+  pageCount: BigInteger!
+  totalResults: BigInteger!
+}
+
+type ConfigurazioniPEOutputDTO {
+  configurazioniPostaElettronica: [PecPeo]
+  pageCount: BigInteger!
+  totalResults: BigInteger!
+}
+
+type DatiUtenteSSO {
+  auth_id: String
+  delegations: [Delegation]
+  email: String
+  firstName: String
+  lastName: String
+  userOffices: [UserOffice]
+  username: String
+}
+
+type Delegation {
+  "ISO-8601"
+  delegation_end: DateTime
+  "ISO-8601"
+  delegation_start: DateTime
+  fromUserData: DatiUtenteSSO
+  permits: [Permit]
+}
+
+type DettaglioProtocolloDTO {
+  annulla: Boolean!
+  assegna: Boolean!
+  authorized: Boolean!
+  canPrendereInCaricoFromPec: Boolean!
+  canViewFromPec: Boolean!
+  destinatariCompetenza: [ReferenteOutputDTO]
+  destinatariConoscenza: [ReferenteOutputDTO]
+  gestioneAnnullamento: Boolean!
+  protocolAuthor: Boolean!
+  protocollo: Protocollo
+  richiestaAnnullamento: Boolean!
+  rifiuta: Boolean!
+  statoProtocollo: String
+  tagList: [Tag]
+  titolario: [TitolarioOutputDTO]
+}
+
+type Email {
+  allegati: [Allegato]
+  cc: String
+  classificazione: String
+  corpo: String
+  deletedFromInbox: Boolean
+  emailDirection: EmailDirection
+  from: String
+  id: BigInteger
+  idUtente: String
+  impronta: String
+  isHidden: Boolean
+  messageId: String
+  metaType: String
+  nomeUtente: String
+  notificaProtocollo: Boolean!
+  oggetto: String
+  protocollo: Protocollo
+  statoInvio: StatoInvio
+  tipoEmail: String
+  to: String
+  "ISO-8601"
+  tsCreation: DateTime
+  "ISO-8601"
+  tsInvio: DateTime
+  "ISO-8601"
+  tsRicezione: DateTime
+  "ISO-8601"
+  tsStartVali: DateTime
+}
+
+type EmailOutputDTO {
+  email: [Email]
+  pageCount: BigInteger!
+  totalResults: BigInteger!
+}
+
+type GruppiOutputDTO {
+  gruppiList: [Gruppo]
+  pageCount: BigInteger!
+  totalResults: BigInteger!
+}
+
+type Gruppo {
+  contatti: [Anagrafica]
+  id: BigInteger
+  idUtenteLastOperation: String
+  metaType: String
+  nome: String
+  note: String
+  "ISO-8601"
+  tsCreation: DateTime
+  "ISO-8601"
+  tsDeleted: DateTime
+  "ISO-8601"
+  tsUpdate: DateTime
+}
+
+type GruppoDTO {
+  id: BigInteger
+  nome: String
+}
+
+type GruppoOutputDTO {
+  "ISO-8601"
+  creation: DateTime
+  "ISO-8601"
+  deleted: DateTime
+  id: BigInteger!
+  nome: String
+  note: String
+  "ISO-8601"
+  update: DateTime
+}
+
+type IpaResponseDTO {
+  acronimo: String
+  cap: String
+  certificato: Boolean
+  cfPiva: String
+  citta: String
+  codAOO: String
+  codAmm: String
+  codUniOU: String
+  cognome: String
+  datValCanaleTrasmSfe: String
+  dataVerificaOF: String
+  descAmm: String
+  descOU: String
+  email: String
+  fax: String
+  gruppiIds: [BigInteger]
+  indirizzo: String
+  nome: String
+  note: String
+  pec: String
+  provincia: String
+  ragioneSociale: String
+  statoCanale: String
+  telefono: String
+  tipologiaIpaResponse: TipologiaIpaResponse
+}
+
+type LoginConservazioneDTO {
+  ambiente: AmbienteConservazione
+  ente: String
+  password: String
+  struttura: String
+  url: String
+  username: String
+  versione: String
+  xmlSip: String
+}
+
+type LoginRaccomandataDTO {
+  gruppo: String
+  password: String
+  username: String
+}
+
+type ModelloAutomaticoDTO {
+  cdr: String
+  cdrCode: String
+  hierarchyStringTitolario: String
+  id: BigInteger
+  metaType: String
+  metodoSpedizione: MetodoSpedizione
+  nomeModello: String
+  oggettoProtocollo: String
+  tipoRegistrazione: TipoRegistrazione
+  titolario: Titolario
+}
+
+type ModelloAutomaticoOutputDTO {
+  modelloAutomaticoList: [ModelloAutomaticoDTO]
+  pageCount: BigInteger!
+  totalResults: BigInteger!
+}
+
+"Mutation root"
+type Mutation {
+  addContactsToGroup(contactIds: [BigInteger], groupId: BigInteger): Boolean!
+  annullaProtocollo(idProtocollo: BigInteger, notaAnnullamento: String): Boolean!
+  annullaRaccomandata(id: BigInteger, motivazione: String): Boolean!
+  assegnaProtocollo(assegnatari: [ReferenteProtocolloInputInput], idProtocollo: BigInteger, noteAssegnazione: String, selectedOffice: String): Boolean!
+  assegnazioneProtocolloMassiva(assegnatari: [ReferenteProtocolloInputInput], noteAssegnazione: String, numbers: [String], selectedOffice: String): Boolean!
+  createModelloAutomatico(input: ModelloAutomaticoInputDTOInput): ModelloAutomaticoDTO
+  createRegistroGiornaliero: Boolean!
+  deleteAnagraficaWithoutCertificazione: String
+  deleteConfiguration(id: BigInteger): Boolean!
+  deleteContatto(id: BigInteger): Boolean!
+  deleteGruppo(groupId: BigInteger): Boolean!
+  deleteModelloAutomatico(id: BigInteger): Boolean!
+  deletePecEsclusa(id: BigInteger): Boolean!
+  deletePecRegola(idCategoria: BigInteger, idEmail: BigInteger): Boolean!
+  deleteTag(id: BigInteger): Boolean!
+  deleteTitolario(idTitolario: BigInteger): Boolean!
+  deleteVisibilitaTitolario(deleteVisibilitaTitolario: [BigInteger]): Boolean!
+  discardAllegato(idAllegato: BigInteger): Boolean!
+  dropTitolario(idTitolario: BigInteger): Boolean!
+  exportListaProtocolli(dto: RicercaProtocolliDTOInput, formato: String, idProtocolliSelezionati: [BigInteger]): String
+  exportStorico(dto: RicercaStoricoDTOInput, formato: String): String
+  fascicolazioneMassivaProtocollo(idProtocolloList: [BigInteger], idTitolarioList: [BigInteger], selectedOffice: String): Boolean!
+  fascicolazioneProtocollo(idProtocollo: BigInteger, idTitolarioList: [BigInteger], selectedOffice: String): Boolean!
+  gestioneAnnullamento(idProtocollo: BigInteger, isAnnulla: Boolean!, nota: String): Boolean!
+  importAnagraficaFromBase64(fileBase64: String): Boolean!
+  importModelliAutomaticiFromBase64(fileBase64: String): Boolean!
+  importProtocolliEmergenzaFromBase64(cdr: String, fileBase64: String, selectedOffice: String): [ProtocolloEmergenzaDTO]
+  inoltraRispondiEmail(dto: InoltraRispondiInput): Boolean!
+  insertPermessoFascicoloDipendente: Void
+  insertRaccomandata(input: RaccomandataProtocolloInputInput): RaccomandataProtocollo
+  insertTitolario(titolarioInput: TitolarioInputInput): Boolean!
+  insertVisibilitatitolario(visibilitaTitolarioInput: VisibilitaTitolarioInputInput): Boolean!
+  inviaRaccomandateInCoda: Void
+  notificaProtocollo(input: NotificaProtocolloPecPeoInputInput): Boolean!
+  presaInCaricoProtocolloMassiva(numbers: [String], selectedOffice: String): Boolean!
+  reinviaEmail(idEmail: BigInteger): String
+  removeContactFromGroup(contactId: BigInteger, groupId: BigInteger): Boolean!
+  resumeAllegato(idAllegato: BigInteger): Boolean!
+  revocaAssegnazioneProtocollo(referentiProtocolloId: BigInteger): Boolean!
+  richiestaAnnullamentoProtocollo(idProtocollo: BigInteger, notaAnnullamento: String): Boolean!
+  richiestaAssegnazioneProtocollo(idProtocollo: BigInteger, note: String): Boolean!
+  rifiutaProtocollo(nProtocollo: String, note: String, selectedOffice: String): Boolean!
+  rifiutaProtocolloMassiva(note: String, numbers: [String], selectedOffice: String): Boolean!
+  saveConfiguration(pecPeoDTOInput: PecPeoDTOInputInput): Boolean!
+  saveContatto(anagraficaInput: AnagraficaInputInput): Anagrafica
+  saveGruppo(gruppoAnagraficaDTO: GruppoAnagraficaDTOInput): Gruppo
+  saveLoginConservazione(loginInput: LoginConservazioneDTOInput): Boolean!
+  saveLoginRaccomandata(loginInput: LoginRaccomandataDTOInput): Boolean!
+  savePecEsclusa(pecInput: PecEscluseRispostaAutomaticaInputInput): PecEscluseRispostaAutomatica
+  savePecRegola(input: PecRegolaInputDTOInput): PecRegolaInputDTO
+  saveProtocollo(protocollo_input: ProtocolloInputInput): Protocollo
+  saveProtocolloByEmail(idEmail: BigInteger): Protocollo
+  saveTag(tagInput: TagInputInput): Tag
+  sendEmailToQueue(idEmail: BigInteger): String
+  setMaxLivelloFascicolazioneForTitolario(livello: Int): Boolean!
+  spostaAllegatiFascicolo(allegatiIds: [BigInteger], newTitolarioId: BigInteger, oldTitolarioId: BigInteger): Boolean!
+  spostaFascicolo(cdr: String, cdrCode: String, idFascicoliList: [BigInteger], idFascicoloPadre: BigInteger): Boolean!
+  spostaProtocollo(idFascicoloNew: BigInteger, idFascicoloOld: BigInteger, idProtocolli: [BigInteger]): Boolean!
+  updateConfigurations(id: BigInteger, input: PecPeoDTOInputInput): Boolean!
+  updateContatto(anagraficaInput: AnagraficaInputInput, id: BigInteger): Anagrafica
+  updateGruppo(groupId: BigInteger, gruppoAnagraficaDTO: GruppoAnagraficaDTOInput): Gruppo
+  updateLoginConservazione(loginInput: LoginConservazioneDTOInput): Boolean!
+  updateLoginRaccomandata(loginInput: LoginRaccomandataDTOInput): Boolean!
+  updateModelloAutomatico(id: BigInteger, input: ModelloAutomaticoInputDTOInput): ModelloAutomaticoDTO
+  updateNoteProtocollo(updateInput: ProtocolloUpdateInputInput): Boolean!
+  updatePecEsclusa(id: BigInteger, pecInput: PecEscluseRispostaAutomaticaInputInput): PecEscluseRispostaAutomatica
+  updateProtocollo(updateInput: ProtocolloUpdateInputInput): Protocollo
+  updateStatoProtocollo(stato_protocollo_input: StatoProtocolloInputInput): Boolean!
+  updateStatoRaccomandateForProtocollo(id: BigInteger): Boolean!
+  updateTag(id: BigInteger, tagInput: TagInputInput): Tag
+  updateTitolario(titolarioInput: TitolarioInputInput): Boolean!
+}
+
+type Office {
+  code: String
+  description: String
+  name: String
+  service: String
+  short_description: String
+}
+
+type PeConfigurazione {
+  connectionTimeout: Int
+  env: String
+  id: BigInteger
+  imapHost: String
+  imapPort: Int
+  metaType: String
+  sentFolder: String
+  smtpHost: String
+  smtpPort: Int
+  tipologiaPosta: TipologiaPosta
+  useTls: Boolean
+}
+
+type PecEscluseRispostaAutomatica {
+  id: BigInteger
+  indirizzo: String
+  metaType: String
+  "ISO-8601"
+  tsCreation: DateTime
+}
+
+type PecEscluseRispostaAutomaticaDTO {
+  id: BigInteger
+  indirizzo: String
+  "ISO-8601"
+  tsCreation: DateTime
+}
+
+type PecEscluseRispostaAutomaticaDTOList {
+  pageCount: BigInteger!
+  pecEscluseRispostaAutomaticaList: [PecEscluseRispostaAutomaticaDTO]
+  totalResults: BigInteger!
+}
+
+type PecPeo {
+  attiva: Boolean!
+  configurazione: PeConfigurazione
+  deleteMessages: Boolean!
+  id: BigInteger
+  idUtente: String
+  indirizzoEmail: String
+  metaType: String
+  mustSendRispostaAutomatica: Boolean!
+  password: String
+  passwordDecrypted: String
+  readPec: Boolean!
+  saveToSent: Boolean!
+  "ISO-8601"
+  tsCreation: DateTime
+  uffici: [Ufficio]
+  username: String
+  utente: String
+}
+
+type PecRegolaFinestraTemporaleInput {
+  dayOfWeek: BigInteger
+  end: String
+  start: String
+}
+
+type PecRegolaInputDTO {
+  description: String
+  durationMinutes: BigInteger
+  enabled: Boolean
+  finestre: [PecRegolaFinestraTemporaleInput]
+  idCategoriaRegola: BigInteger
+  idEmail: BigInteger
+  threshold: BigInteger
+}
+
+type PecRegoleDTO {
+  list: [PecRegolaInputDTO]
+}
+
+type PermessiFascicoloDipendente {
+  id: BigInteger
+  metaType: String
+  titolario: Titolario
+  "ISO-8601"
+  tsCreation: DateTime
+  uffici: [Ufficio]
+  visibilitaArchivista: PermessoFascicoloDipendente
+  visibilitaDipendente: PermessoFascicoloDipendente
+  visibilitaDirigente: PermessoFascicoloDipendente
+  visibilitaProtocollatore: PermessoFascicoloDipendente
+  visibilitaUtente: PermessoFascicoloDipendente
+}
+
+type PermessiVisibilitaOutputDTO {
+  pageCount: Int!
+  permessi: [VisibilitaTitolario]
+  totalResults: BigInteger!
+}
+
+type Permit {
+  "ISO-8601"
+  delegation_end: DateTime
+  "ISO-8601"
+  delegation_start: DateTime
+  officeName: String
+  office_id: BigInteger
+  role: Role
+  type: PermitType
+}
+
+type ProtocolliClassificazione {
+  id: BigInteger
+  idTitolario: BigInteger
+  idUtenteLastOperation: String
+  metaType: String
+  protocollo: Protocollo
+  "ISO-8601"
+  tsCreation: DateTime
+  "ISO-8601"
+  tsDeleted: DateTime
+  "ISO-8601"
+  tsUpdate: DateTime
+}
+
+type ProtocolliOutputDTO {
+  pageCount: BigInteger!
+  protocolli: [Protocollo]
+  totalResults: BigInteger!
+}
+
+type Protocollo {
+  allegati: [Allegato]
+  assegnatari: String
+  cdr: String
+  cdrCode: String
+  corpoPecPeo: String
+  "ISO-8601"
+  dataProtocolloEmergenza: DateTime
+  "ISO-8601"
+  dataProtocolloMittente: DateTime
+  destinatari: String
+  id: BigInteger
+  idMittente: String
+  idUtente: String
+  idUtenteLastOperation: String
+  indirizzoPecPeo: String
+  invioEmailMultiplo: Int
+  metaType: String
+  metodoSpedizione: MetodoSpedizione
+  mittente: String
+  nProtocollo: String
+  nProtocolloCircolare: String
+  nProtocolloEmergenza: String
+  note: String
+  numeroProgressivoForSignature: String
+  oggetto: String
+  protocolliClassificazioneList: [ProtocolliClassificazione]
+  protocolloMittente: String
+  raccomandate: [RaccomandataProtocollo]
+  stato: StatoProtocollo
+  tipoRegistrazione: TipoRegistrazione
+  "ISO-8601"
+  tsCreation: DateTime
+  tsCreationFormatted: String
+  "ISO-8601"
+  tsStartVali: DateTime
+  utente: String
+}
+
+type ProtocolloEmergenzaDTO {
+  "ISO-8601"
+  dataProtocolloEmergenza: DateTime
+  "ISO-8601"
+  dataProtocolloMittente: DateTime
+  destinatari: String
+  empty: Boolean!
+  imported: Boolean!
+  metodo: String
+  mittente: String
+  nAutorizzazione: String
+  nProtocollo: String
+  nProtocolloEmergenza: String
+  nProtocolloMittente: String
+  numeroProtocolloEmergenza: String
+  oggetto: String
+  tipologia: String
+  titolario: String
+  valid: Boolean!
+}
+
+"Query root"
+type Query {
+  cercaRaccomandate(ricercaRaccomandate: RicercaRaccomandataDTOInput): RaccomandataProtocolloDTO
+  cittaDaCap(cap: String, prefix: String): [String]
+  configById(id: BigInteger): PecPeo
+  createFascicoliDipendenti(endIndex: BigInteger, forceRewritePermessi: Boolean, forceRewritePermessiExDipendenti: Boolean, startIndex: BigInteger, userAuthId: String): Boolean!
+  createFascicoliFattureDetermine: Boolean!
+  deleteAllegatiNonUtilizzati: Boolean!
+  dettaglioGruppo(groupId: BigInteger): GruppoOutputDTO
+  dettaglioProtocollo(nProtocollo: String, selectedOffice: String): DettaglioProtocolloDTO
+  dettaglioTitolario(idTitolario: BigInteger): TitolarioOutputDTO
+  findAllPecPeoIdByEmail(id: BigInteger, indirizzoEmail: String): [BigInteger]
+  findReferenti(ricerca_referenti: RicercaReferentiDTOInput): ReferentiOutputDTO
+  forceGetAllOffices: UfficiOutputDTO
+  forceGetAllUsers: UtentiOutputDTO
+  forceGetAllUsersWithRoleAndCdr(cdr: String, roles: [String], search: String, size: Int!): UtentiOutputDTO
+  forceGetTitolario(dto: RicercaTitolarioDTOInput): TitolariOutputDTO
+  generateBarcode(nProtocollo: String): String
+  generateRicevuta(nProtocollo: String): String
+  getAllAnagrafica(ricercaAnagrafica: RicercaAnagraficaDTOInput): AnagraficaDTOList
+  getAllExtensions: [String]
+  getAllGruppi(ricercaGruppi: RicercaGruppiDTOInput): GruppiOutputDTO
+  getAllOffices: UfficiOutputDTO
+  getAllPecConfigurations: [PecPeo]
+  getAllPecEscluse(search: String): [PecEscluseRispostaAutomatica]
+  getAllPecPeoByCdrCode: [PecPeo]
+  getAllPecPeoFromEmails: [PecPeo]
+  getAllPermessiFascicoloDipendente: [PermessiFascicoloDipendente]
+  getAllProtocolliByFascicolo(idFascicolo: BigInteger): [Protocollo]
+  getAllTag(search: String): [Tag]
+  getAllTitolarioByName(nome: String): [BigInteger]
+  getAllUsers: UtentiOutputDTO
+  getAllegati(ricercaAllegatiDTO: RicercaAllegatiDTOInput): AllegatiOutputDTO
+  getAllegatiDiscarded(ricercaAllegatiDTO: RicercaAllegatiDTOInput): AllegatiOutputDTO
+  getAssegnatariTooltipForProtocollo(idProtocollo: BigInteger): [ReferentiProtocollo]
+  getClassificazioneStringByIdProtocollo(idProtocollo: BigInteger): [TitolarioOutputDTO]
+  getConfigurations(ricerca: RicercaConfigPEDTOInput): ConfigurazioniPEOutputDTO
+  getConfiguredUsers: [PecPeo]
+  getContattoInad(codiceFiscale: String): String
+  getDettaglioAnagrafica(id: BigInteger): AnagraficaDTO
+  getEmails(ricerca: RicercaEmailDTOInput): EmailOutputDTO
+  getLoginConservazione: LoginConservazioneDTO
+  getLoginRaccomandata: LoginRaccomandataDTO
+  getMaxLivelloFascicolazioneForTitolario: Int!
+  getMittenteFileds: RaccomandataMittenteFields
+  getModelliAutomaticiByCdrCode(selectedOffice: String): [ModelloAutomaticoDTO]
+  getPathForTitolarioItem(id: BigInteger!): String
+  getPdfRegistroGiornaliero(
+    "ISO-8601"
+    data: DateTime
+  ): String
+  getPecEscluseList(searchPecEscluse: RicercaPecEscluseRispostaAutomaticaDTOInput): PecEscluseRispostaAutomaticaDTOList
+  getPecPeoByTipologiaPosta(idUtente: String, selectedCdrCode: String, tipologiaPosta: String): [String]
+  getPecPeoByUtenteAndCdr(idUtente: String, selectedCdrCode: String): [String]
+  getPecRegole(idEmail: BigInteger): PecRegoleDTO
+  getPermessiVisibilita(visibilitaDTO: RicercaPermessiVisibilitaDTOInput): PermessiVisibilitaOutputDTO
+  getProtocolli(ricerca_protocolli: RicercaProtocolliDTOInput): ProtocolliOutputDTO
+  getProtocolliByFascicolo(ricerca_protocolli: RicercaProtocolliDTOInput): ProtocolliOutputDTO
+  getProtocolliNative(ricerca_protocolli: RicercaProtocolliDTOInput): ProtocolliOutputDTO
+  getProtocolloAllegatoPrincipale(nProtocollo: String): Allegato
+  getProtocolloById(id: BigInteger!): Protocollo
+  getReferenti(ricercaReferentiProtocollo: RicercaReferentiProtocolloDTOInput): ReferentiProtocolloOutputDTO
+  getReferentiDto(ricercaReferentiProtocollo: RicercaReferentiProtocolloDTOInput): ReferentiProtocolloOutputDTO
+  getRegistroGiornaliero(ricercaRegistroDTO: RicercaRegistiGiornalieriDTOInput): RegistroGiornalieroOutputDTO
+  getStoricoProtocollo(ricerca_storico: RicercaStoricoDTOInput): StoricoOutputDTO
+  getStoricoRegistroGiornaliero(ricerca_storico: RicercaStoricoDTOInput): StoricoOutputDTO
+  getStoricoTitolario(ricerca_storico: RicercaStoricoDTOInput): StoricoOutputDTO
+  getTagList(searchTag: RicercaTagDTOInput): TagDTOList
+  getTitolario(dto: RicercaTitolarioDTOInput): TitolariOutputDTO
+  getTitolarioById(idTitolario: BigInteger): Titolario
+  inviaConservazioneForDay(
+    "ISO-8601"
+    date: DateTime
+  ): Boolean!
+  listaCap(prefix: String): [String]
+  listaCapEsteso(citta: String, prefix: String, tipoRicerca: String): [[String]]
+  protocolloByNumero(nProtocollo: String): Protocollo
+  refreshGetAllUsersAndAdminsFromSSO: Boolean!
+  searchModelliAutomatici(input: RicercaModelloAutomaticoDTOInput): ModelloAutomaticoOutputDTO
+  titolarioFindById(id: BigInteger): Titolario
+  vieDaCap(cap: String, prefix: String): [String]
+  vieDaCitta(citta: String): [String]
+}
+
+type RaccomandataMittenteFields {
+  cap: String
+  citta: String
+  civico: String
+  dipartimentoServizio: String
+  indirizzo: String
+  mittente: String
+  presso: String
+  provincia: String
+}
+
+type RaccomandataProtocollo {
+  allegato: Allegato
+  costo: String
+  destinatario: String
+  destinatarioCap: String
+  destinatarioCitta: String
+  destinatarioCivico: String
+  destinatarioIndirizzo: String
+  destinatarioIndirizzo2: String
+  destinatarioProvincia: String
+  id: BigInteger
+  idRaccomandata: String
+  idUtente: String
+  metaType: String
+  mittente: String
+  mittenteCap: String
+  mittenteCitta: String
+  mittenteCivico: String
+  mittenteIndirizzo: String
+  mittentePresso: String
+  mittenteProvincia: String
+  nomeUtente: String
+  numero: String
+  protocollo: Protocollo
+  stato: StatoRaccomandataProtocollo
+  statoConsegna: String
+  tipo: TipoRaccomandata
+  "ISO-8601"
+  tsConsegna: DateTime
+  "ISO-8601"
+  tsCreation: DateTime
+  "ISO-8601"
+  tsInoltro: DateTime
+  "ISO-8601"
+  tsInserimento: DateTime
+  "ISO-8601"
+  tsUpdate: DateTime
+  ulterioreDatoMittente: String
+}
+
+type RaccomandataProtocolloDTO {
+  pageCount: BigInteger!
+  raccomandate: [RaccomandataProtocollo]
+  totalResults: BigInteger!
+}
+
+type ReferenteOutputDTO {
+  cap: String
+  cfPiva: String
+  children: [ReferenteOutputDTO]
+  citta: String
+  cognome: String
+  descrizione: String
+  email: String
+  id: String
+  idDestinatario: String
+  indirizzo: String
+  ipaResponseDTO: IpaResponseDTO
+  label: String
+  nome: String
+  pec: String
+  ragioneSociale: String
+  statoProtocollo: String
+  tipo: String
+}
+
+type ReferentiOutputDTO {
+  pageCount: BigInteger!
+  referenti: [ReferenteOutputDTO]
+  totalResults: BigInteger!
+}
+
+type ReferentiProtocollo {
+  assegnato: Boolean!
+  attribuzione: String
+  creationOption: Boolean!
+  id: BigInteger
+  idDestinatario: String
+  idMittente: String
+  idProtocollo: BigInteger
+  metaType: String
+  nomeDestinatario: String
+  nomeMittente: String
+  noteAssegnazione: String
+  statoProtocollo: StatoProtocollo
+  tipoDestinatario: String
+  "ISO-8601"
+  tsCreation: DateTime
+  "ISO-8601"
+  tsStartVali: DateTime
+  "ISO-8601"
+  tsStatoProtocollo: DateTime
+  ufficioLavorazione: String
+}
+
+type ReferentiProtocolloDTO {
+  assegnato: Boolean!
+  attribuzione: String
+  creationOption: Boolean!
+  id: BigInteger
+  idDestinatario: String
+  idMittente: String
+  idProtocollo: BigInteger
+  nomeDestinatario: String
+  nomeMittente: String
+  noteAssegnazione: String
+  revocabile: Boolean!
+  statoProtocollo: StatoProtocollo
+  tipoDestinatario: String
+  "ISO-8601"
+  tsCreation: DateTime
+  "ISO-8601"
+  tsStartVali: DateTime
+  "ISO-8601"
+  tsStatoProtocollo: DateTime
+}
+
+type ReferentiProtocolloOutputDTO {
+  pageCount: BigInteger!
+  referenti: [ReferentiProtocolloDTO]
+  totalResults: BigInteger!
+}
+
+type RegistroGiornaliero {
+  "ISO-8601"
+  dataRegistro: DateTime
+  esitoVersamento: String
+  file: String
+  id: BigInteger
+  metaType: String
+  note: String
+  riferimentoMinio: String
+  "ISO-8601"
+  tsCreation: DateTime
+  urn: String
+}
+
+type RegistroGiornalieroOutputDTO {
+  pageCount: BigInteger!
+  registri: [RegistroGiornaliero]
+  totalResults: BigInteger!
+}
+
+type Role {
+  full_name: String
+  hierarchy_level: Int!
+  name: String
+}
+
+type Storico {
+  id: BigInteger
+  idProtocollo: BigInteger
+  idRegistroGiornaliero: BigInteger
+  idTitolario: BigInteger
+  idUtente: String
+  metaType: String
+  note: String
+  operazione: String
+  "ISO-8601"
+  tsCreation: DateTime
+  utente: String
+}
+
+type StoricoOutputDTO {
+  logStorici: [Storico]
+  pageCount: BigInteger!
+  totalResults: BigInteger!
+}
+
+type Tag {
+  id: BigInteger
+  metaType: String
+  nome: String
+}
+
+type TagDTO {
+  id: BigInteger
+  nome: String
+}
+
+type TagDTOList {
+  pageCount: BigInteger!
+  tagList: [TagDTO]
+  totalResults: BigInteger!
+}
+
+type TitolariOutputDTO {
+  currentPage: Int!
+  hasMore: Boolean!
+  lastIdTitolario: BigInteger!
+  lastIndex: Int!
+  nextPage: Int!
+  titolario: [TitolarioOutputDTO]
+}
+
+type Titolario {
+  cdr: String
+  cdrCode: String
+  id: BigInteger
+  idPadre: BigInteger
+  idUtenteCreatore: String
+  idUtenteLastOperation: String
+  isFascicoloDipendente: Boolean
+  leaf: Boolean
+  metaType: String
+  nome: String
+  nomeUtenteCreatore: String
+  note: String
+  permessiFascicoloDipendente: [PermessiFascicoloDipendente]
+  tipologiaTitolario: TipologiaTitolario
+  "ISO-8601"
+  tsChiusura: DateTime
+  "ISO-8601"
+  tsCreation: DateTime
+  "ISO-8601"
+  tsDeleted: DateTime
+  "ISO-8601"
+  tsUpdate: DateTime
+}
+
+type TitolarioOutputDTO {
+  cdr: String
+  closed: Boolean!
+  deleted: Boolean!
+  fascicoloDipendente: Boolean!
+  hierarchy: [TitolarioOutputDTO]
+  hierarchyString: String
+  id: BigInteger!
+  idPadre: BigInteger!
+  immutable: Boolean!
+  label: String
+  leaf: Boolean!
+  nomeUtenteCreatore: String
+  note: String
+  numDocumenti: Int!
+  numProtocolli: Int!
+  tipologia: String
+  "ISO-8601"
+  tsChiusura: DateTime
+  "ISO-8601"
+  tsCreation: DateTime
+  "ISO-8601"
+  tsDeleted: DateTime
+  visible: Boolean!
+  write: Boolean!
+}
+
+type UfficiOutputDTO {
+  pageCount: BigInteger!
+  totalResults: BigInteger!
+  uffici: [Office]
+}
+
+type Ufficio {
+  cdr: String
+  cdrCode: String
+  id: BigInteger
+  metaType: String
+  pecPeoList: [PecPeo]
+}
+
+type UserOffice {
+  office: Office
+  roles: [Role]
+  rolesNodeleg: [Role]
+  userOfficeRoles: [Permit]
+}
+
+type UtenteDTO {
+  cognome: String
+  id: String
+  nome: String
+  username: String
+}
+
+type UtentiOutputDTO {
+  datiUtenteSSO: [DatiUtenteSSO]
+  pageCount: BigInteger!
+  totalResults: BigInteger!
+  utenti: [UtenteDTO]
+}
+
+type VisibilitaTitolario {
+  cdr: String
+  cdrCode: String
+  id: BigInteger
+  idUtente: String
+  idUtenteLastOperation: String
+  metaType: String
+  nomeUtente: String
+  note: String
+  titolario: Titolario
+  "ISO-8601"
+  tsCreation: DateTime
+  "ISO-8601"
+  tsUpdate: DateTime
+  usernameUtente: String
+  write: Boolean
+}
+
+enum AmbienteConservazione {
+  PARER
+  PARER_TEST
+}
+
+enum EmailDirection {
+  ENTRATA
+  USCITA
+}
+
+enum MetodoSpedizione {
+  AMano
+  AccreditamentoWeb
+  Corriere
+  Email
+  Mepa
+  NotificaAtti
+  Pec
+  PostaPrioritaria
+  Raccomandata
+  RaccomandataSemplice
+  Sportello
+  Tracciabilita
+}
+
+enum PermessoFascicoloDipendente {
+  no
+  protocollazione
+  visualizzazione
+}
+
+enum PermitType {
+  DELEGATION
+  PERSISTENT
+  TRANSIENT
+}
+
+enum StatoInvio {
+  DA_INVIARE
+  INVIATO
+  INVIO_FALLITO
+  SALVARE_COME_ALLEGATO
+  SALVARE_IN_INBOX
+}
+
+enum StatoProtocollo {
+  Annullato
+  Assegnato
+  Completato
+  DaAssegnare
+  DaPrendereInCarico
+  InCorso
+  PresoInCarico
+  RichiestaDiAnnullamento
+  Rifiutato
+}
+
+enum StatoRaccomandataProtocollo {
+  accettato
+  attesaStampa
+  confermato
+  consegnaParziale
+  consegnato
+  elaborato
+  eliminato
+  errore
+  inCoda
+  inviato
+  nessuno
+  nonConsegnato
+  normalizzazione
+  rimandato
+  verificato
+}
+
+enum TipoRaccomandata {
+  Lettera
+  Raccomandata
+  RaccomandataAR
+}
+
+enum TipoRegistrazione {
+  Circolare
+  Entrata
+  Interno
+  Uscita
+}
+
+enum TipologiaIpaResponse {
+  AOO
+  ENTE
+  UO
+}
+
+enum TipologiaPosta {
+  PEC
+  PEO
+  RICEVUTA
+}
+
+enum TipologiaRubrica {
+  ANAGRAFICA_INTERNA
+  GRUPPI
+  INAD
+  IPA
+}
+
+enum TipologiaTitolario {
+  FascicoloLv1
+  FascicoloLvN
+  Sezione
+  SottoSezione
+  Titolo
+}
+
+input AllegatoInputInput {
+  collocazioneTelematica: String
+  dimensione: BigInteger
+  estensione: String
+  idAllegato: BigInteger
+  inoltro: Boolean!
+  main: Boolean!
+  nome: String
+  oggetto: String
+  position: String
+}
+
+input AnagraficaInputInput {
+  cap: String
+  certificato: Boolean
+  cfPiva: String
+  citta: String
+  cognome: String
+  email: String
+  fax: String
+  gruppiIds: [BigInteger]
+  indirizzo: String
+  nome: String
+  note: String
+  pec: String
+  provincia: String
+  ragioneSociale: String
+  telefono: String
+}
+
+input GruppoAnagraficaDTOInput {
+  anagraficaIds: [BigInteger]
+  nome: String
+  note: String
+}
+
+input InoltraRispondiInput {
+  body: String
+  cc: [String]
+  from: String
+  idAttachments: [BigInteger]
+  subject: String
+  tipologiaPosta: String
+  to: [String]
+}
+
+input IpaResponseDTOInput {
+  acronimo: String
+  cap: String
+  certificato: Boolean
+  cfPiva: String
+  citta: String
+  codAOO: String
+  codAmm: String
+  codUniOU: String
+  cognome: String
+  datValCanaleTrasmSfe: String
+  dataVerificaOF: String
+  descAmm: String
+  descOU: String
+  email: String
+  fax: String
+  gruppiIds: [BigInteger]
+  indirizzo: String
+  nome: String
+  note: String
+  pec: String
+  provincia: String
+  ragioneSociale: String
+  statoCanale: String
+  telefono: String
+  tipologiaIpaResponse: TipologiaIpaResponse
+}
+
+input LoginConservazioneDTOInput {
+  ambiente: AmbienteConservazione
+  ente: String
+  password: String
+  struttura: String
+  url: String
+  username: String
+  versione: String
+  xmlSip: String
+}
+
+input LoginRaccomandataDTOInput {
+  gruppo: String
+  password: String
+  username: String
+}
+
+input MittenteProtocolloInputInput {
+  codAmm: String
+  codAoo: String
+  codUniOu: String
+  descMittente: String
+  idMittente: String
+  isIpa: Boolean
+  tipoMittente: String
+  tipologiaIpa: String
+}
+
+input ModelloAutomaticoInputDTOInput {
+  cdrCode: String
+  idTitolario: BigInteger
+  metodoSpedizione: String
+  nomeModello: String
+  oggettoProtocollo: String
+  tipoRegistrazione: String
+}
+
+input NotificaProtocolloPecPeoInputInput {
+  allegati: [BigInteger]
+  corpo: String
+  destinatariCompetenza: [ReferenteOutputDTOInput]
+  destinatariCompetenzaUsePeoInsteadOfPec: [String]
+  destinatariConoscenza: [ReferenteOutputDTOInput]
+  destinatariConoscenzaUsePeoInsteadOfPec: [String]
+  from: String
+  idProtocollo: BigInteger
+  multiplo: Boolean
+  nProtocollo: String
+  oggetto: String
+  tipologia: String
+}
+
+input PeConfigurazioneInput {
+  connectionTimeout: Int
+  env: String
+  id: BigInteger
+  imapHost: String
+  imapPort: Int
+  sentFolder: String
+  smtpHost: String
+  smtpPort: Int
+  tipologiaPosta: TipologiaPosta
+  useTls: Boolean
+}
+
+input PecEscluseRispostaAutomaticaInputInput {
+  id: [BigInteger]
+  indirizzo: String
+}
+
+input PecPeoDTOInputInput {
+  attiva: Boolean
+  cdrList: [UfficioInput]
+  deleteMessages: Boolean
+  formSwitch: String
+  idUtente: String
+  indirizzoEmail: String
+  password: String
+  readPec: Boolean
+  saveToSent: Boolean
+  sendRispostaAutomatica: Boolean
+  tipologiaPosta: String
+  username: String
+  utente: String
+}
+
+input PecPeoInput {
+  attiva: Boolean!
+  configurazione: PeConfigurazioneInput
+  deleteMessages: Boolean!
+  id: BigInteger
+  idUtente: String
+  indirizzoEmail: String
+  mustSendRispostaAutomatica: Boolean!
+  password: String
+  passwordCrypted: String
+  readPec: Boolean!
+  saveToSent: Boolean!
+  "ISO-8601"
+  tsCreation: DateTime
+  uffici: [UfficioInput]
+  username: String
+  utente: String
+}
+
+input PecRegolaFinestraTemporaleInputInput {
+  dayOfWeek: BigInteger
+  end: String
+  start: String
+}
+
+input PecRegolaInputDTOInput {
+  description: String
+  durationMinutes: BigInteger
+  enabled: Boolean
+  finestre: [PecRegolaFinestraTemporaleInputInput]
+  idCategoriaRegola: BigInteger
+  idEmail: BigInteger
+  threshold: BigInteger
+}
+
+input ProtocolloInputInput {
+  allegati: [AllegatoInputInput]
+  cdr: String
+  cdrCode: String
+  corpoPecPeo: String
+  "ISO-8601"
+  dataProtocolloMittente: DateTime
+  idTitolario: [BigInteger]
+  idUtente: String
+  idUtenteLastOperation: String
+  indirizzoPecPeo: String
+  invioEmailMultiplo: Int
+  metodoSpedizione: String
+  mittente: MittenteProtocolloInputInput
+  nProtocollo: String
+  nProtocolloCircolare: String
+  note: String
+  oggetto: String
+  old_idMittente: String
+  old_mittente: String
+  protocolloMittente: String
+  referenti: [ReferenteProtocolloInputInput]
+  stato: String
+  tagList: [TagInput]
+  tipoRegistrazione: String
+  "ISO-8601"
+  tsCreation: DateTime
+  "ISO-8601"
+  tsStartVali: DateTime
+  utente: String
+}
+
+input ProtocolloUpdateInputInput {
+  allegati: [AllegatoInputInput]
+  cdrCode: String
+  idTitolario: [BigInteger]
+  nProtocollo: String
+  nProtocolloCircolare: String
+  note: String
+}
+
+input RaccomandataProtocolloInputInput {
+  destinatario: String
+  destinatarioCap: String
+  destinatarioCitta: String
+  destinatarioCivico: String
+  destinatarioIndirizzo: String
+  destinatarioIndirizzo2: String
+  destinatarioProvincia: String
+  idAllegato: BigInteger
+  idProtocollo: BigInteger
+  mittente: String
+  mittenteCap: String
+  mittenteCitta: String
+  mittenteCivico: String
+  mittenteIndirizzo: String
+  mittentePresso: String
+  mittenteProvincia: String
+  tipo: String
+  ulterioreDatoMittente: String
+}
+
+input ReferenteOutputDTOInput {
+  cap: String
+  cfPiva: String
+  children: [ReferenteOutputDTOInput]
+  citta: String
+  cognome: String
+  descrizione: String
+  email: String
+  id: String
+  idDestinatario: String
+  indirizzo: String
+  ipaResponseDTO: IpaResponseDTOInput
+  label: String
+  nome: String
+  pec: String
+  ragioneSociale: String
+  statoProtocollo: String
+  tipo: String
+}
+
+input ReferenteProtocolloInputInput {
+  attribuzione: String
+  cdrAssegnatario: String
+  codAmm: String
+  codAoo: String
+  codUniOu: String
+  idAssegnatario: String
+  isAssegnato: Boolean
+  isIpa: Boolean
+  nomeAssegnatario: String
+  tipoDestinatario: String
+  tipologiaIpa: String
+  usePeoForSendEmail: Boolean
+}
+
+input RicercaAllegatiDTOInput {
+  cdr: [String]
+  idProtocollo: BigInteger
+  idTitolario: BigInteger
+  page: Int
+  search: String
+  size: Int
+  sort: SortInputInput
+}
+
+input RicercaAnagraficaDTOInput {
+  cdr: [String]
+  cfPiva: String
+  cognome: String
+  gruppoId: BigInteger
+  mail: String
+  nome: String
+  onlyCertified: Boolean
+  page: Int
+  pec: String
+  ragioneSociale: String
+  search: String
+  size: Int
+  sort: SortInputInput
+}
+
+input RicercaConfigPEDTOInput {
+  cdr: [String]
+  indirizzo: String
+  page: Int
+  search: String
+  size: Int
+  sort: SortInputInput
+  tipologiaPosta: [String]
+  ufficio: String
+  utente: String
+}
+
+input RicercaEmailDTOInput {
+  cdr: [String]
+  "ISO-8601"
+  dataInvioFrom: DateTime
+  "ISO-8601"
+  dataInvioTo: DateTime
+  emailDirection: [String]
+  indirizziEmail: [String]
+  isAssegnato: Boolean
+  isClassificato: Boolean
+  mostraNonLavorate: Boolean
+  page: Int
+  search: String
+  selectedCdr: String
+  size: Int
+  sort: SortInputInput
+  statoInvio: [String]
+  statoProtocollazione: [String]
+  tipoEmail: [String]
+}
+
+input RicercaGruppiDTOInput {
+  cdr: [String]
+  nome: String
+  page: Int
+  search: String
+  size: Int
+  sort: SortInputInput
+}
+
+input RicercaModelloAutomaticoDTOInput {
+  cdr: [String]
+  cdrCode: String
+  metodoSpedizione: String
+  nomeModello: String
+  oggettoProtocollo: String
+  page: Int
+  search: String
+  size: Int
+  sort: SortInputInput
+  tipoRegistrazione: String
+}
+
+input RicercaPecEscluseRispostaAutomaticaDTOInput {
+  cdr: [String]
+  page: Int
+  search: String
+  size: Int
+  sort: SortInputInput
+}
+
+input RicercaPermessiVisibilitaDTOInput {
+  cdr: [String]
+  cdrNames: [String]
+  idTitolario: BigInteger
+  page: Int
+  permesso: String
+  search: String
+  size: Int
+  sort: SortInputInput
+}
+
+input RicercaProtocolliDTOInput {
+  anno: Int
+  assegnatari: String
+  cdr: [String]
+  cdrCode: String
+  "ISO-8601"
+  dataCreazioneEmergenzaFrom: DateTime
+  "ISO-8601"
+  dataCreazioneEmergenzaTo: DateTime
+  "ISO-8601"
+  dataCreazioneFrom: DateTime
+  "ISO-8601"
+  dataCreazioneTo: DateTime
+  destinatari: String
+  filtroAll: Boolean!
+  filtroUfficio: Boolean!
+  idFascicoli: [BigInteger]
+  idFascicolo: BigInteger
+  metodoSpedizione: [String]
+  mittente: String
+  nomeTitolario: String
+  note: String
+  numero: String
+  numeroEmergenza: String
+  oggetto: String
+  page: Int
+  ricercaAvanzata: Boolean!
+  search: String
+  selectedOffice: String
+  size: Int
+  sort: SortInputInput
+  stato: [String]
+  tagList: [String]
+  tipoRegistrazione: [String]
+}
+
+input RicercaRaccomandataDTOInput {
+  cdr: [String]
+  idProtocollo: BigInteger
+  page: Int
+  search: String
+  size: Int
+  sort: SortInputInput
+  stato: String
+  "ISO-8601"
+  tsCreationTo: DateTime
+}
+
+input RicercaReferentiDTOInput {
+  cdr: [String]
+  ipaCodAmm: String
+  ipaCodAoo: String
+  metodoSpedizione: String
+  mittente: Boolean!
+  noCache: Boolean!
+  page: Int
+  ricercaINAD: Boolean!
+  search: String
+  size: Int
+  sort: SortInputInput
+  tipoRegistrazione: String
+  tipoRicercaIPA: String
+  tipologiaRubrica: TipologiaRubrica
+}
+
+input RicercaReferentiProtocolloDTOInput {
+  attribuzioneList: [String]
+  cdr: [String]
+  excludeStatoRifiutato: Boolean!
+  nomeDestinatario: String
+  numero: String
+  page: Int
+  search: String
+  size: Int
+  sort: SortInputInput
+  statoProtocollo: [StatoProtocollo]
+  tipoUtenteList: [String]
+}
+
+input RicercaRegistiGiornalieriDTOInput {
+  cdr: [String]
+  "ISO-8601"
+  dataRegistroFrom: DateTime
+  "ISO-8601"
+  dataRegistroTo: DateTime
+  note: String
+  page: Int
+  search: String
+  size: Int
+  sort: SortInputInput
+}
+
+input RicercaStoricoDTOInput {
+  cdr: [String]
+  cdrCode: String
+  idProtocollo: BigInteger
+  idRegistroGiornaliero: BigInteger
+  idTitolario: BigInteger
+  isFilteredByCdr: Boolean
+  page: Int
+  search: String
+  size: Int
+  sort: SortInputInput
+}
+
+input RicercaTagDTOInput {
+  cdr: [String]
+  page: Int
+  search: String
+  size: Int
+  sort: SortInputInput
+}
+
+input RicercaTitolarioDTOInput {
+  cdr: [String]
+  cdrCode: String
+  hideFascicoliDeleted: Boolean!
+  idPadre: BigInteger
+  lastIdTitolario: Int!
+  page: Int
+  search: String
+  showFascicoliChiusi: Boolean!
+  showFascicoliDeleted: Boolean!
+  showFascicoliForProtocolli: Boolean!
+  showFascicoliWithDocumenti: Boolean!
+  showFascicoliWithProtocolli: Boolean!
+  size: Int
+  sort: SortInputInput
+  startIndex: Int!
+}
+
+input SortInputInput {
+  by: String
+  desc: Boolean = false
+}
+
+input StatoProtocolloInputInput {
+  idProtocollo: BigInteger
+  selectedOffice: String
+  statoProtocollo: String
+}
+
+input TagInput {
+  id: BigInteger
+  nome: String
+}
+
+input TagInputInput {
+  id: [BigInteger]
+  nome: String
+}
+
+input TitolarioInputInput {
+  cdr: String
+  cdrCode: String
+  fascicoloDipendente: Boolean!
+  id: BigInteger
+  idPadre: BigInteger
+  leaf: Boolean!
+  nome: String
+  note: String
+  tipologia: String
+  "ISO-8601"
+  tsChiusura: DateTime
+}
+
+input UfficioInput {
+  cdr: String
+  cdrCode: String
+  id: BigInteger
+  pecPeoList: [PecPeoInput]
+}
+
+input UtenteVisibilitaInputInput {
+  idUtente: String
+  nomeUtente: String
+  usernameUtente: String
+}
+
+input VisibilitaTitolarioInputInput {
+  cdr: String
+  cdrCode: String
+  idTitolario: BigInteger
+  note: String
+  permesso: String
+  utenteAuthIdList: [String]
+  utenti: [UtenteVisibilitaInputInput]
+}

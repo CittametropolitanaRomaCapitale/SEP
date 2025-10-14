@@ -1,0 +1,67 @@
+query findReferenti($search: RicercaReferentiDTOInput) {
+  findReferenti(ricerca_referenti: $search) {
+    referenti {
+      id
+      idDestinatario
+      label
+      tipo
+      ragioneSociale
+      nome
+      cognome
+      cfPiva
+      pec
+      email
+      descrizione
+      citta
+      cap
+      indirizzo
+      ipaResponseDTO {
+        codAmm
+        descAmm
+        acronimo
+        codAOO
+        codUniOU
+        descOU
+        cfPiva
+        pec
+        ragioneSociale
+        indirizzo
+        citta
+        provincia
+        cap
+        telefono
+        fax
+      }
+      children {
+        id
+        idDestinatario
+        label
+        tipo
+        ragioneSociale
+        nome
+        cognome
+        cfPiva
+        pec
+        email
+        descrizione
+        citta
+        cap
+        indirizzo
+      }
+    }
+    pageCount
+    totalResults
+  }
+}
+
+query getReferentiProtocollo(
+  $ricercaReferentiProtocollo: RicercaReferentiProtocolloDTOInput
+) {
+  getReferenti(ricercaReferentiProtocollo: $ricercaReferentiProtocollo) {
+    pageCount
+    totalResults
+    referenti {
+      ...ReferenteProtocollo
+    }
+  }
+}

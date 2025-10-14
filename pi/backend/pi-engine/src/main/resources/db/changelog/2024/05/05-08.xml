@@ -1,0 +1,24 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+
+    <changeSet author="Simone" id="create_exception_table_05081050">
+        <createTable tableName="LOG_EXCEPTION">
+            <column name="ID" type="BIGINT">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="ID_UTENTE" type="BIGINT">
+                <constraints nullable="true" foreignKeyName="fk_log_error_id_utente" references="UTENTI(id)"/>
+            </column>
+            <column name="ERROR_MESSAGE" type="VARCHAR(255)"/>
+            <column name="STACK_TRACE" type="TEXT"/>
+            <column name="ERROR_CODE" type="VARCHAR(50)"/>
+            <column name="ERROR_CONTEXT" type="VARCHAR(50)"/>
+            <column name="NOTE" type="VARCHAR(255)"/>
+            <column name="TS_CREATION" type="TIMESTAMP"/>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

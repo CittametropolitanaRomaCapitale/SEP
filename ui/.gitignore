@@ -1,0 +1,45 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+yarn.lock
+
+# dependencies
+node_modules
+.pnp
+.pnp.js
+
+# testing
+coverage
+
+# next.js
+.next/
+out/
+build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# local env files
+.env
+.env.test
+.env.development.local
+.env.test.local
+.env.production.local
+.env.coll
+.env.prod
+.env.dev
+.env.local
+
+# turbo
+.turbo
+
+CHANGELOG.md
+
+# apps/sid/public/assets/*
+# apps/sso/public/assets/*

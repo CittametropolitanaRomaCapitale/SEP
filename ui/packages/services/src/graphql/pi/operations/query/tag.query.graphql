@@ -1,0 +1,16 @@
+query getAllTag($search: String) {
+  getAllTag(search: $search) {
+    ...TagBase
+  }
+}
+
+query GetTagList($searchTag: RicercaTagDTOInput) {
+  getTagList(searchTag: $searchTag) {
+    tagList {
+      id
+      nome
+    }
+    pageCount
+    totalResults
+  }
+}

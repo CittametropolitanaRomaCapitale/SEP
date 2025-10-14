@@ -1,0 +1,34 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+  <changeSet id="modifica_tipo_colonna_utente_storico" author="Gioacchino De Fusco">
+      <modifyDataType tableName="storico" columnName="id_utente" newDataType="int8"/>
+  </changeSet>
+
+  <changeSet id="aggiuinta_tabella_anagrafica-06272024-1249" author="Lorenzo Petraroli">
+    <createTable tableName="anagrafica">
+      <column name="id" type="int8">
+          <constraints primaryKey="true" nullable="false"/>
+      </column>
+      <column name="ragione_sociale" type="varchar(255)"/>
+      <column name="nome" type="varchar(100)"/>
+      <column name="cognome" type="varchar(100)"/>
+      <column name="cf_piva" type="varchar(16)"/>
+      <column name="indirizzo" type="varchar(255)"/>
+      <column name="citta" type="varchar(100)"/>
+      <column name="cap" type="varchar(5)"/>
+      <column name="provincia" type="varchar(2)"/>
+      <column name="email" type="varchar(255)"/>
+      <column name="pec" type="varchar(255)"/>
+      <column name="telefono" type="varchar(20)"/>
+      <column name="fax" type="varchar(20)"/>
+      <column name="note" type="varchar(255)"/>
+      <column name="ts_creation" type="timestamp"/>
+      <column name="ts_start_vali" type="timestamp"/>
+      <column name="cancellato" type="boolean"/>
+    </createTable>
+  </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,34 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="add_columns_referenti_protocollo_history" author="Gioacchino De Fusco">
+        <addColumn tableName="referenti_protocollo_hist">
+            <column name="stato_protocollo" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="ts_stato_protocollo" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+        </addColumn>
+    </changeSet>
+
+    <changeSet id="add_table_UFFICIO" author="Lorenzo">
+      <createTable tableName="UFFICIO">
+        <column name="ID" type="BIGINT">
+          <constraints primaryKey="true" nullable="false"/>
+        </column>
+        <column name="CDR" type="VARCHAR(255)">
+          <constraints nullable="false"/>
+        </column>
+        <column name="CDR_CODE" type="VARCHAR(255)">
+          <constraints nullable="false"/>
+        </column>
+      </createTable>
+
+      <addUniqueConstraint columnNames="CDR, CDR_CODE" tableName="UFFICIO" constraintName="UK_UFFICIO_CDR_CDRCODE"/>
+    </changeSet>
+
+</databaseChangeLog>

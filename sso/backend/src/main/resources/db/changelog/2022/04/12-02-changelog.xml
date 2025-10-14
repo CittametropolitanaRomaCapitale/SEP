@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.7.xsd"
+        objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+
+    <changeSet id="1287398324988-1" author="arlias">
+        <renameColumn tableName="office" oldColumnName="start" newColumnName="office_start_date"/>
+        <renameColumn tableName="office" oldColumnName="end" newColumnName="office_end_date"/>
+    </changeSet>
+
+</databaseChangeLog>

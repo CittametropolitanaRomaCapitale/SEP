@@ -1,0 +1,7 @@
+fragment CreditorItem on Creditore {
+  id
+  codiceFiscale
+  nome
+  partitaIva
+  siglaPaese
+}

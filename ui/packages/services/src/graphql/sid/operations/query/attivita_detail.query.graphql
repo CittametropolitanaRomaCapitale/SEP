@@ -1,0 +1,7 @@
+#import "../attivita.fragment.graphql"
+
+query getAttivitaDetails($uuid: String, $determinaId: BigInteger!) {
+  singola_attivita_uuid(uuid: $uuid, determinaId: $determinaId) {
+    ...attivita
+  }
+}

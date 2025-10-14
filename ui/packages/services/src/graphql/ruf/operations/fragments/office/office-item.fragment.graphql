@@ -1,0 +1,9 @@
+fragment OfficeItem on Ufficio {
+  id
+  cdr
+  cdrCode
+  descrizione
+  email
+  ipa
+  pathFascicolazione
+}

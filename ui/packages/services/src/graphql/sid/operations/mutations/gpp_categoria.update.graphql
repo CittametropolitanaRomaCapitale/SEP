@@ -1,0 +1,5 @@
+mutation updateGppCategoria($id: BigInteger, $data: GppCategoriaInputInput) {
+  aggiornaGppCategoria(id: $id, data: $data) {
+    id
+  }
+}

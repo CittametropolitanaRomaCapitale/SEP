@@ -1,0 +1,4 @@
+scalar Object
+scalar DateTime
+scalar BigDecimal
+scalar BigInteger

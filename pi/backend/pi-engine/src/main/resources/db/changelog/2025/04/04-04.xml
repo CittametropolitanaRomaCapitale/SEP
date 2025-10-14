@@ -1,0 +1,24 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="add-original-column-to-allegati" author="Simone Spinelli">
+        <addColumn tableName="allegati">
+            <column name="id_original" type="BIGINT"/>
+        </addColumn>
+
+        <addForeignKeyConstraint
+                baseTableName="allegati"
+                baseColumnNames="id_original"
+                constraintName="fk_allegato_original"
+                referencedTableName="allegati"
+                referencedColumnNames="id"
+                deferrable="false"
+                initiallyDeferred="false"
+                onDelete="SET NULL"/>
+    </changeSet>
+
+
+</databaseChangeLog>

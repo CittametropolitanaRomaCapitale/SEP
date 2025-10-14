@@ -1,0 +1,6 @@
+fragment validazione_tab_dto on ValidazioneTabDTO {
+  determinaValida
+  frontespizioPremessa
+  riferimentiContabili
+  sezioneDispositivo
+}

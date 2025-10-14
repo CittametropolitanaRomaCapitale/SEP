@@ -1,0 +1,12 @@
+fragment movimento_impegno on Impegno {
+  impegnato
+  prenotato
+  vincolato
+  numeroVincolo
+  numPrenotazioneSIBAssociata
+  impIniz
+  impVar
+  disponibilita
+  disponibilitaStorni
+  numeroImpegno
+}

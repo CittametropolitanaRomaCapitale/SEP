@@ -1,0 +1,3 @@
+mutation deletePod($id: BigInteger) {
+  eliminaPod(id: $id)
+}

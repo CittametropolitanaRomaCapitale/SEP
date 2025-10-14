@@ -1,0 +1,5 @@
+fragment PaymentItem on Pagamento {
+  id
+  numero
+  data
+}

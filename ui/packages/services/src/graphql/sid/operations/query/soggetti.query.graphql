@@ -1,0 +1,28 @@
+#import "../soggetto.fragment.graphql"
+
+query getSoggetti(
+  $nominativo: String
+  $codice: String
+  $codiceFiscale: String
+  $partitaIVA: String
+  $page: Int
+  $size: Int
+) {
+  soggetto_sib_pages(
+    nominativo: $nominativo
+    codice: $codice
+    codiceFiscale: $codiceFiscale
+    partitaIVA: $partitaIVA
+    size: $size
+  )
+  soggetto_sib(
+    nominativo: $nominativo
+    codice: $codice
+    codiceFiscale: $codiceFiscale
+    partitaIVA: $partitaIVA
+    page: $page
+    size: $size
+  ) {
+    ...soggetto
+  }
+}

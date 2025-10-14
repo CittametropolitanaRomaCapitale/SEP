@@ -1,0 +1,95 @@
+Ricerca dei protocolli generale
+query GetProtocolli($ricercaProtocolliDTO: RicercaProtocolliDTOInput) {
+  getProtocolli(ricerca_protocolli: $ricercaProtocolliDTO
+  ) {
+    pageCount,
+    protocolli
+    {
+    id
+    nProtocollo
+    mittente
+    idAssegnatario
+  	utente {
+      id
+      nome
+      cognome
+    }
+    tipoRegistrazione
+    oggetto
+    idUtenteLastOperation
+    tsCreation
+    tsStartVali
+    metodoSpedizione
+    protocolloMittente
+    dataProtocolloMittente
+    note
+    stato
+    nProtocolloCircolare
+    }
+  }
+}
+
+NB: la paginazione è funzionante quindi si può giocare con il numero delle pagine (page) e il numero di risultati per pagina (size)
+VARIABILI GetProtocolli
+{
+  "ricercaProtocolliDTO": {
+  "search": null,
+  "page": 0,
+  "size": 5,
+  "cdr": [
+    "AV0000"
+  ],
+    "numero": null,
+    "anno": null,
+    "oggetto": "menù"
+  }
+}
+--------------------------------------------------------
+Ricerca di un protocollo by ID
+
+query getProtocolloById($id: BigInteger!) {
+  getProtocolloById(id: $id) {
+    id
+    nProtocollo
+  }
+}
+
+VARIABILI getProtocolloById
+{
+  "id": 1
+}
+
+-----------------------------------------------------------
+Ricerca protocollo by Numero Protocollo
+query getProtocolloByNumero($nProtocollo: String) {
+  protocolloByNumero(nProtocollo: $nProtocollo) {
+  	id
+    nProtocollo
+    idMittente
+    mittente
+    idAssegnatario
+    utente{
+      id
+      nome
+	  cognome
+	  }
+	  tipoRegistrazione
+	  oggetto
+	  idUtenteLastOperation
+	  tsCreation
+	  tsStartVali
+	  metodoSpedizione
+	  protocolloMittente
+	  dataProtocolloMittente
+	  note
+	  stato
+	  nProtocolloCircolare
+   }
+}
+
+VARIABILI getProtocolloByNumero
+{
+  "nProtocollo": "CMRC-2024-000001"
+}
+
+----------------------------------------

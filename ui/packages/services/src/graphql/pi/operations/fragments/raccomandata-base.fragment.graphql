@@ -1,0 +1,37 @@
+fragment RaccomandataBase on RaccomandataProtocollo {
+    protocollo{
+      ...ProtocolloBase
+    }
+    allegato {
+      id,
+      nome,
+      oggetto
+    }
+    tsCreation
+    tsUpdate
+    idRaccomandata
+    id
+    numero
+    stato
+    costo
+    tipo
+    mittente
+    mittenteIndirizzo
+    ulterioreDatoMittente
+    mittenteCivico
+    mittentePresso
+    mittenteCap
+    mittenteProvincia
+    mittenteCitta
+    destinatario
+    destinatarioCitta
+    destinatarioProvincia
+    destinatarioCap
+    destinatarioIndirizzo
+    destinatarioIndirizzo2
+    destinatarioCivico
+    tsInserimento
+    tsInoltro
+    tsConsegna
+    statoConsegna
+}

@@ -1,0 +1,101 @@
+SALVA PROTOCOLLO QUERY -- salvataggio di un protocollo
+mutation SaveProtocollo($protocollo_input: ProtocolloInputInput!) {
+  saveProtocollo(protocollo_input: $protocollo_input) {
+    tipoRegistrazione
+    metodoSpedizione
+    idMittente
+    mittente
+    protocolloMittente
+    dataProtocolloMittente
+    oggetto
+    note
+    stato
+    nProtocolloCircolare
+  }
+}
+
+SALVA PROTOCOLLO VARIABLES
+{
+  "protocollo_input": {
+    "tipoRegistrazione": "Entrata",
+    "metodoSpedizione": "AccreditamentoWeb",
+    "idMittente": "1",
+    "mittente": "Utente",
+    "protocolloMittente": "",
+    "oggetto": "Menù pranzo Pasquetta",
+    "note": "",
+    "idUtente": 1,
+    "stato": "Da prendere in carico",
+    "nProtocolloCircolare": null
+  }
+}
+----------------------------------------------
+
+  "protocollo_input": {
+    "tipoRegistrazione": "Entrata",
+    "metodoSpedizione": "Sportello",
+    "idMittente": "1",
+    "mittente": "Utente",
+    "protocolloMittente": "",
+    "oggetto": "Menù pranzo Pasquetta",
+    "note": "",
+    "idUtente": 1,
+    "stato": "Da prendere in carico",
+    "nProtocolloCircolare": null,
+    "allegati": [
+      {
+        "idAllegato": 83,
+        "collocazioneTelematica": "path/del/collocazione",
+        "oggetto": "Oggetto oggetto",
+        "main": false
+      },
+      {
+        "idAllegato": 84,
+        "collocazioneTelematica": "prova prova",
+        "oggetto": "Oggetto dell'allegato2",
+        "main": true
+      }
+    ]
+  }
+}
+
+
+---------------------------------------------------------------------
+- save new PE configuration - MUTATION
+
+mutation savePE($input: PecPeoDTOInputInput) {
+  saveConfigurazionePE(pecPeoDTOInput: $input) {
+    id
+  }
+}
+
+save new PE configuration - VARIABLES
+{
+  "input": {
+    "idUtente": "1",
+    "tipologiaPosta": "PEC",
+    "cdr": "AVV0000",
+    "indirizzoEmail": "lorenz@info",
+    "username": "user",
+    "password": "password"
+  }
+}
+
+-------------------------------------------
+
+mutation UpdateProtocollo($input: ProtocolloUpdateInput!) {
+  updateProtocollo(input: $input) {
+    nProtocollo
+    note
+    nProtocolloCircolare
+    allegati {
+      id
+      nome
+      oggetto
+      dimensione
+      estensione
+      isMain
+      collocazioneTelematica
+    }
+  }
+}

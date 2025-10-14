@@ -1,0 +1,17 @@
+fragment determina_lista on Determina {
+  id
+  cdr
+  numProposta
+  annoDetermina
+  ruDetermina
+  annoProposta
+  tipoDetermina
+  tipo
+  oggetto
+  statoDetermina
+  stato
+  responsabileIstruttoria
+  responsabileProcedimento
+  dataCreazioneString
+  preferita
+}

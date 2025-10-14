@@ -1,0 +1,34 @@
+fragment ProtocolloBase on Protocollo {
+  id
+  nProtocollo
+  idMittente
+  mittente
+  assegnatari
+  destinatari
+  idUtente
+  utente
+  tipoRegistrazione
+  oggetto
+  idUtenteLastOperation
+  tsCreation
+  tsStartVali
+  metodoSpedizione
+  protocolloMittente
+  dataProtocolloMittente
+  note
+  stato
+  nProtocolloCircolare
+  cdr
+  cdrCode
+  indirizzoPecPeo
+  corpoPecPeo
+  invioEmailMultiplo
+  nProtocolloEmergenza
+  dataProtocolloEmergenza
+  allegati {
+    ...AllegatoBase
+  }
+  protocolliClassificazioneList {
+    ...ProtocolliClassificazioneBase
+  }
+}

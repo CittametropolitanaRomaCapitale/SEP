@@ -1,0 +1,3 @@
+query getTipoDetermina($cdrCode: String, $cdr: String) {
+  tipo_determina(cdrCode: $cdrCode, cdr: $cdr)
+}

@@ -1,0 +1,18 @@
+fragment ReferenteProtocollo on ReferentiProtocolloDTO {
+  id
+  idProtocollo
+  idDestinatario
+  tipoDestinatario
+  nomeDestinatario
+  assegnato
+  attribuzione
+  statoProtocollo
+  creationOption
+  idMittente
+  nomeMittente
+  tsCreation
+  tsStartVali
+  tsStatoProtocollo
+  revocabile
+  noteAssegnazione
+}

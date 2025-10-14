@@ -1,0 +1,15 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="add_column_note_2024-07-29:0913" author="Lorenzo Petraroli" >
+        <addColumn tableName="storico">
+            <column name="note" type="varchar(500)"/>
+        </addColumn>
+    </changeSet>
+
+</databaseChangeLog>
+
+

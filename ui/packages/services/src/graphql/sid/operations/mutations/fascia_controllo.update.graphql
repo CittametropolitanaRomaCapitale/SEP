@@ -1,0 +1,8 @@
+mutation updateFasciaControllo(
+  $id: BigInteger
+  $data: FasciaDiControlloInputInput
+) {
+  aggiornaFasciaDiControllo(id: $id, data: $data) {
+    id
+  }
+}

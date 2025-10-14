@@ -1,0 +1,9 @@
+fragment DocumentStoricList on StoricoListDto {
+  element
+  pageCount
+  pageRequest
+  pageSize
+  list {
+    ...DocumentStoricBase
+  }
+}

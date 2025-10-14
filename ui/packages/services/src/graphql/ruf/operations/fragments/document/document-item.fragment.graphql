@@ -1,0 +1,29 @@
+fragment DocumentItem on Documento {
+  ...DocumentBase
+  presaInCaricoDa
+  dataPresaInCarico
+  dataDecorrenza
+  motivoDecorrenza
+  dataScadenza
+  tipoScadenza
+  dataProtocolloContestazione
+  numeroProtocolloContestazione
+  identificativoSdi
+  messageId
+  indirizzoPecMittente
+  nomeFileXml
+  messaggioRevisione
+  idFatturaConnessa
+  fattureConnesse {
+    id
+    codProgrReg
+    oggetto
+    importo
+  }
+  relazioneFatture {
+    id
+    codProgrReg
+    oggetto
+    importo
+  }
+}

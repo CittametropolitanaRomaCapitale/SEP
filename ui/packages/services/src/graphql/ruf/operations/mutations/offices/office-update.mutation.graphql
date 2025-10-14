@@ -1,0 +1,5 @@
+mutation updateOffice($id: BigInteger, $data: UfficioDtoInput) {
+  aggiornaUfficio(id: $id, data: $data) {
+    id
+  }
+}

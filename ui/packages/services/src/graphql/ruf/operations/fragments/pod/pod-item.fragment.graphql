@@ -1,0 +1,4 @@
+fragment PodItem on Pod {
+  id
+  codice
+}

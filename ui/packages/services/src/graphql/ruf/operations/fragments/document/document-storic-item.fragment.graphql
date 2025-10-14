@@ -1,0 +1,6 @@
+fragment DocumentStoricItem on Storico {
+  ...DocumentStoricBase
+  jsonDocumento {
+    ...DocumentJsonItem
+  }
+}

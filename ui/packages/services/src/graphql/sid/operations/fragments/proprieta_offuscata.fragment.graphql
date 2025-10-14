@@ -1,0 +1,6 @@
+fragment proprieta_offuscata on ProprietaOffuscata {
+  id
+  campo
+  offuscamento
+  offuscata
+}

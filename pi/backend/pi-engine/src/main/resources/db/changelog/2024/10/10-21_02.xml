@@ -1,0 +1,25 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+
+    <changeSet id="add_colonnoe_table_protocolli_raccomandate" author="Gioacchino De Fusco">
+        <addColumn tableName="protocolli_raccomandate">
+            <column name="ts_inserimento" type="TIMESTAMP">
+                <constraints nullable="true"/>
+            </column>
+            <column name="ts_inoltro" type="TIMESTAMP">
+                <constraints nullable="true"/>
+            </column>
+            <column name="ts_consegna" type="TIMESTAMP">
+                <constraints nullable="true"/>
+            </column>
+            <column name="stato_consegna" type="VARCHAR(128)">
+                <constraints nullable="true"/>
+            </column>
+        </addColumn>
+
+    </changeSet>
+
+</databaseChangeLog>

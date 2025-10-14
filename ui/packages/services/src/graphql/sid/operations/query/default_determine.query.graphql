@@ -1,0 +1,7 @@
+#import "../default_determina.fragment.graphql"
+
+query getDefaultDetermine($tipoDetermina: TipoDetermina) {
+  defaultDetermine(tipoDetermina: $tipoDetermina) {
+    ...default_determina
+  }
+}

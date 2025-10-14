@@ -1,0 +1,32 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="create-tabella-modello-automatico" author="Simone Spinelli">
+        <createTable tableName="modello_automatico">
+            <column name="id" type="BIGINT">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="nome_modello" type="VARCHAR(255)"/>
+            <column name="oggetto_protocollo" type="VARCHAR(255)"/>
+            <column name="metodo_spedizione" type="VARCHAR(50)"/>
+            <column name="tipo_registrazione" type="VARCHAR(50)"/>
+            <column name="cdr_code" type="VARCHAR(50)"/>
+            <column name="id_titolario" type="BIGINT"/>
+        </createTable>
+
+        <addForeignKeyConstraint
+                constraintName="fk_modello_titolario"
+                baseTableName="modello_automatico"
+                baseColumnNames="id_titolario"
+                referencedTableName="titolario"
+                referencedColumnNames="id"
+                onDelete="SET NULL"/>
+
+    </changeSet>
+
+
+
+</databaseChangeLog>

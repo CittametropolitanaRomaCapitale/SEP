@@ -1,0 +1,11 @@
+#import "../attivita.fragment.graphql"
+
+query getMovimentiAttivitaDetails($uuid: String, $determinaId: BigInteger!) {
+  singola_attivita_uuid(uuid: $uuid, determinaId: $determinaId) {
+    determina {
+      riferimentiContabili {
+        ...riferimenti_contabili
+      }
+    }
+  }
+}

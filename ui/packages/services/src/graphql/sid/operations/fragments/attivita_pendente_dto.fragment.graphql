@@ -1,0 +1,9 @@
+fragment attivita_pendente_dto on AttivitaPendenteDTO {
+  id
+  name
+  referenceName
+  userEnabled
+  dataPresaInCaricoString
+  stato
+  presaInCaricoDa
+}

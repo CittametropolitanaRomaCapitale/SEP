@@ -1,0 +1,10 @@
+#import "../determina_gpp.fragment.graphql"
+
+query getDeterminaGpp($id: BigInteger!) {
+  determine_form_gpp_by_determina_id(determinaId: $id) {
+    totaleGpp
+  }
+  determina(id: $id) {
+    ...determina_gpp
+  }
+}

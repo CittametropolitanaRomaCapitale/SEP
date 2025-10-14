@@ -1,0 +1,5 @@
+mutation saveSoggetto($data: SoggettoInputInput) {
+  salvaSoggetto(data: $data) {
+    id
+  }
+}

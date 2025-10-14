@@ -1,0 +1,17 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="delete_columns_stacktrace_and_note-11-18062024" author="Simone">
+            <dropColumn tableName="log_exception" columnName="stack_trace"/>
+            <dropColumn tableName="email" columnName="note"/>
+    </changeSet>
+
+    <changeSet id="rename_referenti_protocollo-15-18062024" author="Simone">
+        <renameTable oldTableName="destinatari_protocollo" newTableName="referenti_protocollo"/>
+    </changeSet>
+
+
+</databaseChangeLog>

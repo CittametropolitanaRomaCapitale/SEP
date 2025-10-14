@@ -1,0 +1,33 @@
+-- saveLoginConservazione: SALVATAGGIO CONFIGURAZIONE CONSERVAZIONE
+mutation saveLoginConservazione($loginInput: LoginConservazioneDTOInput!) {
+  saveLoginConservazione(loginInput: $loginInput)
+}
+
+saveLoginConservazione: VARIABILI
+{
+  "loginInput": {
+    "username": "pippo",
+    "password": "ciao",
+    "ambiente": "PARER",
+    "struttura": "cmrc",
+    "ente": "citta metropolitana roma capitale"
+  }
+}
+
+
+-- updateLoginConservazione: MODIFICA CONFIGURAZIONE CONSERVAZIONE
+mutation updateLoginConservazione($loginInput: LoginConservazioneDTOInput!) {
+  updateLoginConservazione(loginInput: $loginInput)
+}
+
+updateLoginConservazione: VARIABILI
+{
+  "loginInput": {
+    "username": "pippo",
+    "password": "ciao",
+    "ambiente": "PARER",
+    "struttura": "cmrc",
+    "ente": "citta metropolitana roma capitale"
+  }
+}
+

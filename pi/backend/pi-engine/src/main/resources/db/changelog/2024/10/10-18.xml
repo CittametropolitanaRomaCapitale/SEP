@@ -1,0 +1,20 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+     <changeSet id="create_table_registro_giornaliero" author="Roberta Pia Castelli">
+        <createTable tableName="REGISTRO_GIORNALIERO">
+            <column name="ID" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="FILE" type="VARCHAR(255)"/>
+            <column name="riferimento_minio" type="VARCHAR(255)"/>
+            <column name="TS_CREATION" type="TIMESTAMP"/>
+            <column name="NOTE" type="VARCHAR(500)"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
+
+

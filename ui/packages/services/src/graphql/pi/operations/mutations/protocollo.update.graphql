@@ -1,0 +1,6 @@
+mutation updateProtocollo($data: ProtocolloUpdateInputInput!) {
+  updateProtocollo(updateInput: $data) {
+    id
+    nProtocollo
+  }
+}

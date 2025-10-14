@@ -1,0 +1,5 @@
+mutation UpdateGruppo($groupId: BigInteger!, $input: GruppoAnagraficaDTOInput!) {
+  updateGruppo(groupId:$groupId, gruppoAnagraficaDTO: $input) {
+    id
+  }
+}

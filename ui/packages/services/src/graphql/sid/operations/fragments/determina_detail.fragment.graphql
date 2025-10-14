@@ -1,0 +1,24 @@
+fragment determina_detail on Determina {
+  ...determina_base
+  documentoPrincipale {
+    ...documento
+  }
+  documentoOscurato {
+    ...documento
+  }
+  attivita_pendente {
+    ...attivita_pendente_dto
+  }
+  listaAttivita {
+    ...attivita_nota
+  }
+  riferimentiContabili {
+    ...riferimenti_contabili
+  }
+  note {
+    ...nota_determina
+  }
+  documenti {
+    ...documento
+  }
+}

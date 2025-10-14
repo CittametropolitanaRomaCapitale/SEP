@@ -1,0 +1,35 @@
+mutation updateMassiveDocument(
+  $idDocumenti: [BigInteger]
+  $oggetto: String
+  $creditore: String
+  $cig: String
+  $motivoEsclusioneCig: String
+  $cup: String
+  $cia: String
+  $cui: String
+  $numeroDetermina: String
+  $annoDetermina: String
+  $impegni: [String]
+  $stato: StatoDocumento
+  $assegnato: String
+  $assegnatoCode: String
+) {
+  aggiornamentoMassivo(
+    idDocumenti: $idDocumenti
+    oggetto: $oggetto
+    creditore: $creditore
+    cig: $cig
+    motivoEsclusioneCig: $motivoEsclusioneCig
+    cup: $cup
+    cia: $cia
+    cui: $cui
+    numeroDetermina: $numeroDetermina
+    annoDetermina: $annoDetermina
+    impegni: $impegni
+    stato: $stato
+    assegnato: $assegnato
+    assegnatoCode: $assegnatoCode
+  ) {
+    id
+  }
+}

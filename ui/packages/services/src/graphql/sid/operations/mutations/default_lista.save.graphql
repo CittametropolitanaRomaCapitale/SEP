@@ -1,0 +1,5 @@
+mutation saveDefaultLista($data: DefaultListeInputInput) {
+  salvaDefaultListe(data: $data) {
+    id
+  }
+}

@@ -1,0 +1,46 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+
+    <changeSet id="create_configurazione_pe_tables-04161815" author="Simone">
+        <createTable tableName="ENV_PE">
+            <column name="ID" type="BIGINT">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="TIPOLOGIA_POSTA" type="VARCHAR(255)">
+                <constraints unique="true" nullable="false"/>
+            </column>
+            <column name="SMTP_HOST" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="SMTP_PORT" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="USE_TLS" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CONNECTION_TIMEOUT" type="INTEGER"/>
+        </createTable>
+
+        <createTable tableName="CONFIGURAZIONE_PE">
+            <column name="ID" type="BIGINT">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="ID_UTENTE" type="BIGINT">
+                <constraints nullable="true" foreignKeyName="fk_configurazione_pe_id_utente" references="UTENTI(id)"/>
+            </column>
+            <column name="TIPOLOGIA_POSTA" type="VARCHAR(255)"/>
+            <column name="INDIRIZZO_EMAIL" type="VARCHAR(255)"/>
+            <column name="CDR" type="VARCHAR(255)"/>
+            <column name="TS_CREATION" type="TIMESTAMP"/>
+            <column name="USERNAME" type="VARCHAR(255)"/>
+            <column name="PASSWORD" type="VARCHAR(255)"/>
+            <column name="ID_ENV" type="BIGINT">
+                <constraints nullable="false" foreignKeyName="fk_configurazione_pe_id_env" references="ENV_PE(id)"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

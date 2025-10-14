@@ -1,0 +1,4 @@
+fragment OfficeSSOItem on Office {
+  code
+  name
+}

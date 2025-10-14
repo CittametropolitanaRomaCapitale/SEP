@@ -1,0 +1,6 @@
+fragment attivita on Attivita {
+  ...attivita_base
+  determina {
+    ...determina
+  }
+}

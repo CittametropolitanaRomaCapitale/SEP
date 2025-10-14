@@ -1,0 +1,24 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+
+    <changeSet id="add_fk_constraint_table_protocolli_raccomandate" author="Lorenzo">
+
+       <addForeignKeyConstraint
+        baseTableName="protocolli_raccomandate"
+        baseColumnNames="id_protocollo"
+        constraintName="fk_protocolli_raccomandate_id_protocollo"
+        referencedTableName="protocolli"
+        referencedColumnNames="id"/>
+
+      <addForeignKeyConstraint
+              baseTableName="protocolli_raccomandate"
+              baseColumnNames="id_allegato"
+              constraintName="fk_protocolli_raccomandate_id_allegato"
+              referencedTableName="allegati"
+              referencedColumnNames="id"/>
+    </changeSet>
+
+</databaseChangeLog>

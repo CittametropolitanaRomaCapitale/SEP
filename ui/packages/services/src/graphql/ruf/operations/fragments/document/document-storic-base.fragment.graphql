@@ -1,0 +1,13 @@
+fragment DocumentStoricBase on Storico {
+  id
+  assegnato
+  assegnatoCode
+  nomeCampo
+  data
+  codiceUtente
+  nomeUtente
+  ruoloUtente
+  vecchioStato
+  nuovoStato
+  commento
+}

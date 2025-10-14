@@ -1,0 +1,17 @@
+#import "../attivita_base.fragment.graphql"
+
+mutation rilasciaAttivita(
+  $taskName: TipoAttivita
+  $taskId: String
+  $determinaId: BigInteger
+  $roles: [String]
+) {
+  rilasciaAttivita(
+    taskName: $taskName
+    taskId: $taskId
+    determinaId: $determinaId
+    roles: $roles
+  ) {
+    ...attivita_base
+  }
+}

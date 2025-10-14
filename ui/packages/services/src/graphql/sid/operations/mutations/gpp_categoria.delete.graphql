@@ -1,0 +1,3 @@
+mutation deleteGppCategoria($id: BigInteger) {
+  eliminaGppCategoria(id: $id)
+}

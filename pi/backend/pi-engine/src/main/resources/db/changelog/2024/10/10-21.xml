@@ -1,0 +1,50 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="create_table_raccomandate" author="Gioacchino De Fusco">
+        <createTable tableName="protocolli_raccomandate">
+            <column name="ID" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="ID_PROTOCOLLO" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ID_ALLEGATO" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TS_CREATION" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TS_UPDATE" type="TIMESTAMP"/>
+
+            <!-- parametri raccomandata -->
+            <!-- id raccomandata è l'id che verrà utilizzato nella comunicazione con il gestore di invio -->
+            <column name="ID_RACCOMANDATA" type="VARCHAR(128)" />
+            <column name="STATO_RACCOMANDATA" type="VARCHAR(64)" />
+            <column name="NUMERO_RACCOMANDATA" type="VARCHAR(128)" />
+            <column name="COSTO_RACCOMANDATA" type="CURRENCY" />
+            <column name="TIPO_RACCOMANDATA" type="VARCHAR(24)" />
+            
+            <!-- Mittente -->
+            <column name="MITTENTE" type="VARCHAR(512)" />
+            <column name="MITTENTE_INDIRIZZO" type="VARCHAR(255)" />
+            <column name="MITTENTE_NR_CIVICO" type="VARCHAR(32)" />
+            <column name="MITTENTE_PRESSO" type="VARCHAR(255)" />
+            <column name="MITTENTE_CAP" type="VARCHAR(16)" />
+            <column name="MITTENTE_PROVINCIA" type="VARCHAR(6)" />
+            <column name="MITTENTE_CITTA" type="VARCHAR(64)" />
+
+            <!-- Destinatario -->
+            <column name="DESTINATARIO" type="VARCHAR(512)" />
+            <column name="DESTINATARIO_CITTA" type="VARCHAR(255)" />
+            <column name="DESTINATARIO_PROVINCIA" type="VARCHAR(6)" />
+            <column name="DESTINATARIO_CAP" type="VARCHAR(16)" />
+            <column name="DESTINATARIO_INDIRIZZO" type="VARCHAR(255)" />
+            <column name="DESTINATARIO_INDIRIZZO_2" type="VARCHAR(255)" />
+            <column name="DESTINATARIO_NR_CIVICO" type="VARCHAR(32)" />
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

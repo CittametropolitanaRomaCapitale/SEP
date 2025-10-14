@@ -1,0 +1,33 @@
+fragment impegno on RecordImpAccert {
+  capNew
+  artNew
+  ntit
+  annoRiferimento
+  anno
+  num
+  impAss
+  impLiq
+  cap
+  descr
+  nmis
+  nprog
+  ntipmac
+  cdr
+  cdrNew
+  cdrVeroNew
+  ncateg
+  nContof
+  nContofinanziario
+  nMissione
+  nProgramma
+  nDesctit
+  nDesctipmac
+  descCdr
+  descCdc
+  nDesccateg
+  es
+  tipo
+  sub
+  codForn
+  codCig
+}

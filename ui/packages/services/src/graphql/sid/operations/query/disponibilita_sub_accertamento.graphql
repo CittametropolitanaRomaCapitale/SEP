@@ -1,0 +1,17 @@
+#import "../disponibilita_dto.fragment.graphql"
+
+query getDisponibilitaSubAccertamento(
+  $numAccertamento: Int
+  $assestato: BigDecimal
+  $liquidato: BigDecimal
+  $determinaId: BigInteger
+) {
+  check_subaccertamento(
+    numAccertamento: $numAccertamento
+    assestato: $assestato
+    liquidato: $liquidato
+    determinaId: $determinaId
+  ) {
+    ...disponibilita_dto
+  }
+}

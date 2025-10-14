@@ -1,0 +1,49 @@
+fragment DocumentJsonItem on DocumentoJson {
+  id
+  codProgrReg
+  oggetto
+  dataProtocollo
+  numeroProtocollo
+  dataNotificaSdi
+  contaGiorniNotificaSdi
+  tipo
+  dataEmissione
+  numero
+  importo
+  assegnato
+  assegnatoCode
+  stato
+  presaInCaricoDa
+  dataPresaInCarico
+  dataDecorrenza
+  motivoDecorrenza
+  dataScadenza
+  tipoScadenza
+  dataProtocolloContestazione
+  numeroProtocolloContestazione
+  identificativoSdi
+  messageId
+  nomeFileXml
+  messaggioRevisione
+  determina {
+    id
+    anno
+    cig
+    cup
+    motivoEsclusioneCig
+    numero
+    spesaRilevanteFiniIva
+  }
+  creditore {
+    id
+    codiceFiscale
+    nome
+    partitaIva
+    siglaPaese
+  }
+  fattureConnesse {
+    id
+    oggetto
+    importo
+  }
+}

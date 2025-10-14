@@ -1,0 +1,15 @@
+query getPaymentList(
+  $page: Int
+  $size: Int
+  $sort: SortInputInput
+  $documentoId: BigInteger
+) {
+  getAllPagamento(
+    page: $page
+    size: $size
+    sort: $sort
+    documentoId: $documentoId
+  ) {
+    ...PaymentList
+  }
+}

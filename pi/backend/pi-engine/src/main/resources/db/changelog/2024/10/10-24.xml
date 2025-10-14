@@ -1,0 +1,15 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+
+    <changeSet id="add_colonne_utente_table_protocolli_raccomandate" author="Andrea De Matteis">
+        <addColumn tableName="protocolli_raccomandate">
+            <column name="nome_utente" type="VARCHAR(255)"/>
+        </addColumn>
+        <addColumn tableName="protocolli_raccomandate">
+            <column name="id_utente" type="BIGINT"/>
+        </addColumn>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,3 @@
+mutation deleteContatto($id: BigInteger!) {
+  deleteContatto(id: $id)
+}

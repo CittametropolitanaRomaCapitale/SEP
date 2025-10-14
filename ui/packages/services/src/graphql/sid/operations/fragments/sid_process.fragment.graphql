@@ -1,0 +1,17 @@
+fragment sid_process on SidProcessGraphqlDTO {
+  bpmnProcessTaskId
+  referenceName
+  stato: statoAttivita
+  determina {
+    id
+    cdr
+    numProposta
+    annoProposta
+    ruDetermina
+    annoDetermina
+    oggetto
+    stato
+    tipo
+    dataCreazioneString
+  }
+}

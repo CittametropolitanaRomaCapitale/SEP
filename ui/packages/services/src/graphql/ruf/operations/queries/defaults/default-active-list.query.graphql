@@ -1,0 +1,15 @@
+query getDefaultActiveList(
+  $sort: SortInputInput
+  $search: String
+  $cdr: String
+  $tipiLista: [TipoLista]
+) {
+  getAllDefaultListaAttivi(
+    sort: $sort
+    search: $search
+    cdr: $cdr
+    tipiLista: $tipiLista
+  ) {
+    ...DefaultItem
+  }
+}

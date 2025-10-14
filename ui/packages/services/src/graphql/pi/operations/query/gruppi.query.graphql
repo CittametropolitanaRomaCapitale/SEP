@@ -1,0 +1,21 @@
+# import "../gruppo-base.fragment.graphql"
+query getAllGruppi($ricercaGruppiDTO: RicercaGruppiDTOInput) {
+  getAllGruppi(ricercaGruppi: $ricercaGruppiDTO) {
+    gruppiList {
+      ...GruppoBase
+    }
+    pageCount
+    totalResults
+  }
+}
+
+query DettaglioGruppo($groupId: BigInteger!) {
+  dettaglioGruppo(groupId: $groupId) {
+    id
+    nome
+    note
+    creation
+    update
+    deleted
+  }
+}

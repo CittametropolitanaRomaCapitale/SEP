@@ -1,0 +1,7 @@
+#import "../movimento_soggetto.fragment.graphql"
+
+query getSoggettiDetermina($determinaId: BigInteger) {
+  soggetti_per_determina(determinaId: $determinaId) {
+    ...movimento_soggetto
+  }
+}

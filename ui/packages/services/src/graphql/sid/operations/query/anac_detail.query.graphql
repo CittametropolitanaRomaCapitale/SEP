@@ -1,0 +1,10 @@
+#import "../anac_form.fragment.graphql"
+
+query getAnacDetails($determinaId: BigInteger!, $cig: String) {
+  determina_form_anac_by_cig_determinaId(determinaId: $determinaId, cig: $cig) {
+    importoDiAggiudicazione
+  }
+  form_anac_by_cig_determinaId(determinaId: $determinaId, cig: $cig) {
+    ...anac_form
+  }
+}

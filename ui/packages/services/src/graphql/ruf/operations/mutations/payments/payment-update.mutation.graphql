@@ -1,0 +1,5 @@
+mutation updatePayment($id: BigInteger, $data: PagamentoDtoInput) {
+  aggiornaPagamento(id: $id, data: $data) {
+    id
+  }
+}

@@ -1,0 +1,9 @@
+fragment DocumentList on DocumentoListDto {
+  element
+  pageCount
+  pageRequest
+  pageSize
+  list {
+    ...DocumentBase
+  }
+}

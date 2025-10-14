@@ -1,0 +1,19 @@
+fragment attivita_light on Attivita {
+  id
+  bpmnProcessTaskId
+  referenceName
+  stato
+  dataPresaInCaricoString
+  determina {
+    id
+    cdr
+    numProposta
+    annoProposta
+    ruDetermina
+    annoDetermina
+    oggetto
+    stato
+    tipo
+    dataCreazioneString
+  }
+}

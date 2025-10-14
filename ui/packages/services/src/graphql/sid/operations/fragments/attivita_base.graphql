@@ -1,0 +1,21 @@
+fragment attivita_base on Attivita {
+  id
+  bpmnProcessTaskId
+  name
+  referenceName
+  presaInCaricoDa
+  statoAttivita
+  stato
+  tipoAttivita
+  dataInserimento
+  dataInserimentoString
+  dataPresaInCarico
+  dataPresaInCaricoString
+  dataCompletamento
+  dataCompletamentoString
+  revisione
+  statoDetermina
+  statoRevisione
+  statoDet
+  userEnabled
+}

@@ -1,0 +1,31 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+
+
+    <!--
+    Nuova colonna per il calcolo dell'impronta di un file utilizzando metodo SHA256
+    -->
+    <changeSet id="add_column_allegati-2024-04-24" author="Gioacchino De Fusco" >
+        <addColumn tableName="allegati">
+            <column name="impronta" type="VARCHAR(64)"/>
+        </addColumn>
+    </changeSet>
+
+    <!--
+   Nuova colonna per il salvataggio del cdr che effettua la registrazione del protocollo
+   -->
+    <changeSet id="add_column_protocolli-2024-04-24" author="Andrea De Matteis" >
+        <addColumn tableName="protocolli">
+            <column name="cdr" type="VARCHAR(255)"/>
+        </addColumn>
+    </changeSet>
+
+    <changeSet id="add_column_protocolli_hist-2024-04-24" author="Andrea De Matteis" >
+        <addColumn tableName="protocolli_hist">
+            <column name="cdr" type="VARCHAR(255)"/>
+        </addColumn>
+    </changeSet>
+</databaseChangeLog>

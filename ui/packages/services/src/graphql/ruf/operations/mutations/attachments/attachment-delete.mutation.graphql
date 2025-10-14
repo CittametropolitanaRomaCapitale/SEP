@@ -1,0 +1,3 @@
+mutation deleteAttachment($id: BigInteger) {
+  eliminaAllegato(id: $id)
+}

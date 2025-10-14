@@ -1,0 +1,29 @@
+fragment prenotazione on RecordPrenotImpegno {
+  capNew
+  artNew
+  nTit
+  annoRiferimento
+  anno
+  num
+  impAss
+  cap
+  descr
+  nMis
+  nProg
+  nTipmac
+  cdr
+  cdrNew
+  cdrVeroNew
+  nCateg
+  nContof
+  nContofinanziario
+  nMissione
+  nProgramma
+  nDesctit
+  nDesctipmac
+  descCdr
+  descCdc
+  nDesccateg
+  impIniz
+  impVar
+}

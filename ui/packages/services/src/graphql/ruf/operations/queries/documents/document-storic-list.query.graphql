@@ -1,0 +1,15 @@
+query getDocumentStoricList(
+  $documentoId: BigInteger
+  $page: Int
+  $size: Int
+  $sort: SortInputInput
+) {
+  getAllStorico(
+    documentoId: $documentoId
+    page: $page
+    size: $size
+    sort: $sort
+  ) {
+    ...DocumentStoricList
+  }
+}

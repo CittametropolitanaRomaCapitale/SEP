@@ -1,0 +1,22 @@
+fragment EmailBase on Email {
+  id
+  protocollo{
+    ...ProtocolloBase
+  }
+  tipoEmail
+  emailDirection
+  from
+  to
+  cc
+  oggetto
+  corpo
+  tsInvio
+  statoInvio
+  classificazione
+  idUtente
+  tsCreation
+  tsRicezione
+  tsStartVali
+  impronta
+  messageId
+}

@@ -1,0 +1,5 @@
+mutation saveGppForm($data: FormGppInputInput) {
+  salvaFormGpp(data: $data) {
+    id
+  }
+}

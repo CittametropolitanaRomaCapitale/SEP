@@ -1,0 +1,7 @@
+#import "../default_liste.fragment.graphql"
+
+query getDefaultListe($cdr: String, $tipoLista: TipoLista) {
+  defaultListe(cdr: $cdr, tipoLista: $tipoLista) {
+    ...default_liste
+  }
+}

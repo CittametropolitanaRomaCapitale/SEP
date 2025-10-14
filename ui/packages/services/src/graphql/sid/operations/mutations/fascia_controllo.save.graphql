@@ -1,0 +1,5 @@
+mutation saveFasciaControllo($data: FasciaDiControlloInputInput) {
+  salvaFasciaDiControllo(data: $data) {
+    id
+  }
+}

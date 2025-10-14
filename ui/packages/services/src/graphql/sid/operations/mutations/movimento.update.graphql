@@ -1,0 +1,9 @@
+mutation updateMovimento(
+  $id: BigInteger
+  $data: MovimentoInputInput
+  $tipoUscita: String
+) {
+  aggiornaMovimento(id: $id, data: $data, tipoUscita: $tipoUscita) {
+    id
+  }
+}

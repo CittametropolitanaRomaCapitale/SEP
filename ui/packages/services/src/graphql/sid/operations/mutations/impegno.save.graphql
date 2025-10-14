@@ -1,0 +1,10 @@
+#import "../movimento_soggetto.fragment.graphql"
+
+mutation saveImpegno($data: ImpegnoInputInput) {
+  salvaImpegno(data: $data) {
+    id
+    subRows: soggetti {
+      ...movimento_soggetto
+    }
+  }
+}

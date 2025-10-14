@@ -1,0 +1,33 @@
+{
+    "name": "@cmrc/services",
+    "version": "0.0.1",
+    "description": "",
+    "scripts": {
+        "generate": "graphql-codegen --config codegen-sid.yaml",
+        "generate:ruf": "graphql-codegen --config codegen-ruf.yaml",
+        "generate:pi": "graphql-codegen --config codegen-pi.yaml",
+        "generate:sso": "rtk-query-codegen-openapi src/app/ssoapi/config.ts",
+        "download-schema": "node -r dotenv/config scripts/download-schema-sid.js",
+        "download-schema:ruf": "node -r dotenv/config scripts/download-schema-ruf.js",
+        "download-schema:pi": "node -r dotenv/config scripts/download-schema-pi.js",
+        "update": "yarn download-schema && yarn generate",
+        "update:ruf": "yarn download-schema:ruf && yarn generate:ruf",
+        "update:pi": "yarn download-schema:pi && yarn generate:pi"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@graphql-codegen/cli": "2.6.2",
+        "@graphql-codegen/typescript-operations": "2.3.5",
+        "@graphql-codegen/typescript-rtk-query": "2.2.9",
+        "@reduxjs/toolkit": "1.8.2",
+        "@rtk-query/codegen-openapi": "^2.0.0",
+        "@rtk-query/graphql-request-base-query": "2.1.0",
+        "dotenv": "16.0.0",
+        "graphql": "16.4.0",
+        "graphql-request": "4.3.0",
+        "next-auth": "4.12.3"
+    },
+    "devDependencies": {}
+}

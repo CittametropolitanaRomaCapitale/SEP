@@ -1,0 +1,20 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+
+    <changeSet id="creazione_tabella_cofigurazioni" author="Simone">
+        <createTable tableName="CONFIGURAZIONI">
+            <column name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="nome" type="VARCHAR(255)"/>
+            <column name="valore" type="VARCHAR(255)"/>
+            <column name="tipo" type="VARCHAR(255)"/>
+            <column name="categoria" type="VARCHAR(255)"/>
+            <column name="ts_creation" type="TIMESTAMP"/>
+            <column name="ts_update" type="TIMESTAMP"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

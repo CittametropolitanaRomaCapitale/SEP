@@ -1,0 +1,3 @@
+mutation insertTitolario($titolarioInput: TitolarioInputInput!) {
+  insertTitolario(titolarioInput: $titolarioInput)
+}

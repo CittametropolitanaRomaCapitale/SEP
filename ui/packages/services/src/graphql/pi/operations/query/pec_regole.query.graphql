@@ -1,0 +1,16 @@
+query getPecRegole($idEmail: BigInteger!) {
+  getPecRegole(idEmail: $idEmail) {
+    list {
+      idEmail
+      idCategoriaRegola
+      threshold
+      durationMinutes
+      enabled
+      finestre {
+        dayOfWeek
+        start
+        end
+      }
+    }
+  }
+}

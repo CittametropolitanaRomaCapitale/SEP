@@ -1,0 +1,6 @@
+fragment determina_gpp on Determina {
+  ...determina_base
+  formGpp {
+    ...gpp_form
+  }
+}

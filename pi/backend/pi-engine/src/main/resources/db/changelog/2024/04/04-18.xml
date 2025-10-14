@@ -1,0 +1,43 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+
+    <changeSet id="indirizzoEmailUnique_04181030" author="Simone">
+        <addUniqueConstraint
+                columnNames="INDIRIZZO_EMAIL"
+                tableName="PEC_PEO"
+                constraintName="PEC_PEO_EMAIL_UNIQUE" />
+    </changeSet>
+    <changeSet id="idAssegnatarioRefactorTemp_04181205" author="Gioacchino De Fusco">
+        <modifyDataType
+                tableName="protocolli"
+                columnName="id_assegnatario"
+                newDataType="VARCHAR(128)" />
+        <modifyDataType
+                tableName="protocolli_hist"
+                columnName="id_assegnatario"
+                newDataType="VARCHAR(128)" />
+        <renameColumn
+                tableName="protocolli"
+                oldColumnName="id_assegnatario"
+                newColumnName="id_assegnatari" />
+        <renameColumn
+                tableName="protocolli_hist"
+                oldColumnName="id_assegnatario"
+                newColumnName="id_assegnatari" />
+    </changeSet>
+
+    <changeSet id="changeNameColumnsTo_04191038" author="Salvatore">
+        <renameColumn
+                oldColumnName="to"
+                newColumnName="email_to"
+                tableName="email" />
+        <renameColumn
+                oldColumnName="cc"
+                newColumnName="email_cc"
+                tableName="email" />
+    </changeSet>
+
+</databaseChangeLog>

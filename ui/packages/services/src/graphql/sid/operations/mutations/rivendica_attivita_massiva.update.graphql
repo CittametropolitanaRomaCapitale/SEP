@@ -1,0 +1,19 @@
+#import "../attivita_base.fragment.graphql"
+
+mutation rivendicaAttivitaMassiva(
+  $taskNames: [TipoAttivita]!
+  $taskIds: [String]!
+  $referenceNames: [String]
+  $determineIds: [BigInteger]!
+  $roles: [String]
+) {
+  rivendicaAttivitaMassiva(
+    taskNames: $taskNames
+    taskIds: $taskIds
+    referenceNames: $referenceNames
+    determineIds: $determineIds
+    roles: $roles
+  ) {
+    ...attivita_base
+  }
+}

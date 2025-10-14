@@ -1,0 +1,56 @@
+version: '3.4'
+
+
+services:
+
+  keycloak:
+    image: jboss/keycloak:11.0.3
+    ports:
+      - "8980:8080"
+      - "8943:8443"
+    volumes:
+      - ./keycloak-theme:/opt/jboss/keycloak/themes/keycloak-theme
+      - ./imports:/opt/jboss/keycloak/imports
+    command:
+      - "-b 0.0.0.0 -Dkeycloak.profile.feature.upload_scripts=enabled"
+    environment:
+      DB_VENDOR:   POSTGRES
+      PROXY_ADDRESS_FORWARDING: "true"
+      DB_ADDR:     postgresql-master
+      DB_PORT:     5432
+      DB_DATABASE: keycloak
+      DB_USER:     keycloak
+      DB_PASSWORD: password
+      KEYCLOAK_USER:     admin
+      KEYCLOAK_PASSWORD: admin
+
+  postgresql-master:
+    image: 'docker.io/bitnami/postgresql:11-debian-10'
+    ports:
+      - "32787:5432"
+    environment:
+      - POSTGRESQL_REPLICATION_MODE=master
+      - POSTGRESQL_REPLICATION_USER=repl_user
+      - POSTGRESQL_REPLICATION_PASSWORD=repl_password
+      - POSTGRESQL_USERNAME=keycloak
+      - POSTGRESQL_PASSWORD=password
+      - POSTGRESQL_DATABASE=keycloak
+      - ALLOW_EMPTY_PASSWORD=yes
+    command: bash -c "/opt/bitnami/scripts/postgresql/run.sh && postgres -c wal_level=logical"
+
+  postgresql-slave:
+    image: 'docker.io/bitnami/postgresql:11-debian-10'
+    ports:
+      - "32788:5432"
+    depends_on:
+      - postgresql-master
+    environment:
+      - POSTGRESQL_REPLICATION_MODE=slave
+      - POSTGRESQL_REPLICATION_USER=repl_user
+      - POSTGRESQL_REPLICATION_PASSWORD=repl_password
+      - POSTGRESQL_MASTER_HOST=postgresql-master
+      - POSTGRESQL_PASSWORD=password
+      - POSTGRESQL_MASTER_PORT_NUMBER=5432
+      - ALLOW_EMPTY_PASSWORD=yes
+    command: bash -c "/opt/bitnami/scripts/postgresql/run.sh && postgres -c wal_level=logical"
+

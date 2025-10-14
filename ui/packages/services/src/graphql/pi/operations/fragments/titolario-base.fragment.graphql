@@ -1,0 +1,14 @@
+    fragment TitolarioBase on Titolario {
+      id
+      idPadre
+      idUtenteLastOperation
+      cdr
+      cdrCode
+      leaf
+      nome
+      tipologiaTitolario
+      tsCreation
+      tsChiusura
+      tsDeleted
+      tsUpdate
+    }

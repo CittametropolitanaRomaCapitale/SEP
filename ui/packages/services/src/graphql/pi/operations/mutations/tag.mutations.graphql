@@ -1,0 +1,17 @@
+mutation saveTag($tagInput: TagInputInput!) {
+  saveTag(tagInput: $tagInput) {
+    id
+    nome
+  }
+}
+
+mutation updateTag($id: BigInteger!, $tagInput: TagInputInput!) {
+  updateTag(id: $id, tagInput: $tagInput) {
+    id
+    nome
+  }
+}
+
+mutation deleteTag($id: BigInteger!) {
+  deleteTag(id: $id)
+}

@@ -1,0 +1,5 @@
+mutation updateCommit($id: BigInteger, $data: ImpegnoDtoInput) {
+  aggiornaImpegno(id: $id, data: $data) {
+    id
+  }
+}

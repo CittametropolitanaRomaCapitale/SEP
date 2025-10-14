@@ -1,0 +1,11 @@
+mutation annullaProtocollo($idProtocollo: BigInteger!, $notaAnnullamento: String!) {
+  annullaProtocollo(idProtocollo: $idProtocollo, notaAnnullamento: $notaAnnullamento)
+}
+
+mutation richiestaAnnullamentoProtocollo($idProtocollo: BigInteger!, $notaAnnullamento: String!) {
+  richiestaAnnullamentoProtocollo(idProtocollo: $idProtocollo, notaAnnullamento: $notaAnnullamento)
+}
+
+mutation gestioneAnnullamento($idProtocollo: BigInteger!, $isAnnulla: Boolean!, $nota: String!) {
+  gestioneAnnullamento(idProtocollo: $idProtocollo, isAnnulla: $isAnnulla, nota: $nota)
+}

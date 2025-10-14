@@ -1,0 +1,19 @@
+#import "../disponibilita_dto.fragment.graphql"
+
+query getDisponibilitaSubImpegno(
+  $numImpegno: Int
+  $assestato: BigDecimal
+  $liquidato: BigDecimal
+  $annoCompetenza: String
+  $determinaId: BigInteger
+) {
+  check_subimpegno(
+    numImpegno: $numImpegno
+    assestato: $assestato
+    liquidato: $liquidato
+    annoCompetenza: $annoCompetenza
+    determinaId: $determinaId
+  ) {
+    ...disponibilita_dto
+  }
+}

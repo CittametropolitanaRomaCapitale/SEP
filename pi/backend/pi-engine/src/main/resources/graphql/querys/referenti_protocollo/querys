@@ -1,0 +1,32 @@
+query getReferentiProtocollo($ricercaReferentiProtocollo:RicercaReferentiProtocolloDTOInput){
+  getReferenti(ricercaReferentiProtocollo: $ricercaReferentiProtocollo){
+    pageCount,
+    referenti{
+      idDestinatario
+      nomeDestinatario
+      assegnato
+      attribuzione
+      statoProtocollo
+      creationOption
+      idMittente
+      nomeMittente
+      tsCreation
+      tsStartVali
+      tsStatoProtocollo
+    }
+  }
+}
+-------
+VARIABLES
+{
+  "ricercaReferentiProtocollo": {
+    "size": 20,
+    "page": 0,
+    "search": "",
+    "numero": "CMRC-2024-0000125",
+    "nomeDestinatario": "",
+    "attribuzioneList": ["competenza"],
+    "excludeStatoRifiutato": false,
+    "tipoUtenteList": ["utente", "ufficio"]
+  }
+}

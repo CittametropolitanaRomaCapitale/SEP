@@ -1,0 +1,71 @@
+{
+  "name": "cmrc-suite",
+  "version": "0.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "@cmrc/*"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "build:sid": "turbo run build --filter=sid...",
+    "start:sid": "turbo run start --filter=sid",
+    "build:sso": "turbo run build --filter=sso...",
+    "start:sso": "turbo run start --filter=sso",
+    "build:ruf": "turbo run build --filter=ruf...",
+    "start:ruf": "turbo run start --filter=ruf",
+    "dev:ruf": "turbo run dev --filter=ruf",
+    "build:pi": "turbo run build --filter=pi...",
+    "start:pi": "turbo run start --filter=pi",
+    "dev:pi": "cross-env NODE_ENV=test turbo run dev --filter=pi",
+    "prune:docs": "turbo prune --scope=docs --docker",
+    "start:docs": "turbo run serve --filter=docs...",
+    "start:mock-sid": "turbo run start --filter=mock-server...",
+    "build:docs": "turbo run build --filter=docs...",
+    "changelog:sid": "turbo run changelog --filter=sid...",
+    "changelog:sso": "turbo run changelog --filter=sso...",
+    "changelog:ruf": "turbo run changelog --filter=ruf...",
+    "changelog:pi": "turbo run changelog --filter=pi...",
+    "dev:sid": "cross-env NODE_ENV=test turbo run dev --filter=sid",
+    "start:sid-test": "cross-env NODE_ENV=test turbo  run start --filter=sid",
+    "build:sid-test": "cross-env NODE_ENV=test turbo  run build --filter=sid",
+    "lint:sid": "turbo run lint --filter=sid",
+    "dev": "turbo run dev --parallel",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "prepare": "husky install",
+    "test": "turbo run start-test",
+    "test:sso": "turbo run test --filter=sso-test",
+    "dev:sso": "cross-env turbo run dev --filter=sso"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "16.2.3",
+    "@commitlint/config-conventional": "16.2.1",
+    "cross-env": "7.0.3",
+    "dotenv": "16.0.0",
+    "eslint": "8.12.0",
+    "husky": "7.0.4",
+    "lint-staged": "12.3.7",
+    "prettier": "2.6.2",
+    "standard-version": "9.3.2",
+    "turbo": "1.2.8"
+  },
+  "engines": {
+    "npm": ">=7.0.0",
+    "node": ">=14.0.0"
+  },
+  "lint-staged": {
+    "apps/**/*.{js,ts,jsx,tsx}": [
+      "eslint --fix"
+    ],
+    "packages/ui/**/*.{js,ts,jsx,tsx}": [
+      "eslint --fix"
+    ],
+    "*.json": [
+      "prettier --write"
+    ]
+  },
+  "packageManager": "yarn@1.22.10",
+  "dependencies": {}
+}

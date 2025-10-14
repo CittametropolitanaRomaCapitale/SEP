@@ -1,0 +1,3 @@
+mutation updateStatoRaccomandateForProtocollo($id: BigInteger!){
+  updateStatoRaccomandateForProtocollo(id: $id)
+}

@@ -1,0 +1,31 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+
+    <changeSet id="add_column_Titolario_and_VisibilitaTitolario" author="Cosimo">
+
+        <addColumn tableName="TITOLARIO">
+            <column name="ID_UTENTE_CREATORE" type="VARCHAR(255)"/>
+        </addColumn>
+        <addColumn tableName="TITOLARIO">
+            <column name="NOME_UTENTE_CREATORE" type="VARCHAR(255)"/>
+        </addColumn>
+        <addColumn tableName="TITOLARIO">
+            <column name="CDR" type="VARCHAR(255)"/>
+        </addColumn>
+
+        <addColumn tableName="VISIBILITA_TITOLARIO">
+            <column name="USERNAME_UTENTE" type="VARCHAR(255)"/>
+        </addColumn>
+        <addColumn tableName="VISIBILITA_TITOLARIO">
+            <column name="NOME_UTENTE" type="VARCHAR(255)"/>
+        </addColumn>
+
+    </changeSet>
+
+</databaseChangeLog>
+
+

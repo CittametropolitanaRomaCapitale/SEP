@@ -1,0 +1,7 @@
+mutation rifiutaProtocollo($nProtocollo:String, $note: String, $selectedOffice: String){
+  rifiutaProtocollo(nProtocollo:$nProtocollo, note:$note, selectedOffice:$selectedOffice)
+}
+
+mutation RifiutaProtocolloMassiva($numbers: [String!], $selectedOffice: String!, $note: String!) {
+  rifiutaProtocolloMassiva(numbers: $numbers, selectedOffice: $selectedOffice, note: $note)
+}

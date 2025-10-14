@@ -1,0 +1,3 @@
+mutation deleteCommit($id: BigInteger) {
+  eliminaImpegno(id: $id)
+}

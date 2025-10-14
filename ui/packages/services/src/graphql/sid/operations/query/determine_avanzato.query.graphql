@@ -1,0 +1,87 @@
+#import "../determina_lista.fragment.graphql"
+
+query getDetermineAvanzato(
+  $page: Int
+  $size: Int
+  $search: String
+  $sort: SortInputInput = { by: "datacreazione", desc: true }
+  $cdrCode: [String]
+  $data_creazione_da: String
+  $data_creazione_a: String
+  $data_esecutiva_da: String
+  $data_esecutiva_a: String
+  $protocollo: String
+  $cia: String
+  $cig: String
+  $cup: String
+  $oggetto: String
+  $tipoFinanziamento: String
+  $dipositivo: String
+  $creatoreDetermina: String
+  $responsabileProcedimento: String
+  $statoDetermina: StatoDetermina
+  $tipoDetermina: TipoDetermina
+  $numProposta: String
+  $annoProposta: Int
+  $ruDetermina: String
+  $annoDetermina: Int
+  $idDetermina: Int
+  $preferite: Boolean
+) {
+  determine_avanzato_paginato(
+    search: $search
+    size: $size
+    cdrCode: $cdrCode
+    data_creazione_da: $data_creazione_da
+    data_creazione_a: $data_creazione_a
+    data_esecutiva_da: $data_esecutiva_da
+    data_esecutiva_a: $data_esecutiva_a
+    protocollo: $protocollo
+    cia: $cia
+    cig: $cig
+    cup: $cup
+    oggetto: $oggetto
+    tipoFinanziamento: $tipoFinanziamento
+    dipositivo: $dipositivo
+    creatoreDetermina: $creatoreDetermina
+    responsabileProcedimento: $responsabileProcedimento
+    statoDetermina: $statoDetermina
+    tipoDetermina: $tipoDetermina
+    numProposta: $numProposta
+    annoProposta: $annoProposta
+    ruDetermina: $ruDetermina
+    annoDetermina: $annoDetermina
+    idDetermina: $idDetermina
+    preferite: $preferite
+  )
+  determine_avanzato(
+    page: $page
+    size: $size
+    search: $search
+    sort: $sort
+    cdrCode: $cdrCode
+    data_creazione_da: $data_creazione_da
+    data_creazione_a: $data_creazione_a
+    data_esecutiva_da: $data_esecutiva_da
+    data_esecutiva_a: $data_esecutiva_a
+    protocollo: $protocollo
+    cia: $cia
+    cig: $cig
+    cup: $cup
+    oggetto: $oggetto
+    tipoFinanziamento: $tipoFinanziamento
+    dipositivo: $dipositivo
+    creatoreDetermina: $creatoreDetermina
+    responsabileProcedimento: $responsabileProcedimento
+    statoDetermina: $statoDetermina
+    tipoDetermina: $tipoDetermina
+    numProposta: $numProposta
+    annoProposta: $annoProposta
+    ruDetermina: $ruDetermina
+    annoDetermina: $annoDetermina
+    idDetermina: $idDetermina
+    preferite: $preferite
+  ) {
+    ...determina_lista
+  }
+}

@@ -1,0 +1,5 @@
+mutation updateSubImpegno($id: BigInteger, $data: SubImpegnoInputInput) {
+  aggiornaSubImpegno(id: $id, data: $data) {
+    id
+  }
+}

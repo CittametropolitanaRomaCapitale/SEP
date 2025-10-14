@@ -1,0 +1,30 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+
+   <changeSet id="update_titolario" author="Francesco Canzaniello">
+       <dropColumn
+               columnName="TITOLO"
+               tableName="TITOLARIO"/>
+       <dropColumn
+               columnName="SEZIONE"
+               tableName="TITOLARIO"/>
+       <dropColumn
+               columnName="SOTTOSEZIONE"
+               tableName="TITOLARIO"/>
+       <renameColumn
+               oldColumnName="NOME_FASCICOLO"
+               newColumnName="NOME"
+               tableName="TITOLARIO" />
+       <renameColumn
+               oldColumnName="ID_FASCICOLO_PADRE"
+               newColumnName="ID_PADRE"
+               tableName="TITOLARIO" />
+   </changeSet>
+
+</databaseChangeLog>
+
+

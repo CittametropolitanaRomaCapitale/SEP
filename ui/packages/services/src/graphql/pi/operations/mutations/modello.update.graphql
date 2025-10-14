@@ -1,0 +1,17 @@
+mutation updateModelloAutomatico($id: BigInteger!, $input: ModelloAutomaticoInputDTOInput) {
+    updateModelloAutomatico(id: $id, input: $input) {
+        id
+        nomeModello
+        oggettoProtocollo
+        metodoSpedizione
+        tipoRegistrazione
+        cdrCode
+        titolario {
+            id
+            idPadre
+            nome
+        }
+        hierarchyStringTitolario
+        cdr
+    }
+}

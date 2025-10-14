@@ -1,0 +1,31 @@
+mutation firmaMultipla(
+  $taskNames: [TipoAttivita]!
+  $taskIds: [String]!
+  $determineIds: [BigInteger]!
+  $revisione: Boolean
+  $avanzaStatoDetermina: Boolean
+  $attribuzioniOrizzontali: AttribuzioniOrizzontaliInputInput
+  $approvazioneBilancioInput: ApprovazioneBilancioInputInput
+  $remote_sign: Boolean
+  $firmaInput: FirmaInputInput
+  $omissis: Boolean
+  $roles: [String]
+  $titoloScelto: Int
+) {
+  firmaMultipla(
+    taskNames: $taskNames
+    taskIds: $taskIds
+    determineIds: $determineIds
+    revisione: $revisione
+    avanzaStatoDetermina: $avanzaStatoDetermina
+    attribuzioniOrizzontali: $attribuzioniOrizzontali
+    approvazioneBilancioInput: $approvazioneBilancioInput
+    remote_sign: $remote_sign
+    firmaInput: $firmaInput
+    omissis: $omissis
+    roles: $roles
+    titoloScelto: $titoloScelto
+  ) {
+    id
+  }
+}

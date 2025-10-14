@@ -1,0 +1,3 @@
+mutation ResumeAllegato($idAllegato: BigInteger!) {
+  resumeAllegato(idAllegato: $idAllegato)
+}

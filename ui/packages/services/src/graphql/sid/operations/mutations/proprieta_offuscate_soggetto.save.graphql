@@ -1,0 +1,11 @@
+mutation saveProprietaOffuscateSoggetto(
+  $id_determina: BigInteger
+  $proprieta_comuni: [ProprietaOffuscataCampo]
+  $proprieta: [ProprietaOffuscataSectionInputInput]
+) {
+  salvaMultiProprietaOffuscataSoggetto(
+    id_determina: $id_determina
+    proprieta_comuni: $proprieta_comuni
+    proprieta: $proprieta
+  )
+}

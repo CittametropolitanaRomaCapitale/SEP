@@ -1,0 +1,8 @@
+mutation FascicolaProtocollo($idProtocollo: BigInteger!, $idTitolarioList: [BigInteger!], $selectedOffice: String!) {
+  fascicolazioneProtocollo(idProtocollo: $idProtocollo, idTitolarioList:$idTitolarioList,selectedOffice: $selectedOffice)
+}
+
+mutation FascicolaProtocolloMassivo($idProtocolloList: [BigInteger]!, $idTitolarioList: [BigInteger!], $selectedOffice: String!) {
+  fascicolazioneMassivaProtocollo(idProtocolloList: $idProtocolloList, idTitolarioList: $idTitolarioList, selectedOffice: $selectedOffice
+  )
+}

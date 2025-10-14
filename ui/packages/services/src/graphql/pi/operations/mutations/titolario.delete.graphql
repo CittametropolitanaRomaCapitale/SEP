@@ -1,0 +1,11 @@
+mutation deleteTitolario($idTitolario: BigInteger!) {
+  deleteTitolario(idTitolario: $idTitolario)
+}
+
+mutation deleteVisibilitaTitolario($idVisibilitaList: [BigInteger]!) {
+  deleteVisibilitaTitolario(deleteVisibilitaTitolario: $idVisibilitaList)
+}
+
+mutation dropTitolario($idTitolario: BigInteger!) {
+  dropTitolario(idTitolario: $idTitolario)
+}

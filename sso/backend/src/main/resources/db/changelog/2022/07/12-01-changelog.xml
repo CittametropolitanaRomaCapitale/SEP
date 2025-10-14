@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.7.xsd"
+        objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+    <changeSet id="1657647387726-7" author="francesco (generated)">
+        <addColumn tableName="office">
+            <column name="blocked" type="BOOLEAN"/>
+        </addColumn>
+    </changeSet>
+    <changeSet id="1657647387726-8" author="francesco (generated)">
+        <addNotNullConstraint columnName="blocked" tableName="office"/>
+    </changeSet>
+
+</databaseChangeLog>

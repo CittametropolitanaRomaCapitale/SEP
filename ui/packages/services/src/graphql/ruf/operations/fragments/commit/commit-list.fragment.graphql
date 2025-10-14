@@ -1,0 +1,9 @@
+fragment CommitList on ImpegnoListDto {
+  element
+  pageCount
+  pageRequest
+  pageSize
+  list {
+    ...CommitItem
+  }
+}

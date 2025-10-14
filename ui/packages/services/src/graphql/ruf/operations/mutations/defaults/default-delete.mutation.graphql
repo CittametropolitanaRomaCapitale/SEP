@@ -1,0 +1,3 @@
+mutation deleteDefault($id: BigInteger) {
+  eliminaDefaultLista(id: $id)
+}

@@ -1,0 +1,20 @@
+mutation savePecEsclusa($pecInput: PecEscluseRispostaAutomaticaInputInput!) {
+  savePecEsclusa(pecInput: $pecInput) {
+    id
+    indirizzo
+  }
+}
+
+mutation updatePecEsclusa(
+  $id: BigInteger!
+  $pecInput: PecEscluseRispostaAutomaticaInputInput!
+) {
+  updatePecEsclusa(id: $id, pecInput: $pecInput) {
+    id
+    indirizzo
+  }
+}
+
+mutation deletePecEsclusa($id: BigInteger!) {
+  deletePecEsclusa(id: $id)
+}

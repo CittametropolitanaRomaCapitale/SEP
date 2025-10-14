@@ -1,0 +1,63 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+  <!-- Creazione tabella PERMESSI_FASCICOLO_DIPENDENTE -->
+  <changeSet id="create-permessi-fascicolo-dipendente" author="Lorenzo">
+    <createTable tableName="PERMESSI_FASCICOLO_DIPENDENTE">
+      <column name="id" type="BIGINT">
+        <constraints primaryKey="true" nullable="false" />
+      </column>
+      <column name="id_titolario" type="BIGINT">
+        <constraints nullable="false" />
+      </column>
+      <column name="visibilita_utente" type="VARCHAR(50)" />
+      <column name="visibilita_dirigente" type="VARCHAR(50)" />
+      <column name="visibilita_archivista" type="VARCHAR(50)" />
+      <column name="visibilita_protocollatore" type="VARCHAR(50)" />
+      <column name="visibilita_dipendente" type="VARCHAR(50)" />
+      <column name="ts_creation" type="TIMESTAMP"/>
+    </createTable>
+  </changeSet>
+
+  <!-- Creazione tabella di relazione PERMESSI_FASCICOLO_DIPENDENTE_CDR -->
+  <changeSet id="create--permessi-fascicolo-dipendente-cdr" author="Lorenzo">
+      <createTable tableName="PERMESSI_FASCICOLO_DIPENDENTE_CDR">
+      <column name="id_permessi_fascicolo_dipendente" type="BIGINT">
+        <constraints nullable="false" />
+      </column>
+      <column name="id_ufficio" type="BIGINT">
+        <constraints nullable="false" />
+      </column>
+    </createTable>
+
+    <addForeignKeyConstraint
+            baseTableName="PERMESSI_FASCICOLO_DIPENDENTE_CDR"
+            baseColumnNames="id_permessi_fascicolo_dipendente"
+            constraintName="fk_id_permessi_fascicolo_dipendente"
+            referencedTableName="PERMESSI_FASCICOLO_DIPENDENTE"
+            referencedColumnNames="id" />
+
+    <addForeignKeyConstraint
+            baseTableName="PERMESSI_FASCICOLO_DIPENDENTE_CDR"
+            baseColumnNames="id_ufficio"
+            constraintName="fk_id_permessi_ufficio"
+            referencedTableName="UFFICIO"
+            referencedColumnNames="id" />
+
+  </changeSet>
+
+  <changeSet id="add-foreign-key-constraint-id-titolario" author="Lorenzo">
+    <addForeignKeyConstraint
+            baseTableName="PERMESSI_FASCICOLO_DIPENDENTE"
+            baseColumnNames="id_titolario"
+            constraintName="fk_id_titolario"
+            referencedTableName="titolario"
+            referencedColumnNames="id" />
+  </changeSet>
+
+</databaseChangeLog>
+
+

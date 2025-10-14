@@ -1,0 +1,5 @@
+query getDocumentStoricItem($id: BigInteger) {
+  getStorico(id: $id) {
+    ...DocumentStoricItem
+  }
+}

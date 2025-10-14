@@ -1,0 +1,17 @@
+query getPodList(
+  $page: Int
+  $size: Int
+  $sort: SortInputInput
+  $search: String
+  $ufficioId: BigInteger
+) {
+  getAllPod(
+    page: $page
+    size: $size
+    sort: $sort
+    search: $search
+    ufficioId: $ufficioId
+  ) {
+    ...PodList
+  }
+}

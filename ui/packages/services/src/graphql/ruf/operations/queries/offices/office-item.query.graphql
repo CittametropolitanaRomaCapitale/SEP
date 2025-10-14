@@ -1,0 +1,5 @@
+query getOfficeItem($id: BigInteger) {
+  getUfficio(id: $id) {
+    ...OfficeItem
+  }
+}

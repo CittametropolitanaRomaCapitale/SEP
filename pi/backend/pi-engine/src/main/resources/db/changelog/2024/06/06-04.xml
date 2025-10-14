@@ -1,0 +1,63 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="aggiunta_colonna_pe_configurazione" author="Salvatore Versienti">
+        <addColumn tableName="pe_configurazione">
+            <column name="sent_folder" type="varchar(64)">
+                <constraints nullable="true"/>
+            </column>
+        </addColumn>
+
+        <update tableName="pe_configurazione">
+            <column name="sent_folder" value="INBOX.Inviata"/>
+            <where>id = 1</where>
+        </update>
+
+        <update tableName="pe_configurazione">
+            <column name="sent_folder" value="INBOX.Sent"/>
+            <where>id = 2</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="aggiunte_configurazioni_coll_pe_configurazione" author="Salvatore Versienti">
+        <preConditions>
+            <tableExists tableName="pe_configurazione"/>
+        </preConditions>
+        <insert tableName="pe_configurazione">
+            <column name="id" value="3"/>
+            <column name="tipologia_posta" value="PEC"/>
+            <column name="smtp_host" value="smtps.pec.aruba.it"/>
+            <column name="smtp_port" value="465"/>
+            <column name="use_tls" value="true"/>
+            <column name="connection_timeout" value="10000"/>
+            <column name="env" value="coll"/>
+            <column name="imap_host" value="imaps.pec.aruba.it"/>
+            <column name="imap_port" value="993"/>
+            <column name="sent_folder" value="INBOX.Inviata"/>
+        </insert>
+
+        <insert tableName="pe_configurazione">
+            <column name="id" value="4"/>
+            <column name="tipologia_posta" value="PEO"/>
+            <column name="smtp_host" value="smtps.aruba.it"/>
+            <column name="smtp_port" value="465"/>
+            <column name="use_tls" value="true"/>
+            <column name="connection_timeout" value="10000"/>
+            <column name="env" value="coll"/>
+            <column name="imap_host" value="imaps.aruba.it"/>
+            <column name="imap_port" value="993"/>
+            <column name="sent_folder" value="INBOX.Inviata"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="update_sent_folder_pec" author="Salvatore Versienti">
+        <update tableName="pe_configurazione">
+            <column name="sent_folder" value="INBOX.Sent"/>
+            <where>id = 4</where>
+        </update>
+    </changeSet>
+
+</databaseChangeLog>

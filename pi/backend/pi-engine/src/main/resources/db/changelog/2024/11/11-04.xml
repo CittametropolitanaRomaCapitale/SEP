@@ -1,0 +1,36 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+
+    <changeSet id="add_column_id_registro_giornaliero_to_storico" author="Andrea De Matteis">
+        <addColumn tableName="STORICO">
+            <column name="ID_REGISTRO_GIORNALIERO" type="BIGINT">
+                <constraints nullable="true"/>
+            </column>
+        </addColumn>
+        <addForeignKeyConstraint baseTableName="STORICO"
+                                 baseColumnNames="ID_REGISTRO_GIORNALIERO"
+                                 constraintName="fk_id_registro_giornaliero"
+                                 referencedTableName="REGISTRO_GIORNALIERO"
+                                 referencedColumnNames="ID"/>
+    </changeSet>
+
+
+    <changeSet id="add_table_protocollo_numero" author="Lorenzo">
+        <createTable tableName="protocollo_numero">
+            <column name="ID" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="ANNO" type="INT">
+                <constraints nullable="false" />
+            </column>
+            <column name="COUNT" type="BIGINT" />
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>
+
+

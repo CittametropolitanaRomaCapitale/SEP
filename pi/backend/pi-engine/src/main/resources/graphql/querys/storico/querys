@@ -1,0 +1,32 @@
+----Query per recuperare i log storici di un protocollo
+query getStoricoProtocollo($ricercaStoricoDTO: RicercaStoricoDTOInput) {
+  getStoricoProtocollo(ricerca_storico: $ricercaStoricoDTO) {
+    logStorici {
+      tsCreation
+      utente
+      operazione
+    }
+    pageCount
+  }
+}
+
+----Query per recuperare i log storici di un registro giornaliero
+query getStoricoRegistroGiornaliero($ricercaStoricoDTO: RicercaStoricoDTOInput) {
+  getStoricoRegistroGiornaliero(ricerca_storico: $ricercaStoricoDTO) {
+    logStorici {
+      tsCreation
+      utente
+      operazione
+    }
+    pageCount
+  }
+}
+
+-----VARS-------------------
+{
+  "ricercaStoricoDTO": {
+    "numero": "CMRC-2024-0000116",
+    "size": 10,
+    "page": 0
+  }
+}

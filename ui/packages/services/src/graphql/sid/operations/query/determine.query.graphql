@@ -1,0 +1,36 @@
+#import "../determina_lista.fragment.graphql"
+
+query getDetermine(
+  $page: Int
+  $size: Int
+  $search: String
+  $sort: SortInputInput = { by: "datacreazione", desc: true }
+  $cdrCode: [String]
+  $statoDetermina: [StatoDetermina]
+  $tipoDetermina: [TipoDetermina]
+  $annoProposta: Int
+  $preferite: Boolean
+) {
+  determine_paginato(
+    search: $search
+    size: $size
+    cdrCode: $cdrCode
+    statoDetermina: $statoDetermina
+    tipoDetermina: $tipoDetermina
+    annoProposta: $annoProposta
+    preferite: $preferite
+  )
+  determine(
+    page: $page
+    size: $size
+    search: $search
+    sort: $sort
+    cdrCode: $cdrCode
+    statoDetermina: $statoDetermina
+    tipoDetermina: $tipoDetermina
+    annoProposta: $annoProposta
+    preferite: $preferite
+  ) {
+    ...determina_lista
+  }
+}

@@ -1,0 +1,12 @@
+fragment attribuzioni_orizzontali on AttribuzioniOrizzontali {
+  id
+  controlloPosizione
+  peg
+  controlloFiscale
+  controlloPartecipate
+  controlloPatrimonio
+  controlloMutuo
+  controlloBilancio
+  controlloPianoOpere
+  controlloBeniServizi
+}

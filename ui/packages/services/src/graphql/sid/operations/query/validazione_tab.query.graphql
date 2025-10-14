@@ -1,0 +1,7 @@
+query getValidazioneTab($determina_id: BigInteger!) {
+  determina(id: $determina_id) {
+    validazione {
+      ...validazione_tab_dto
+    }
+  }
+}

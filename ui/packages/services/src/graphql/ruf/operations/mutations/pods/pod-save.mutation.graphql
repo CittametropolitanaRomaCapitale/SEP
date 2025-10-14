@@ -1,0 +1,5 @@
+mutation savePod($id: BigInteger, $data: PodDtoInput) {
+  salvaPod(id: $id, data: $data) {
+    id
+  }
+}

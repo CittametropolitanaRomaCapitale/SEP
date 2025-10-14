@@ -1,0 +1,3 @@
+mutation deletePayment($id: BigInteger) {
+  eliminaPagamento(id: $id)
+}

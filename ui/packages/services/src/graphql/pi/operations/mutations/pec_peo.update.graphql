@@ -1,0 +1,3 @@
+mutation updateConfigurations($id:BigInteger!, $input:PecPeoDTOInputInput){
+  updateConfigurations(id:$id, input: $input)
+}

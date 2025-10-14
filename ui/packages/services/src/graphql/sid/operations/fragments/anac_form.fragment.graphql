@@ -1,0 +1,20 @@
+fragment anac_form on FormAnac {
+  id
+  cig
+  determina_id
+  completato
+  oggetto_bando
+  nome_struttura_preponente
+  codice_struttura_preponente
+  procesura_scelta
+  importo_aggiudicazione
+  importo_somme_liquidate
+  tempo_completamento_servizio_da
+  tempo_completamento_servizio_a
+  invitati {
+    ...anac_invitato
+  }
+  gruppiInvitati {
+    ...anac_gruppo_invitato
+  }
+}

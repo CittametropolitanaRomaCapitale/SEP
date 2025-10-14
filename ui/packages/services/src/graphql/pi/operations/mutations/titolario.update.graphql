@@ -1,0 +1,41 @@
+mutation spostaProtocollo(
+  $idProtocolli: [BigInteger!]!
+  $idFascicoloOld: BigInteger!
+  $idFascicoloNew: BigInteger!
+) {
+  spostaProtocollo(
+    idProtocolli: $idProtocolli
+    idFascicoloOld: $idFascicoloOld
+    idFascicoloNew: $idFascicoloNew
+  )
+}
+
+mutation spostaFascicolo(
+  $idFascicoliList: [BigInteger!]!
+  $idFascicoloPadre: BigInteger!
+  $cdr: String!
+  $cdrCode: String!
+) {
+  spostaFascicolo(
+    idFascicoliList: $idFascicoliList
+    idFascicoloPadre: $idFascicoloPadre
+    cdr: $cdr
+    cdrCode: $cdrCode
+  )
+}
+
+mutation spostaAllegatiFascicolo(
+  $allegatiIds: [BigInteger!]!
+  $oldTitolarioId: BigInteger!
+  $newTitolarioId: BigInteger!
+) {
+  spostaAllegatiFascicolo(
+    allegatiIds: $allegatiIds
+    oldTitolarioId: $oldTitolarioId
+    newTitolarioId: $newTitolarioId
+  )
+}
+
+mutation updateTitolario($titolarioInput: TitolarioInputInput!) {
+  updateTitolario(titolarioInput: $titolarioInput)
+}

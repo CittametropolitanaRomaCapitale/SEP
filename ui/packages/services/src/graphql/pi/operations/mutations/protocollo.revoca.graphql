@@ -1,0 +1,3 @@
+mutation RevocaAssegnazioneProtocollo($referentiProtocolloId: BigInteger!) {
+  revocaAssegnazioneProtocollo(referentiProtocolloId: $referentiProtocolloId)
+}

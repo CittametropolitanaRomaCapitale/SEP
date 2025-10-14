@@ -1,0 +1,3 @@
+mutation deleteFasceControllo($idList: [BigInteger]) {
+  eliminaListaFasciaDiControllo(idList: $idList)
+}

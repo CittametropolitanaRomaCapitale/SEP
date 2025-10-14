@@ -1,0 +1,26 @@
+fragment movimento_soggetto on Soggetto {
+  id
+  movimento_id
+  nominativo
+  importo
+  cig
+  motivoEsclusioneCig
+  cup
+  codObiettivo
+  piva
+  codiceFiscale
+  indirizzo
+  cap
+  comune
+  codice
+  origin
+  numImpegnoSib
+  numPrenotazioneSib
+  numAccertamentoSib
+  numSubImpegnoSib
+  numSubAccertamentoSib
+  numReimputazioneSib
+  proprietaOffuscate {
+    ...proprieta_offuscata_soggetto
+  }
+}

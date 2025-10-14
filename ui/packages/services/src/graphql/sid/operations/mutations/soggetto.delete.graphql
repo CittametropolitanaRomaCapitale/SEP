@@ -1,0 +1,3 @@
+mutation deleteSoggetto($id: BigInteger) {
+  eliminaSoggetto(id: $id)
+}

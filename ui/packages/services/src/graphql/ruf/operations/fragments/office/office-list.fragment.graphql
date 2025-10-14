@@ -1,0 +1,9 @@
+fragment OfficeList on UfficioListDto {
+  element
+  pageCount
+  pageRequest
+  pageSize
+  list {
+    ...OfficeItem
+  }
+}

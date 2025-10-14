@@ -1,0 +1,40 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+     <changeSet id="create_table_visibilita_titolario" author="Roberta Pia Castelli">
+        <createTable tableName="VISIBILITA_TITOLARIO">
+            <column name="ID" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="ID_TITOLARIO" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ID_UTENTE" type="varchar(255)"/>
+            <column name="CDR" type="varchar(255)"/>
+            <column name="TS_CREATION" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="READ_MODE" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="WRITE_MODE" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TS_UPDATE" type="TIMESTAMP"/>
+            <column name="NOTE" type="VARCHAR(500)"/>
+            <column name="ID_UTENTE_LAST_OPERATION" type="VARCHAR(255)"/>
+        </createTable>
+
+        <addForeignKeyConstraint
+                baseTableName="VISIBILITA_TITOLARIO"
+                baseColumnNames="ID_TITOLARIO"
+                constraintName="fk_visibilita_titolario"
+                referencedTableName="TITOLARIO"
+                referencedColumnNames="ID"/>
+    </changeSet>
+</databaseChangeLog>
+
+

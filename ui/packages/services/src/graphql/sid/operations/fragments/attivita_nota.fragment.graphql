@@ -1,0 +1,6 @@
+fragment attivita_nota on Attivita {
+  ...attivita_base
+  nota {
+    ...nota
+  }
+}

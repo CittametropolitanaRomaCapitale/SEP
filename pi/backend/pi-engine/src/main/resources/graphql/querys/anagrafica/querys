@@ -1,0 +1,31 @@
+-------------QUERY RESTITUZIONE ANAGRAFICA------------------------------
+query getAllAnagrafica($ricercaAnagraficaDTO: RicercaAnagraficaDTOInput) {
+  getAllAnagrafica(ricercaAnagrafica: $ricercaAnagraficaDTO) {
+    anagraficaList {
+      ragioneSociale
+      nome
+      cognome
+      cfPiva
+      indirizzo
+      citta
+      cap
+      provincia
+      email
+      pec
+      telefono
+      fax
+      note
+      tsCreation
+      tsStartVali
+      cancellato
+    }
+    pageCount
+  }
+}
+-------------VARIABILI ANAGRAFICA------------------------------
+{
+  "ricercaAnagraficaDTO": {
+    "size": 10,
+    "page": 0
+  }
+}

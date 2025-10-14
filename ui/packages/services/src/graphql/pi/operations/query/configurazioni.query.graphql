@@ -1,0 +1,47 @@
+query getPecPeoByTipologiaPosta($idUtente: String, $tipologiaPosta: String!, $selectedCdrCode: String! ) {
+  getPecPeoByTipologiaPosta(idUtente: $idUtente, tipologiaPosta:$tipologiaPosta , selectedCdrCode:$selectedCdrCode) 
+}
+
+query getPecPeoByUtenteAndCdr($idUtente: String, $selectedCdrCode: String! ) {
+  getPecPeoByUtenteAndCdr(idUtente: $idUtente, selectedCdrCode:$selectedCdrCode) 
+}
+
+query findAllPecPeoIdByEmail($id: BigInteger!, $indirizzoEmail: String!) {
+  findAllPecPeoIdByEmail(id: $id, indirizzoEmail: $indirizzoEmail)
+}
+
+query getPecPeoConfigurations($RicercaConfigPEDTOInput: RicercaConfigPEDTOInput) {
+  getConfigurations(ricerca: $RicercaConfigPEDTOInput) {
+    pageCount
+    totalResults
+    configurazioniPostaElettronica {
+      ...PecPeoFragment
+    }
+  }
+}
+
+#import "../pec-peo-base.fragment.graphql"
+query getConfiguredUsers {
+  getConfiguredUsers {
+    ...PecPeoFragment
+    }
+}
+
+query getLoginRaccomandata {
+  getLoginRaccomandata {
+    gruppo
+    username
+    password
+  }
+}
+
+query getLoginConservazione {
+  getLoginConservazione {
+    url,
+    username
+    password
+    ambiente
+    ente
+    struttura
+  }
+}

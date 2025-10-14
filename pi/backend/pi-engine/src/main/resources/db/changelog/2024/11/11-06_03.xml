@@ -1,0 +1,15 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="alter_table_notifiche_id_protocollo" author="Gioacchino De Fusco">
+        <renameColumn tableName="protocollo_notifiche" oldColumnName="read" newColumnName="notifica_read" />
+        <renameColumn tableName="protocollo_notifiche" oldColumnName="type" newColumnName="notifica_type" />
+        <renameColumn tableName="protocollo_notifiche" oldColumnName="to" newColumnName="notifica_to" />
+        <renameColumn tableName="protocollo_notifiche" oldColumnName="from" newColumnName="notifica_from" />
+    </changeSet>
+</databaseChangeLog>
+
+

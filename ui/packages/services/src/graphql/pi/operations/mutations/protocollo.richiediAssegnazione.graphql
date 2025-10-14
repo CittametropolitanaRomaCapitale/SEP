@@ -1,0 +1,3 @@
+mutation richiestaAssegnazioneProtocollo($idProtocollo: BigInteger!, $note: String) {
+  richiestaAssegnazioneProtocollo(idProtocollo: $idProtocollo, note: $note)
+}

@@ -1,0 +1,16 @@
+mutation updateRiferimentiMovimenti(
+  $id: BigInteger
+  $riferimentiContabili: RiferimentiContabiliInputInput
+  $capitoli: MultiMovimentoSoggettoUpdateInput
+  $prenotazioni: MultiMovimentoSoggettoUpdateInput
+  $impegniAccertamenti: MultiMovimentoSoggettoUpdateInput
+) {
+  aggiornaRiferimentiContabili(id: $id, data: $riferimentiContabili) {
+    id
+  }
+  salvaCapitoli: salvaMultiMovimentoSoggetto(data: $capitoli)
+  salvaPrenotazioni: salvaMultiMovimentoSoggetto(data: $prenotazioni)
+  salvaImpegniAccertamenti: salvaMultiMovimentoSoggetto(
+    data: $impegniAccertamenti
+  )
+}

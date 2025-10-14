@@ -1,0 +1,3 @@
+mutation deleteOffice($id: BigInteger) {
+  eliminaUfficio(id: $id)
+}

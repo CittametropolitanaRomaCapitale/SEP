@@ -1,0 +1,7 @@
+#import "../validazione_dto.fragment.graphql"
+
+mutation updateValidaPrenotazione($determina_id: BigInteger) {
+  valida_prenotazione(determina_id: $determina_id) {
+    ...validazione_dto
+  }
+}

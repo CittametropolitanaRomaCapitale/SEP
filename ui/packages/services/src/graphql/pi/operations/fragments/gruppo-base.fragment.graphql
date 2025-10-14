@@ -1,0 +1,8 @@
+fragment GruppoBase on Gruppo {
+  id
+    nome
+    note
+    tsCreation
+    tsUpdate
+    tsDeleted
+}

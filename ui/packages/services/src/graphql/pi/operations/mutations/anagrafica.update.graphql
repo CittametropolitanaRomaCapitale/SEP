@@ -1,0 +1,5 @@
+mutation updateContatto($id: BigInteger, $input: AnagraficaInputInput) {
+  updateContatto(id: $id, anagraficaInput: $input) {
+    ...AnagraficaBase
+  }
+}

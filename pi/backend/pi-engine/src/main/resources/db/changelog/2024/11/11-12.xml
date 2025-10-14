@@ -1,0 +1,20 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+  <changeSet id="modify_type_content_to_text" author="Andrea De Matteis">
+      <modifyDataType tableName="protocollo_notifiche" columnName="content" newDataType="TEXT"/>
+  </changeSet>
+
+  <changeSet id="remove_bpmn_process_id_column" author="Lorenzo">
+    <dropColumn tableName="PROTOCOLLI" columnName="bpmn_process_id" />
+  </changeSet>
+
+  <changeSet id="remove_bpmn_process_id_column_protocolli_hist" author="Lorenzo">
+    <dropColumn tableName="PROTOCOLLI_HIST" columnName="bpmn_process_id" />
+  </changeSet>
+</databaseChangeLog>
+
+

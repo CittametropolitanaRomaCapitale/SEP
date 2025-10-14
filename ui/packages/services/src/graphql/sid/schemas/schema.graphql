@@ -1,0 +1,2126 @@
+type Accertamento {
+  accertamentoData: Accertamento
+  accertato: BigDecimal
+  annoCompetenza: String
+  articolo: Int
+  articoloDescr: String
+  assestato: BigDecimal
+  capitolo: Int
+  capitoloDescr: String
+  capitoloStorico: String
+  categoria: String
+  categoriaDescr: String
+  cdc: String
+  cdcDscr: String
+  cdr: String
+  cdrCode: String
+  cdrDescr: String
+  contoF: String
+  contoFinanziario: String
+  descrizione: String
+  disponibilita: BigDecimal
+  disponibilitaStorni: BigDecimal
+  id: BigInteger
+  impegnoData: Impegno
+  importo: BigDecimal
+  macroAggregato: String
+  macroaggregatoDescr: String
+  metaType: String
+  missione: String
+  missioneDescr: String
+  motivazione: String
+  numAccertamento: Int
+  numeroImpegno: Int
+  numeroVincolo: String
+  prenotato: BigDecimal
+  prenotazioneData: Prenotazione
+  programma: String
+  programmaDescr: String
+  reimputazioneData: Reimputazione
+  riferimentiContabili: RiferimentiContabili
+  soggetti: [Soggetto]
+  sub: Int
+  subAccertamentoData: SubAccertamento
+  subImpegnoData: SubImpegno
+  tipo: String
+  tipologia: String
+  tipologiaDescr: String
+  titolo: Int
+  titoloDescr: String
+  validato: Boolean
+  vincolato: Boolean
+}
+
+type Attivita {
+  avanzaStatoDetermina: Boolean
+  bpmnProcessTaskId: String
+  "ISO-8601"
+  dataCompletamento: DateTime
+  dataCompletamentoString: String
+  "ISO-8601"
+  dataInserimento: DateTime
+  dataInserimentoString: String
+  "ISO-8601"
+  dataPresaInCarico: DateTime
+  dataPresaInCaricoString: String
+  determina: Determina
+  id: BigInteger
+  metaType: String
+  name: String
+  nota: Nota
+  pdfGenerated: Boolean
+  presaInCaricoDa: String
+  presaInCaricoDaId: String
+  referenceName: String
+  revisione: Boolean
+  roles: String
+  stato: String
+  statoAttivita: StatoAttivita
+  statoDet: String
+  statoDetermina: StatoDetermina
+  statoRevisione: String
+  tipo: String
+  tipoAttivita: TipoAttivita
+  userEnabled: Boolean!
+}
+
+type AttivitaPendenteDTO {
+  dataPresaInCaricoString: String
+  id: String
+  name: String
+  potentialGroups: [String]
+  presaInCaricoDa: String
+  processId: String
+  processInstanceId: String
+  referenceName: String
+  state: String
+  stato: String
+  userEnabled: Boolean!
+}
+
+type AttribuzioniOrizzontali {
+  controlloBeniServizi: Boolean
+  controlloBilancio: Boolean
+  controlloFiscale: Boolean
+  controlloMutuo: Boolean
+  controlloPartecipate: Boolean
+  controlloPatrimonio: Boolean
+  controlloPianoOpere: Boolean
+  controlloPosizione: Boolean
+  id: BigInteger
+  metaType: String
+  peg: Boolean
+}
+
+type CheckDisponibilitaDTO {
+  determine: [Determina]
+  disponibilitaContabilita: BigDecimal
+  disponibilitaEffettiva: BigDecimal
+  totaleImpegnatoAccertato: BigDecimal
+}
+
+type DatiUtenteDTO {
+  history: [UserHistory]
+  storic_offices: [Office]
+  user_data: DatiUtenteSSO
+  utenteData: Utente
+}
+
+type DatiUtenteSSO {
+  auth_id: String
+  delegations: [Delegation]
+  firstName: String
+  lastName: String
+  userOffices: [UserOffice]
+  username: String
+}
+
+type DefaultDetermina {
+  id: BigInteger
+  metaType: String
+  nomeCampo: String
+  tipoDetermina: TipoDetermina
+  valore: String
+}
+
+type DefaultListe {
+  attivo: Boolean
+  cdr: String
+  descrizione: String
+  id: BigInteger
+  metaType: String
+  nomeCampo: String
+  tipoLista: TipoLista
+}
+
+type Delegation {
+  "ISO-8601"
+  delegation_end: DateTime
+  "ISO-8601"
+  delegation_start: DateTime
+  fromUserData: DatiUtenteSSO
+  permits: [Permit]
+}
+
+type Determina {
+  allegatiInPubblicazione: [Documento]
+  anac: Boolean
+  annoDetermina: Int
+  annoProposta: Int
+  ato2: Boolean
+  attivita_pendente: AttivitaPendenteDTO
+  attribuzioniOrizzontali: AttribuzioniOrizzontali
+  attribuzioni_orizzontali_id: BigInteger
+  bpmnProcessId: String
+  cdr: String
+  cdrCode: String
+  "ISO-8601"
+  dataCreazione: DateTime
+  dataCreazioneString: String
+  "ISO-8601"
+  dataEsecutiva: DateTime
+  dataEsecutivaString: String
+  "ISO-8601"
+  dataFinePubblicazione: DateTime
+  dataFinePubblicazioneString: String
+  "ISO-8601"
+  dataInizioPubblicazione: DateTime
+  dataInizioPubblicazioneString: String
+  "ISO-8601"
+  dataProposta: DateTime
+  "ISO-8601"
+  dataProtocollazione: DateTime
+  dataProtocollazioneString: String
+  "ISO-8601"
+  dataRedazione: DateTime
+  dataRedazioneString: String
+  deleted: Boolean!
+  dispositivo: String
+  dispositivo_clean: String
+  documenti: [Documento]
+  documentoOscurato: Documento
+  documentoOscuratoBozza: Documento
+  documentoOscuratoFirmato: Documento
+  documentoPrincipale: Documento
+  documentoPrincipaleFirmato: Documento
+  email: String
+  faseDetermina: FaseDetermina
+  formAnac: [FormAnac]
+  formAnacCompletato: [FormAnac]
+  formGpp: FormGpp
+  gpp: Boolean
+  id: BigInteger
+  idAtto: BigInteger
+  listaAttivita: [Attivita]
+  metaType: String
+  modLiquidazione: String
+  modLiquidazione_clean: String
+  motivazione: String
+  motivazione_clean: String
+  note: [Nota]
+  numProposta: String
+  numProtocollo: String
+  num_proposta_num: BigInteger
+  numeroRepertorio: String
+  oggetto: String
+  preferita: Boolean!
+  premesso: String
+  premesso_clean: String
+  preseDatto: String
+  preseDatto_clean: String
+  proprietaOffuscate: [ProprietaOffuscata]
+  redattore: String
+  responsabileIstruttoria: String
+  responsabileProcedimento: String
+  riferimentiContabili: RiferimentiContabili
+  ruDetermina: String
+  ruDetermina_num: BigInteger
+  skipResponsabileProcedimento: Boolean
+  soggettiMotivoEsclusioneCig: [Soggetto]
+  soggettiUniqueCig: [Soggetto]
+  stato: String
+  statoDetermina: StatoDetermina
+  template: String
+  template_type: TemplateDeterminaType
+  tipo: String
+  tipoAffidamento: String
+  tipoDetermina: TipoDetermina
+  validazione: ValidazioneTabDTO
+  vistiDiLegge: String
+  vistiDiLegge_clean: String
+  vistoDipartimentale: Boolean
+}
+
+type DeterminaFormAnac {
+  anacCompletato: Boolean
+  annoDetermina: String
+  annoProposta: String
+  cdr: String
+  cdrCode: String
+  cig: String
+  determina_id: BigInteger
+  formAnac: FormAnac
+  importoDiAggiudicazione: BigDecimal
+  numProposta: String
+  oggettoDetermina: String
+  ruDetermina: String
+  stato: String
+  statoAnac: String
+  statoDetermina: StatoDetermina
+  tipo: String
+  tipoDetermina: TipoDetermina
+}
+
+type DeterminaFormGpp {
+  annoDetermina: String
+  annoProposta: String
+  cdr: String
+  cdrCode: String
+  determina_id: BigInteger
+  formGpp: FormGpp
+  gppCompletato: Boolean
+  numProposta: String
+  oggettoDetermina: String
+  ruDetermina: String
+  stato: String
+  statoDetermina: StatoDetermina
+  statoGpp: String
+  tipo: String
+  tipoDetermina: TipoDetermina
+  totaleGpp: BigDecimal
+}
+
+type Documento {
+  bozza: Boolean
+  determina_id: BigInteger
+  firmato: Boolean
+  id: BigInteger
+  inPubblicazione: Boolean
+  metaType: String
+  nonInPubblicazione: Boolean
+  oscurato: Boolean
+  principale: Boolean
+  url: String
+}
+
+type FasciaDiControllo {
+  "ISO-8601"
+  a: DateTime
+  aString: String
+  "ISO-8601"
+  da: DateTime
+  daString: String
+  deleted: Boolean!
+  id: BigInteger
+  metaType: String
+  tipoDetermina: TipoDetermina
+}
+
+type FormAnac {
+  cig: String
+  codice_struttura_preponente: String
+  completato: Boolean
+  determina_id: BigInteger
+  gruppiInvitati: [GruppoInvitatoAnac]
+  id: BigInteger
+  importoDiAggiudicazione: BigDecimal
+  importo_aggiudicazione: BigDecimal
+  importo_somme_liquidate: BigDecimal
+  invitati: [InvitatoAnac]
+  metaType: String
+  nome_struttura_preponente: String
+  oggetto_bando: String
+  procesura_scelta: String
+  "ISO-8601"
+  tempo_completamento_servizio_a: DateTime
+  tempo_completamento_servizio_aString: String
+  "ISO-8601"
+  tempo_completamento_servizio_da: DateTime
+  tempo_completamento_servizio_daString: String
+}
+
+type FormGpp {
+  categorie: [GppCategoria]
+  completato: Boolean
+  determina_id: BigInteger
+  id: BigInteger
+  metaType: String
+  totale: BigDecimal
+  totaleGpp: BigDecimal
+}
+
+type GppCategoria {
+  anno: Int
+  categoria: String
+  descrizione: String
+  form_gpp_id: BigInteger
+  id: BigInteger
+  macro_categoria: String
+  metaType: String
+  quantita: Int
+  quantita_gpp: Int
+  totale: BigDecimal
+}
+
+type GruppoInvitatoAnac {
+  aggiudicatario: Boolean
+  codice_fiscale: String
+  form_anac_id: BigInteger
+  id: BigInteger
+  identificativoFiscaleEstero: String
+  metaType: String
+  ragione_sociale: String
+  ruolo: String
+}
+
+type Impegno {
+  accertamentoData: Accertamento
+  annoCompetenza: String
+  articolo: Int
+  articoloDescr: String
+  assestato: BigDecimal
+  capitolo: Int
+  capitoloDescr: String
+  capitoloStorico: String
+  categoria: String
+  categoriaDescr: String
+  cdc: String
+  cdcDscr: String
+  cdr: String
+  cdrCode: String
+  cdrDescr: String
+  contoF: String
+  contoFinanziario: String
+  descrizione: String
+  disponibilita: BigDecimal
+  disponibilitaStorni: BigDecimal
+  id: BigInteger
+  impIniz: BigDecimal
+  impVar: BigDecimal
+  impegnato: BigDecimal
+  impegnoData: Impegno
+  importo: BigDecimal
+  macroAggregato: String
+  macroaggregatoDescr: String
+  metaType: String
+  missione: String
+  missioneDescr: String
+  motivazione: String
+  numPrenotazioneSIBAssociata: Int
+  numeroImpegno: Int
+  numeroVincolo: String
+  prenotato: BigDecimal
+  prenotazione: Boolean
+  prenotazioneData: Prenotazione
+  programma: String
+  programmaDescr: String
+  reimputazioneData: Reimputazione
+  riferimentiContabili: RiferimentiContabili
+  soggetti: [Soggetto]
+  sub: Int
+  subAccertamentoData: SubAccertamento
+  subImpegnoData: SubImpegno
+  tipo: String
+  tipologia: String
+  tipologiaDescr: String
+  titolo: Int
+  titoloDescr: String
+  validato: Boolean
+  vincolato: Boolean
+}
+
+type InvitatoAnac {
+  aggiudicatario: Boolean
+  codice_fiscale: String
+  form_anac_id: BigInteger
+  id: BigInteger
+  identificativoFiscaleEstero: String
+  metaType: String
+  ragione_sociale: String
+}
+
+type Movimento {
+  accertamentoData: Accertamento
+  annoCompetenza: String
+  articolo: Int
+  articoloDescr: String
+  assestato: BigDecimal
+  capitolo: Int
+  capitoloDescr: String
+  capitoloStorico: String
+  categoria: String
+  categoriaDescr: String
+  cdc: String
+  cdcDscr: String
+  cdr: String
+  cdrCode: String
+  cdrDescr: String
+  contoF: String
+  contoFinanziario: String
+  descrizione: String
+  disponibilita: BigDecimal
+  id: BigInteger
+  impegnoData: Impegno
+  importo: BigDecimal
+  macroAggregato: String
+  macroaggregatoDescr: String
+  metaType: String
+  missione: String
+  missioneDescr: String
+  motivazione: String
+  numeroImpegno: Int
+  numeroVincolo: String
+  prenotato: BigDecimal
+  prenotazioneData: Prenotazione
+  programma: String
+  programmaDescr: String
+  reimputazioneData: Reimputazione
+  riferimentiContabili: RiferimentiContabili
+  soggetti: [Soggetto]
+  sub: Int
+  subAccertamentoData: SubAccertamento
+  subImpegnoData: SubImpegno
+  tipo: String
+  tipologia: String
+  tipologiaDescr: String
+  titolo: Int
+  titoloDescr: String
+  validato: Boolean
+  vincolato: Boolean
+}
+
+"Mutation root"
+type Mutation {
+  aggiornaAccertamento(data: AccertamentoInputInput, id: BigInteger): Accertamento
+  aggiornaAttivita(data: AttivitaInputInput, id: BigInteger): Attivita
+  aggiornaDefaultDetermina(data: DefaultDeterminaInputInput, id: BigInteger): DefaultDetermina
+  aggiornaDefaultListe(data: DefaultListeInputInput, id: BigInteger): DefaultListe
+  aggiornaDetermina(data: DeterminaInputInput, id: BigInteger): Determina
+  aggiornaDocumento(data: DocumentoInputInput, id: BigInteger): Documento
+  aggiornaFasciaDiControllo(data: FasciaDiControlloInputInput, id: BigInteger): FasciaDiControllo
+  aggiornaFormAnac(data: FormAnacInputInput, id: BigInteger): FormAnac
+  aggiornaFormGpp(data: FormGppInputInput, id: BigInteger): FormGpp
+  aggiornaGppCategoria(data: GppCategoriaInputInput, id: BigInteger): GppCategoria
+  aggiornaGruppoInvitatoAnac(data: GruppoInvitatoAnacInputInput, id: BigInteger): GruppoInvitatoAnac
+  aggiornaImpegno(data: ImpegnoInputInput, id: BigInteger): Impegno
+  aggiornaInvitatoAnac(data: InvitatoAnacInputInput, id: BigInteger): InvitatoAnac
+  aggiornaMovimento(data: MovimentoInputInput, id: BigInteger, tipoUscita: String): Movimento
+  aggiornaNota(data: NotaInputInput, id: BigInteger): Nota
+  aggiornaPrenotazione(data: PrenotazioneInputInput, id: BigInteger): Prenotazione
+  aggiornaProprietaOffuscata(data: ProprietaOffuscataInputInput, id: BigInteger): ProprietaOffuscata
+  aggiornaReimputazione(data: ReimputazioneInputInput, id: BigInteger): Reimputazione
+  aggiornaRiferimentiContabili(data: RiferimentiContabiliInputInput, id: BigInteger): RiferimentiContabili
+  aggiornaSoggetto(data: SoggettoInputInput, id: BigInteger): Soggetto
+  aggiornaSubAccertamento(data: SubAccertamentoInputInput, id: BigInteger): SubAccertamento
+  aggiornaSubImpegno(data: SubImpegnoInputInput, id: BigInteger): SubImpegno
+  aggiornaUtente(data: UtenteInputInput, id: BigInteger): Utente
+  annullaDetermina(id: BigInteger, nota: NotaInputInput): Boolean!
+  cambiaAttivita(id: BigInteger, nuovaAttivita: String): Boolean!
+  completaAttivita(approvazioneBilancioInput: ApprovazioneBilancioInputInput, attribuzioniOrizzontali: AttribuzioniOrizzontaliInputInput, avanzaStatoDetermina: Boolean, determinaId: BigInteger, firmaInput: FirmaInputInput, nota: NotaInputInput, omissis: Boolean, remote_sign: Boolean = true, revisione: Boolean, roles: [String], taskId: String, taskName: TipoAttivita, titoloScelto: Int): Attivita
+  duplicaDetermina(data: DeterminaInputInput, id: BigInteger): Determina
+  eliminaAccertamento(id: BigInteger): Boolean!
+  eliminaAttivita(id: BigInteger): Boolean!
+  eliminaDefaultDetermina(id: BigInteger): Boolean!
+  eliminaDefaultListe(id: BigInteger): Boolean!
+  eliminaDefinitivamenteFasciaDiControllo(id: BigInteger): Boolean!
+  eliminaDetermina(id: BigInteger): Boolean!
+  eliminaDocumento(id: BigInteger): Boolean!
+  eliminaFasciaDiControllo(id: BigInteger): Boolean!
+  eliminaFormAnac(id: BigInteger): Boolean!
+  eliminaFormGpp(id: BigInteger): Boolean!
+  eliminaGppCategoria(id: BigInteger): Boolean!
+  eliminaGruppoInvitatoAnac(id: BigInteger): Boolean!
+  eliminaImpegno(id: BigInteger): Boolean!
+  eliminaInvitatoAnac(id: BigInteger): Boolean!
+  eliminaListaFasciaDiControllo(idList: [BigInteger]): Boolean!
+  eliminaMovimento(id: BigInteger): Boolean!
+  eliminaNota(id: BigInteger): Boolean!
+  eliminaPrenotazione(id: BigInteger): Boolean!
+  eliminaProprietaOffuscata(id: BigInteger): Boolean!
+  eliminaReimputazione(id: BigInteger): Boolean!
+  eliminaRiferimentiContabili(id: BigInteger): Boolean!
+  eliminaSoggetto(id: BigInteger): Boolean!
+  eliminaSubAccertamento(id: BigInteger): Boolean!
+  eliminaSubImpegno(id: BigInteger): Boolean!
+  eliminaUtente(id: BigInteger): Boolean!
+  firmaMultipla(approvazioneBilancioInput: ApprovazioneBilancioInputInput, attribuzioniOrizzontali: AttribuzioniOrizzontaliInputInput, avanzaStatoDetermina: Boolean, determineIds: [BigInteger], firmaInput: FirmaInputInput, omissis: Boolean, remote_sign: Boolean = true, revisione: Boolean, roles: [String], taskIds: [String], taskNames: [TipoAttivita], titoloScelto: Int): [Attivita]
+  generateD33CSV(year: Int): Boolean!
+  mergeDefaultDetermina(data: DefaultDeterminaInputInput): DefaultDetermina
+  rilasciaAttivita(determinaId: BigInteger, roles: [String], taskId: String, taskName: TipoAttivita): Attivita
+  rivendicaAttivita(determinaId: BigInteger, referenceName: String = "", roles: [String], taskId: String, taskName: TipoAttivita): Attivita
+  rivendicaAttivitaMassiva(determineIds: [BigInteger], referenceNames: [String] = "", roles: [String], taskIds: [String], taskNames: [TipoAttivita]): [Attivita]
+  salvaAccertamento(data: AccertamentoInputInput): Accertamento
+  salvaAttivita(data: AttivitaInputInput): Attivita
+  salvaAttribuzioniOrizzontali(data: AttribuzioniOrizzontaliInput, determinaId: BigInteger): AttribuzioniOrizzontali
+  salvaDefaultDetermina(data: DefaultDeterminaInputInput): DefaultDetermina
+  salvaDefaultListe(data: DefaultListeInputInput): DefaultListe
+  salvaDetermina(data: DeterminaInputInput, fastMode: Boolean = false): Determina
+  salvaFasciaDiControllo(data: FasciaDiControlloInputInput): FasciaDiControllo
+  salvaFormAnac(data: FormAnacInputInput): FormAnac
+  salvaFormGpp(data: FormGppInputInput): FormGpp
+  salvaGppCategoria(data: GppCategoriaInputInput, determinaId: BigInteger): GppCategoria
+  salvaGruppoInvitatoAnac(data: GruppoInvitatoAnacInputInput): GruppoInvitatoAnac
+  salvaImpegno(data: ImpegnoInputInput): Impegno
+  salvaInvitatoAnac(data: InvitatoAnacInputInput): InvitatoAnac
+  salvaMovimento(data: MovimentoInputInput): Movimento
+  salvaMultiMovimentoSoggetto(data: MultiMovimentoSoggettoUpdateInput): Boolean!
+  salvaMultiMovimentoSoggettoStorni(data: MultiMovimentoSoggettoUpdateInput): Boolean!
+  salvaMultiProprietaOffuscataSoggetto(id_determina: BigInteger, proprieta: [ProprietaOffuscataSectionInputInput], proprieta_comuni: [ProprietaOffuscataCampo]): Boolean!
+  salvaNota(data: NotaInputInput): Nota
+  salvaPrenotazione(data: PrenotazioneInputInput): Prenotazione
+  salvaProprietaOffuscataDetermina(data: ProprietaOffuscataInputInput, id: BigInteger): ProprietaOffuscata
+  salvaProprietaOffuscataRiferimentiContabili(data: ProprietaOffuscataInputInput, id: BigInteger): ProprietaOffuscata
+  salvaProprietaOffuscataSoggetto(data: ProprietaOffuscataInputInput, id: BigInteger): ProprietaOffuscata
+  salvaProprietaOffuscateDetermina(data: [ProprietaOffuscataMergeInputInput], id: BigInteger): Boolean!
+  salvaReimputazione(data: ReimputazioneInputInput): Reimputazione
+  salvaRiferimentiContabili(data: RiferimentiContabiliInputInput): RiferimentiContabili
+  salvaSoggetto(data: SoggettoInputInput): Soggetto
+  salvaSubAccertamento(data: SubAccertamentoInputInput): SubAccertamento
+  salvaSubImpegno(annoCompetenza: String, data: SubImpegnoInputInput): Movimento
+  salvaUtente(data: UtenteInputInput): Utente
+  toggleDeterminaPreferita(determina_id: BigInteger): Utente
+  valida_capitolo(determina_id: BigInteger): [ValidazioneDTO]
+  valida_prenotazione(determina_id: BigInteger): [ValidazioneDTO]
+  valida_subImpegnoAccertamento(determina_id: BigInteger): [ValidazioneDTO]
+}
+
+type Nota {
+  attivita: Attivita
+  "ISO-8601"
+  dataCreazione: DateTime
+  dataCreazioneString: String
+  determina: Determina
+  id: BigInteger
+  metaType: String
+  mittente: String
+  richiestaRevisione: Boolean
+  testo: String
+}
+
+type Office {
+  code: String
+  description: String
+  name: String
+  service: String
+}
+
+type Permit {
+  "ISO-8601"
+  delegation_end: DateTime
+  "ISO-8601"
+  delegation_start: DateTime
+  officeName: String
+  office_id: BigInteger
+  role: Role
+  type: PermitType
+}
+
+type Prenotazione {
+  accertamentoData: Accertamento
+  annoCompetenza: String
+  articolo: Int
+  articoloDescr: String
+  assestato: BigDecimal
+  capitolo: Int
+  capitoloDescr: String
+  capitoloStorico: String
+  categoria: String
+  categoriaDescr: String
+  cdc: String
+  cdcDscr: String
+  cdr: String
+  cdrCode: String
+  cdrDescr: String
+  contoF: String
+  contoFinanziario: String
+  descrizione: String
+  disponibilita: BigDecimal
+  disponibilitaStorni: BigDecimal
+  id: BigInteger
+  idPrenotazioneSIB: Int
+  impIniz: BigDecimal
+  impVar: BigDecimal
+  impegnato: BigDecimal
+  impegnoData: Impegno
+  importo: BigDecimal
+  macroAggregato: String
+  macroaggregatoDescr: String
+  metaType: String
+  missione: String
+  missioneDescr: String
+  motivazione: String
+  numPrenotazioneSIBAssociata: Int
+  numeroImpegno: Int
+  numeroVincolo: String
+  prenotato: BigDecimal
+  prenotazione: Boolean
+  prenotazioneData: Prenotazione
+  programma: String
+  programmaDescr: String
+  reimputazioneData: Reimputazione
+  riferimentiContabili: RiferimentiContabili
+  soggetti: [Soggetto]
+  sub: Int
+  subAccertamentoData: SubAccertamento
+  subImpegnoData: SubImpegno
+  tipo: String
+  tipologia: String
+  tipologiaDescr: String
+  titolo: Int
+  titoloDescr: String
+  validato: Boolean
+  vincolato: Boolean
+}
+
+type ProprietaOffuscata {
+  campo: ProprietaOffuscataCampo
+  id: BigInteger
+  metaType: String
+  offuscamento: String
+  offuscata: Boolean
+}
+
+"Query root"
+type Query {
+  accertamenti(page: Int = 0, search: String = "", size: Int = 50, sort: SortInputInput): [Accertamento]
+  accertamenti_paginato(search: String = "", size: Int = 50): Int!
+  accertamento(id: BigInteger!): Accertamento
+  attivita(cdr: [String], filtro: FiltroAttivita = DEFAULT, page: Int = 0, roles: [String], search: String = "", size: Int = 50, sort: SortInputInput, statoDetermina: [StatoDetermina], tipoDetermina: [TipoDetermina], utente: String): [Attivita]
+  attivita_paginato(cdr: [String], filtro: FiltroAttivita = DEFAULT, roles: [String], search: String = "", size: Int = 50, statoDetermina: [StatoDetermina], tipoDetermina: [TipoDetermina], utente: String): Int!
+  attivita_pendenti(cdr: [String], page: Int = 0, roles: [String], search: String = "", size: Int = 50, sort: SortInputInput, statoDetermina: [StatoDetermina], tipoDetermina: [TipoDetermina]): [SidProcessGraphqlDTO]
+  attivita_pendenti_new(cdr: [String], page: Int = 0, roles: [String], search: String = "", size: Int = 50, sort: SortInputInput, statoDetermina: [StatoDetermina], tipoDetermina: [TipoDetermina]): [SidProcessGraphqlDTO]
+  attivita_pendenti_paginato(cdr: [String], roles: [String], search: String = "", size: Int = 50, statoDetermina: [StatoDetermina], tipoDetermina: [TipoDetermina]): Float!
+  attivita_pendenti_paginato_new(cdr: [String], roles: [String], search: String = "", size: Int = 50, statoDetermina: [StatoDetermina], tipoDetermina: [TipoDetermina]): Float!
+  calcolo_disponibilita_teorica(assestato: BigDecimal, impegnato: BigDecimal): BigDecimal
+  capitolo(annoBilancio: String = "", annoCompetenza: String = "", articolo: String = "", capitolo: String = "", capitoloVecchio: String = "", cdr: String = "", page: Int = 0, size: Int = 50, sorted: Boolean = false, tipoMovimento: String = "U", titolo: String = "", vincolo: String = ""): [RecordCapitolo]
+  capitolo_pages(annoBilancio: String = "", annoCompetenza: String = "", articolo: String = "", capitolo: String = "", capitoloVecchio: String = "", cdr: String = "", size: Int = 50, tipoMovimento: String = "U", titolo: String = "", vincolo: String = ""): Float!
+  check_capitolo(accertato: BigDecimal, annoCompetenza: String, articolo: Int, assestato: BigDecimal, capitolo: Int, determinaId: BigInteger, entrata: Boolean, impegnato: BigDecimal, prenotato: BigDecimal, titolo: Int): CheckDisponibilitaDTO
+  check_prenotazione(annoCompetenza: String, assestato: BigDecimal, determinaId: BigInteger, numPrenotazione: Int, variazioni: BigDecimal): CheckDisponibilitaDTO
+  check_subaccertamento(assestato: BigDecimal, determinaId: BigInteger, liquidato: BigDecimal, numAccertamento: Int): CheckDisponibilitaDTO
+  check_subimpegno(annoCompetenza: String, assestato: BigDecimal, determinaId: BigInteger, liquidato: BigDecimal, numImpegno: Int): CheckDisponibilitaDTO
+  defaultDetermina(id: BigInteger!): DefaultDetermina
+  defaultDetermine(page: Int = 0, search: String = "", size: Int = 50, sort: SortInputInput, tipoDetermina: TipoDetermina): [DefaultDetermina]
+  defaultDetermine_paginato(search: String = "", size: Int = 50, tipoDetermina: TipoDetermina): Int!
+  defaultLista(id: BigInteger!): DefaultListe
+  defaultListe(cdr: String = "", page: Int = 0, search: String = "", size: Int = 1000, sort: SortInputInput, tipoLista: TipoLista): [DefaultListe]
+  defaultListe_paginato(cdr: String = "", search: String = "", size: Int = 500, tipoLista: TipoLista): Int!
+  determina(id: BigInteger!): Determina
+  determina_form_anac_by_cig_determinaId(cig: String, determinaId: BigInteger!): DeterminaFormAnac
+  determine(annoProposta: Int, cdrCode: [String], page: Int = 0, preferite: Boolean = false, search: String = "", size: Int = 50, sort: SortInputInput, statoDetermina: [StatoDetermina], tipoDetermina: [TipoDetermina]): [Determina]
+  determine_avanzato(annoDetermina: Int, annoProposta: Int, cdrCode: [String], cia: String = "", cig: String = "", creatoreDetermina: String = "", cup: String = "", data_creazione_a: String, data_creazione_da: String, data_esecutiva_a: String, data_esecutiva_da: String, dipositivo: String = "", idDetermina: Int, numProposta: String, oggetto: String = "", page: Int = 0, preferite: Boolean = false, protocollo: String = "", responsabileProcedimento: String = "", ruDetermina: String, search: String = "", size: Int = 50, sort: SortInputInput, statoDetermina: StatoDetermina, tipoDetermina: TipoDetermina, tipoFinanziamento: String = ""): [Determina]
+  determine_avanzato_paginato(annoDetermina: Int, annoProposta: Int, cdrCode: [String], cia: String = "", cig: String = "", creatoreDetermina: String = "", cup: String = "", data_creazione_a: String, data_creazione_da: String, data_esecutiva_a: String, data_esecutiva_da: String, dipositivo: String = "", idDetermina: Int, numProposta: String, oggetto: String = "", preferite: Boolean = false, protocollo: String = "", responsabileProcedimento: String = "", ruDetermina: String, search: String = "", size: Int = 50, statoDetermina: StatoDetermina, tipoDetermina: TipoDetermina, tipoFinanziamento: String = ""): Int!
+  determine_form_gpp_by_determina_id(determinaId: BigInteger): DeterminaFormGpp
+  determine_paginato(annoProposta: Int, cdrCode: [String], preferite: Boolean = false, search: String = "", size: Int = 50, statoDetermina: [StatoDetermina], tipoDetermina: [TipoDetermina]): Int!
+  documenti(page: Int = 0, search: String = "", size: Int = 50, sort: SortInputInput): [Documento]
+  documenti_paginato(search: String = "", size: Int = 50): Int!
+  documento(id: BigInteger!): Documento
+  fascia_di_controllo(id: BigInteger!): FasciaDiControllo
+  fascia_di_controllo_lista(filter: FasciaDiControlloFilter = ATTIVE, page: Int = 0, search: String = "", size: Int = 50, sort: SortInputInput): [FasciaDiControllo]
+  fascia_di_controllo_lista_paginato(filter: FasciaDiControlloFilter = ATTIVE, search: String = "", size: Int = 50): Int!
+  fascia_di_controllo_per_tipo_determina(tipo: TipoDetermina): FasciaDiControllo
+  form_anac(id: BigInteger!): FormAnac
+  form_anac_by_cig_determinaId(cig: String, determinaId: BigInteger!): FormAnac
+  form_gpp(id: BigInteger!): FormGpp
+  impegni(page: Int = 0, search: String = "", size: Int = 50, sort: SortInputInput): [Impegno]
+  impegni_paginato(search: String = "", size: Int = 50): Int!
+  impegno(id: BigInteger!): Impegno
+  impegno_accertamento(annoBilancio: String = "", annoImpegno: String = "", articolo: String = "", capitolo: String = "", capitoloStorico: String = "", cdr: String = "", numImpegno: String = "", numeroVincolo: String = "", page: Int = 0, size: Int = 50, sorted: Boolean = false, tipoMovimento: String = "U", titolo: String = ""): [RecordImpAccert]
+  impegno_accertamento_pages(annoBilancio: String = "", annoImpegno: String = "", articolo: String = "", capitolo: String = "", capitoloStorico: String = "", cdr: String = "", numImpegno: String = "", numeroVincolo: String = "", size: Int = 50, tipoMovimento: String = "U", titolo: String = ""): Float!
+  lista_determine_form_anac(anacStateFiler: StateFiler = DA_COMPLETARE, cdrCode: [String], page: Int = 0, search: String = "", size: Int = 50, sort: SortInputInput): [DeterminaFormAnac]
+  lista_determine_form_anac_paginato(anacStateFiler: StateFiler = DA_COMPLETARE, cdrCode: [String], page: Int = 0, search: String = "", size: Int = 50, sort: SortInputInput): Int!
+  lista_determine_form_gpp(a: String, categoria: [String], cdrCode: [String], da: String, gppStateFiler: StateFiler = DA_COMPLETARE, macro_categoria: [String], page: Int = 0, search: String = "", size: Int = 50, sort: SortInputInput): [DeterminaFormGpp]
+  lista_determine_form_gpp_paginato(a: String, categoria: [String], cdrCode: [String], da: String, gppStateFiler: StateFiler = DA_COMPLETARE, macro_categoria: [String], page: Int = 0, search: String = "", size: Int = 50, sort: SortInputInput): Int!
+  lista_form_anac(cig: String = "", page: Int = 0, search: String = "", size: Int = 50, sort: SortInputInput): [FormAnac]
+  lista_form_anac_paginato(cig: String = "", search: String = "", size: Int = 50): Int!
+  movimenti(page: Int = 0, search: String = "", size: Int = 50, sort: SortInputInput): [Movimento]
+  movimenti_paginato(search: String = "", size: Int = 50): Int!
+  movimento(id: BigInteger!): Movimento
+  nota(id: BigInteger!): Nota
+  note(page: Int = 0, search: String = "", size: Int = 50, sort: SortInputInput): [Nota]
+  note_paginato(search: String = "", size: Int = 50): Int!
+  prenotazione(id: BigInteger!): Prenotazione
+  prenotazione_pages(annoBilancio: String = "", annoPrenotazione: String = "", articolo: String = "", capitolo: String = "", capitoloStorico: String = "", cdr: String = "", numeroPrenotazione: String = "", numeroVincolo: String = "", size: Int = 50, tipoMovimento: String = "U", titolo: String = ""): Float!
+  prenotazione_sib(annoBilancio: String = "", annoPrenotazione: String = "", articolo: String = "", capitolo: String = "", capitoloStorico: String = "", cdr: String = "", numeroPrenotazione: String = "", numeroVincolo: String = "", page: Int = 0, size: Int = 50, sorted: Boolean = false, tipoMovimento: String = "U", titolo: String = ""): [RecordPrenotImpegno]
+  prenotazioni(page: Int = 0, search: String = "", size: Int = 50, sort: SortInputInput): [Prenotazione]
+  prenotazioni_paginato(search: String = "", size: Int = 50): Int!
+  proprietaOffuscata(id: BigInteger!): ProprietaOffuscata
+  proprietaOffuscate(page: Int = 0, search: String = "", size: Int = 50, sort: SortInputInput): [ProprietaOffuscata]
+  proprietaOffuscate_paginato(search: String = "", size: Int = 50): Int!
+  pubblica_determina(determinaId: BigInteger): Boolean!
+  reimputazione(id: BigInteger!): Reimputazione
+  reimputazioni(page: Int = 0, search: String = "", size: Int = 50, sort: SortInputInput): [Reimputazione]
+  reimputazioni_paginato(search: String = "", size: Int = 50): Int!
+  riferimentiContabili(page: Int = 0, search: String = "", size: Int = 50, sort: SortInputInput): [RiferimentiContabili]
+  riferimentiContabili_paginato(search: String = "", size: Int = 50): Int!
+  riferimentoContabile(id: BigInteger!): RiferimentiContabili
+  singola_attivita(id: BigInteger!): Attivita
+  singola_attivita_uuid(determinaId: BigInteger!, uuid: String): Attivita
+  soggetti(page: Int = 0, search: String = "", size: Int = 50, sort: SortInputInput): [Soggetto]
+  soggetti_paginato(search: String = "", size: Int = 50): Int!
+  soggetti_per_determina(determinaId: BigInteger): [Soggetto]
+  soggetto(id: BigInteger!): Soggetto
+  soggetto_sib(codice: String = "", codiceFiscale: String = "", nominativo: String = "", page: Int = 0, partitaIVA: String = "", size: Int = 50): [RecordSoggetto]
+  soggetto_sib_pages(codice: String = "", codiceFiscale: String = "", nominativo: String = "", partitaIVA: String = "", size: Int = 50): Float!
+  sso_data: DatiUtenteDTO
+  subAccertamenti(page: Int = 0, search: String = "", size: Int = 50, sort: SortInputInput): [SubAccertamento]
+  subAccertamenti_paginato(search: String = "", size: Int = 50): Int!
+  subAccertamento(id: BigInteger!): SubAccertamento
+  subImpegni(page: Int = 0, search: String = "", size: Int = 50, sort: SortInputInput): [SubImpegno]
+  subImpegni_paginato(search: String = "", size: Int = 50): Int!
+  subImpegno(id: BigInteger!): SubImpegno
+  testAnacXml(anno: Int!): String
+  tipo_determina(cdr: String = "", cdrCode: String = ""): [TipoDetermina]
+  utente(id: BigInteger!): Utente
+  utenti(page: Int = 0, search: String = "", size: Int = 50, sort: SortInputInput): [Utente]
+  utenti_paginato(search: String = "", size: Int = 50): Int!
+}
+
+type RecordCapitolo {
+  accertato: String
+  annoRiferimento: String
+  articolo: String
+  articoloNew: String
+  assestato: String
+  capart: String
+  capartNew: String
+  capitolo: String
+  cdcVero: String
+  cdg: String
+  cdgNew: String
+  cdr: String
+  cdrNew: String
+  cdrVero: String
+  codAnnoBil: String
+  codCapitolo: String
+  codCapitoloNew: String
+  codCateg: String
+  codCorrelazione: String
+  codiceCdr: String
+  conto: String
+  corrBreve: String
+  correlazione: String
+  desCateg: String
+  desFunzione: String
+  desRisorsa: String
+  desServizio: String
+  desTitolo: String
+  descCdc: String
+  descCdr: String
+  descSiope: String
+  descrizioneArticolo: String
+  eS: String
+  flgAnnullato: String
+  funz: String
+  impegnato: String
+  inT: String
+  incassato: String
+  iniziale: String
+  interventoCompleto: String
+  liquidato: String
+  ncateg: String
+  ncontof: String
+  ncontofinanziario: String
+  ndesccateg: String
+  ndesctipmac: String
+  ndesctit: String
+  nmis: String
+  nmissione: String
+  nprog: String
+  nprogramma: String
+  ntipmac: String
+  ntit: String
+  num: String
+  numeroVincolo: String
+  oid: String
+  oidLivello: String
+  pagato: String
+  prenotato: String
+  progetto: String
+  residuo: String
+  ris: String
+  serv: String
+  siope: String
+  sub: String
+  tipoVincolo: String
+  tit: String
+  variazione: String
+  vincolato: String
+  voce: String
+}
+
+type RecordImpAccert {
+  aaBil: String
+  anno: String
+  annoCrono: String
+  annoRes: String
+  annoRiferimento: String
+  art: String
+  artNew: String
+  cap: String
+  capNew: String
+  capart: String
+  capartNew: String
+  cat: String
+  cdg: String
+  cdgNew: String
+  cdr: String
+  cdrNew: String
+  cdrVero: String
+  cdrVeroNew: String
+  cntNumeroAtto: String
+  codAnnoAtto: String
+  codAnnoBil: String
+  codCig: String
+  codComune: String
+  codForn: String
+  codIcecca: String
+  codRdp: String
+  codRdpNew: String
+  codRdpOld: String
+  codRdpOldNew: String
+  codRuolo: String
+  codTipoAtto: String
+  conto: String
+  data: String
+  desCateg: String
+  desFunzione: String
+  desRisorsa: String
+  desServizio: String
+  desTitolo: String
+  descCdc: String
+  descCdr: String
+  descSiope: String
+  descr: String
+  emittente: String
+  es: String
+  flgEsecutivo: String
+  fornitore: String
+  fun: String
+  impAss: String
+  impIni: String
+  impLiq: String
+  impPag: String
+  impVar: String
+  inT: String
+  mac: String
+  mis: String
+  nContof: String
+  nContofinanziario: String
+  nDesccateg: String
+  nDesctipmac: String
+  nDesctit: String
+  nMissione: String
+  nProgramma: String
+  ncateg: String
+  nmis: String
+  nprog: String
+  ntipmac: String
+  ntit: String
+  num: String
+  numOld: String
+  numRes: String
+  numeroCrono: String
+  oggetto: String
+  oid: String
+  prog: String
+  progetto: String
+  ris: String
+  ser: String
+  siope: String
+  statoImp: String
+  sub: String
+  subOld: String
+  subRes: String
+  tipo: String
+  tipoRes: String
+  tit: String
+  voce: String
+}
+
+type RecordPrenotImpegno {
+  amnImpaccSubEuro: String
+  anno: String
+  annoRiferimento: String
+  art: String
+  artNew: String
+  cap: String
+  capNew: String
+  capart: String
+  capartNew: String
+  cat: String
+  cdg: String
+  cdgNew: String
+  cdgVero: String
+  cdgVeroNew: String
+  cdr: String
+  cdrNew: String
+  cdrVero: String
+  cdrVeroNew: String
+  cntNumeroAtto: String
+  codAnnoAtto: String
+  codAnnoBil: String
+  codForn: String
+  codRdp: String
+  codRdpOld: String
+  codRuolo: String
+  codTipoAtto: String
+  codUnitaOrg: String
+  conto: String
+  desCateg: String
+  desFunzione: String
+  desRisorsa: String
+  desServizio: String
+  desTitolo: String
+  descCdc: String
+  descCdr: String
+  descSiope: String
+  descr: String
+  es: String
+  flgRelationType: String
+  fornitore: String
+  fun: String
+  funOld: String
+  impAss: String
+  impIniz: String
+  impVar: String
+  inT: String
+  nCateg: String
+  nContof: String
+  nContofinanziario: String
+  nDesccateg: String
+  nDesctipmac: String
+  nDesctit: String
+  nMis: String
+  nMissione: String
+  nProg: String
+  nProgramma: String
+  nTipmac: String
+  nTit: String
+  num: String
+  oggetto: String
+  oid: String
+  ris: String
+  ser: String
+  serOld: String
+  siope: String
+  sub: String
+  tipo: String
+  tit: String
+  voce: String
+}
+
+type RecordSoggetto {
+  cap: String
+  capOld: String
+  cin: String
+  codBanca: String
+  codCity: String
+  codStatoSogg: String
+  codSubject: String
+  codUser: String
+  codicebancario: String
+  codicefiscale: String
+  comune: String
+  defCodBank: String
+  desQuietanza: String
+  email: String
+  fax: String
+  flgLogicaldel: String
+  flgRelationType: String
+  iban: String
+  indirizzo: String
+  nazione: String
+  nominativo: String
+  numerocivico: String
+  partitaiva: String
+  provincia: String
+  ruolo: String
+  telefono: String
+}
+
+type Reimputazione {
+  accertamentoData: Accertamento
+  annoCompetenza: String
+  articolo: Int
+  articoloDescr: String
+  assestato: BigDecimal
+  capitolo: Int
+  capitoloDescr: String
+  capitoloStorico: String
+  categoria: String
+  categoriaDescr: String
+  cdc: String
+  cdcDscr: String
+  cdr: String
+  cdrCode: String
+  cdrDescr: String
+  contoF: String
+  contoFinanziario: String
+  descrizione: String
+  disponibilita: BigDecimal
+  disponibilitaStorni: BigDecimal
+  id: BigInteger
+  impegnoData: Impegno
+  importo: BigDecimal
+  liquidato: BigDecimal
+  macroAggregato: String
+  macroaggregatoDescr: String
+  metaType: String
+  missione: String
+  missioneDescr: String
+  motivazione: String
+  numeroImpegno: Int
+  numeroNuovoImpegno: Int
+  numeroVincolo: String
+  prenotato: BigDecimal
+  prenotazioneData: Prenotazione
+  programma: String
+  programmaDescr: String
+  reimputazioneData: Reimputazione
+  riferimentiContabili: RiferimentiContabili
+  soggetti: [Soggetto]
+  sub: Int
+  subAccertamentoData: SubAccertamento
+  subImpegnoData: SubImpegno
+  tipo: String
+  tipologia: String
+  tipologiaDescr: String
+  titolo: Int
+  titoloDescr: String
+  validato: Boolean
+  vincolato: Boolean
+}
+
+type RiferimentiContabili {
+  capitoli: [Movimento]
+  cca: String
+  cia: String
+  determina: Determina
+  id: BigInteger
+  impegniAccertamenti: [Movimento]
+  metaType: String
+  movimenti: [Movimento]
+  prenotazioni: [Movimento]
+  proprietaOffuscate: [ProprietaOffuscata]
+  tipoFinanziamento: String
+  totImporto: Float
+  "ISO-8601"
+  ultimaValidazione: DateTime
+  ultimaValidazioneString: String
+  valido: Boolean
+}
+
+type Role {
+  full_name: String
+  hierarchy_level: Int!
+  name: String
+}
+
+type SidProcessGraphqlDTO {
+  bpmnProcessTaskId: String
+  "ISO-8601"
+  dataCreazioneDetermina: DateTime
+  determina: Determina
+  name: String
+  potentialGroups: [String]
+  processId: String
+  processInstanceId: String
+  referenceName: String
+  state: String
+  statoAttivita: String
+  tipoAttivita: TipoAttivita
+}
+
+type Soggetto {
+  cap: String
+  cig: String
+  codObiettivo: String
+  codice: String
+  codiceFiscale: String
+  comune: String
+  cup: String
+  id: BigInteger
+  importo: BigDecimal
+  importoAggiudicazione: BigDecimal
+  importoSommeLiquidate: BigDecimal
+  indirizzo: String
+  metaType: String
+  motivoEsclusioneCig: String
+  movimento: Movimento
+  movimento_id: BigInteger
+  nominativo: String
+  numAccertamentoSib: Int
+  numImpegnoSib: Int
+  numPrenotazioneSib: Int
+  numReimputazioneSib: Int
+  numSubAccertamentoSib: Int
+  numSubImpegnoSib: Int
+  origin: String
+  piva: String
+  proprietaOffuscate: [ProprietaOffuscata]
+}
+
+type SubAccertamento {
+  accertamentoData: Accertamento
+  annoCompetenza: String
+  articolo: Int
+  articoloDescr: String
+  assestato: BigDecimal
+  capitolo: Int
+  capitoloDescr: String
+  capitoloStorico: String
+  categoria: String
+  categoriaDescr: String
+  cdc: String
+  cdcDscr: String
+  cdr: String
+  cdrCode: String
+  cdrDescr: String
+  contoF: String
+  contoFinanziario: String
+  descrizione: String
+  disponibilita: BigDecimal
+  disponibilitaStorni: BigDecimal
+  id: BigInteger
+  impegnoData: Impegno
+  importo: BigDecimal
+  liquidato: BigDecimal
+  macroAggregato: String
+  macroaggregatoDescr: String
+  metaType: String
+  missione: String
+  missioneDescr: String
+  motivazione: String
+  numAccertamento: Int
+  numSubAccertamento: Int
+  numeroImpegno: Int
+  numeroVincolo: String
+  prenotato: BigDecimal
+  prenotazioneData: Prenotazione
+  programma: String
+  programmaDescr: String
+  reimputazioneData: Reimputazione
+  riferimentiContabili: RiferimentiContabili
+  soggetti: [Soggetto]
+  sub: Int
+  subAccertamentoData: SubAccertamento
+  subImpegnoData: SubImpegno
+  tipo: String
+  tipologia: String
+  tipologiaDescr: String
+  titolo: Int
+  titoloDescr: String
+  validato: Boolean
+  vincolato: Boolean
+}
+
+type SubImpegno {
+  accertamentoData: Accertamento
+  annoCompetenza: String
+  articolo: Int
+  articoloDescr: String
+  assestato: BigDecimal
+  capitolo: Int
+  capitoloDescr: String
+  capitoloStorico: String
+  categoria: String
+  categoriaDescr: String
+  cdc: String
+  cdcDscr: String
+  cdr: String
+  cdrCode: String
+  cdrDescr: String
+  contoF: String
+  contoFinanziario: String
+  descrizione: String
+  disponibilita: BigDecimal
+  disponibilitaStorni: BigDecimal
+  id: BigInteger
+  impegnoData: Impegno
+  importo: BigDecimal
+  liquidato: BigDecimal
+  macroAggregato: String
+  macroaggregatoDescr: String
+  metaType: String
+  missione: String
+  missioneDescr: String
+  motivazione: String
+  numSubImpegno: Int
+  numeroImpegno: Int
+  numeroVincolo: String
+  prenotato: BigDecimal
+  prenotazioneData: Prenotazione
+  programma: String
+  programmaDescr: String
+  reimputazioneData: Reimputazione
+  riferimentiContabili: RiferimentiContabili
+  soggetti: [Soggetto]
+  sub: Int
+  subAccertamentoData: SubAccertamento
+  subImpegnoData: SubImpegno
+  tipo: String
+  tipologia: String
+  tipologiaDescr: String
+  titolo: Int
+  titoloDescr: String
+  validato: Boolean
+  vincolato: Boolean
+}
+
+type UserHistory {
+  "ISO-8601"
+  created_at: DateTime
+  "ISO-8601"
+  delegation_end: DateTime
+  "ISO-8601"
+  delegation_start: DateTime
+  record_type: RecordType
+  state: RecordState
+  type: PermitType
+}
+
+type UserOffice {
+  office: Office
+  roles: [Role]
+  userOfficeRoles: [Permit]
+}
+
+type Utente {
+  determinePreferite: [Determina]
+  id: BigInteger
+  metaType: String
+  ssoId: String
+}
+
+type ValidazioneDTO {
+  motivazione: String
+  movimentoId: BigInteger
+  valido: Boolean!
+}
+
+type ValidazioneTabDTO {
+  determinaValida: Boolean!
+  frontespizioPremessa: Boolean!
+  riferimentiContabili: Boolean!
+  sezioneDispositivo: Boolean!
+}
+
+enum FasciaDiControlloFilter {
+  ATTIVE
+  STORICO
+  TUTTE
+}
+
+enum FaseDetermina {
+  annullata
+  approvazioneDiRagioneria
+  firmaDirigenteRagioneria
+  firmata
+  pubblicata
+  redazione
+  secondaApprovazioneDiRagioneria
+}
+
+enum FiltroAttivita {
+  CONCLUSE
+  DEFAULT
+  DI_FIRMA
+  LE_MIE_ATTIVITA
+}
+
+enum PermitType {
+  DELEGATION
+  PERSISTENT
+  TRANSIENT
+}
+
+enum ProprietaOffuscataCampo {
+  cap
+  cia
+  cig
+  codice
+  codiceFiscale
+  comune
+  cup
+  dispositivo
+  indirizzo
+  modLiquidazione
+  motivazione
+  nominativo
+  oggetto
+  piva
+  premesso
+  preseDatto
+  vistiDiLegge
+}
+
+enum RecordState {
+  CR
+  IN
+  OUT
+}
+
+enum RecordType {
+  DELETE_OFFICE
+  INVALIDATE_PERMIT
+  OFFICE
+  PERM
+  UPDATE_ROW
+}
+
+enum StateFiler {
+  BOZZA
+  COMPLETATO
+  DA_COMPLETARE
+}
+
+enum StatoAttivita {
+  annullata
+  completata
+  daPrendereInCarico
+  presaInCarico
+}
+
+enum StatoDetermina {
+  AllaFirmaDelRagioniereGenerale
+  AllaFirmaDirigenteProponente
+  AllaFirmaDirigenteSpesaEntrata
+  Annullata
+  ApprovazioniOrizzontaliDiRagioneria
+  Esecutiva
+  FirmataDalDirigenteProponente
+  FirmataDalDirigenteSpesaEntrata
+  InLavorazioneUfficioRagioneria
+  InVisioneDirettoreDipartimento
+  InVisioneDirigente
+  InVisioneResponsabileProcedimento
+  OscuramentoDati
+  ServizioProponente
+  UfficioRagioneria
+}
+
+enum TemplateDeterminaType {
+  ATO2
+  BASE
+  PNRR
+  PNRR_ATO2
+}
+
+enum TipoAttivita {
+  annullamentoScrittureContabili
+  approvazioneDirettore
+  approvazioneDirigente
+  approvazioneFirmaDirigente
+  approvazioneFirmaDirigenteEntrata
+  approvazioneFirmaDirigenteSpesa1
+  approvazioneFirmaDirigenteSpesa2
+  approvazioneFirmaRagioniereGenerale
+  approvazioneOmissis
+  approvazioneRagioneria
+  approvazioneRagioneriaEntrata
+  approvazioneRagioneriaTitolo1
+  approvazioneRagioneriaTitolo2
+  approvazioneResponsabileProcedimento
+  approvazioneUfficioBilancio
+  attribuzioniOrizzontali
+  attribuzioniOrizzontaliEntrata
+  attribuzioniOrizzontaliSpesa
+  attribuzioniOrizzontaliTitolo1
+  attribuzioniOrizzontaliTitolo2
+  avanzaStatoDetermina
+  beniServizi
+  bilancio
+  firmaDirigente
+  firmaDirigenteEntrata
+  firmaDirigenteSpesa1
+  firmaDirigenteSpesa2
+  firmaRagioniereGenerale
+  fiscale
+  gestioneOmissis
+  mutuo
+  none
+  partecipate
+  patrimonio
+  peg
+  pianoOpere
+  posizione
+  redazione
+  secondaApprovazioneRagioneriaEntrata
+  secondaApprovazioneRagioneriaTitolo1
+  secondaApprovazioneRagioneriaTitolo2
+}
+
+enum TipoDetermina {
+  accertamentoImpegno
+  accertamentoImpegnoAto2
+  anticipazioneEconomale
+  contabileSenzaEntrata
+  contabileSenzaEntrataAto2
+  contabileSenzaSpesa
+  contabileSenzaSpesaAto2
+  contabileSenzaStorniEntrata
+  contabileSenzaStorniEntrataAto2
+  contabileSenzaStorniSpesa
+  contabileSenzaStorniSpesaAto2
+  notificazione
+  rilevanzaEntrata
+  rilevanzaEntrataAto2
+  rilevanzaSpesa
+  rilevanzaSpesaAto2
+  senzaRilevanza
+  senzaRilevanzaAto2
+}
+
+enum TipoLista {
+  affidamento
+  categorieGPP
+  codiceObiettivo
+  finanziamento
+  macrocategoriaGPP
+}
+
+input AccertamentoInputInput {
+  accertato: BigDecimal
+  annoCompetenza: String
+  articolo: Int
+  articoloDescr: String
+  assestato: BigDecimal
+  capitolo: Int
+  capitoloDescr: String
+  capitoloStorico: String
+  categoria: String
+  categoriaDescr: String
+  cdc: String
+  cdcDscr: String
+  cdr: String
+  cdrCode: String
+  cdrDescr: String
+  codForn: String
+  cod_cig: String
+  contoF: String
+  contoFinanziario: String
+  descrizione: String
+  determinaId: BigInteger
+  disponibilita: BigDecimal
+  idPrenotazioneSIB: Int
+  impIniz: BigDecimal
+  impVar: BigDecimal
+  impegnato: BigDecimal
+  importo: BigDecimal
+  liquidato: BigDecimal
+  macroAggregato: String
+  macroaggregatoDescr: String
+  missione: String
+  missioneDescr: String
+  motivazione: String
+  numAccertamento: Int
+  numPrenotazioneSIBAssociata: Int
+  numSubAccertamento: Int
+  numSubImpegno: Int
+  numeroImpegno: Int
+  numeroNuovoImpegno: Int
+  numeroVincolo: String
+  prenotato: BigDecimal
+  programma: String
+  programmaDescr: String
+  sub: Int
+  tipo: String
+  tipologia: String
+  tipologiaDescr: String
+  titolo: Int
+  titoloDescr: String
+  validato: Boolean
+  vincolato: Boolean
+}
+
+input ApprovazioneBilancioInputInput {
+  improcedibile: Boolean
+  negativo: Boolean
+  positivo: Boolean
+}
+
+input AttivitaInputInput {
+  bpmnProcessTaskId: String
+  dataInserimento: String
+  dataPresaInCarico: String
+  determinaId: BigInteger
+  presaInCaricoDa: String
+  revisione: Boolean
+  statoAttivita: String
+  tipoAttivita: String
+}
+
+input AttribuzioniOrizzontaliInput {
+  controlloBeniServizi: Boolean
+  controlloBilancio: Boolean
+  controlloFiscale: Boolean
+  controlloMutuo: Boolean
+  controlloPartecipate: Boolean
+  controlloPatrimonio: Boolean
+  controlloPianoOpere: Boolean
+  controlloPosizione: Boolean
+  id: BigInteger
+  peg: Boolean
+}
+
+input AttribuzioniOrizzontaliInputInput {
+  attribuzioniOrizzontali: AttribuzioniOrizzontaliInput
+  sceltaAttribuzioniOrizzontali: Boolean
+}
+
+input DefaultDeterminaInputInput {
+  nomeCampo: String
+  tipoDetermina: String
+  valore: String
+}
+
+input DefaultListeInputInput {
+  attivo: Boolean
+  cdr: String
+  descrizione: String
+  nomeCampo: String
+  tipoLista: String
+}
+
+input DeterminaInputInput {
+  anac: Boolean
+  bpmnProcessId: String
+  cdr: String
+  cdrCode: String
+  dataEsecutiva: String
+  "ISO-8601"
+  dataFinePubblicazione: DateTime
+  "ISO-8601"
+  dataInizioPubblicazione: DateTime
+  "ISO-8601"
+  dataProtocollazione: DateTime
+  dispositivo: String
+  email: String
+  faseDetermina: String
+  gpp: Boolean
+  modLiquidazione: String
+  motivazione: String
+  numProtocollo: String
+  numeroRepertorio: String
+  oggetto: String
+  premesso: String
+  preseDatto: String
+  redattore: String
+  responsabileIstruttoria: String
+  responsabileProcedimento: String
+  riferimentiContabiliId: BigInteger
+  skipResponsabileProcedimento: Boolean
+  statoDetermina: String
+  template: String
+  tipoAffidamento: String
+  tipoDetermina: String
+  vistiDiLegge: String
+  vistoDipartimentale: Boolean
+}
+
+input DocumentoInputInput {
+  determinaId: BigInteger
+  inPubblicazione: Boolean
+  nonInPubblicazione: Boolean
+  oscurato: Boolean
+  principale: Boolean
+  url: String
+}
+
+input FasciaDiControlloInputInput {
+  a: String
+  da: String
+  tipoDetermina: TipoDetermina
+}
+
+input FirmaInputInput {
+  otp: String
+  password: String
+  username: String
+}
+
+input FormAnacInputInput {
+  cig: String
+  codice_struttura_preponente: String
+  completato: Boolean
+  determina_id: BigInteger
+  importo_aggiudicazione: BigDecimal
+  importo_somme_liquidate: BigDecimal
+  nome_struttura_preponente: String
+  oggetto_bando: String
+  procesura_scelta: String
+  tempo_completamento_servizio_a: String
+  tempo_completamento_servizio_da: String
+}
+
+input FormGppInputInput {
+  completato: Boolean
+  determina_id: BigInteger
+}
+
+input GppCategoriaInputInput {
+  anno: Int
+  categoria: String
+  descrizione: String
+  form_gpp_id: BigInteger
+  macro_categoria: String
+  quantita: Int
+  quantita_gpp: Int
+  totale: BigDecimal
+}
+
+input GruppoInvitatoAnacInputInput {
+  aggiudicatario: Boolean
+  codice_fiscale: String
+  form_anac_id: BigInteger
+  identificativoFiscaleEstero: String
+  ragione_sociale: String
+  ruolo: String
+}
+
+input ImpegnoInputInput {
+  accertato: BigDecimal
+  annoCompetenza: String
+  articolo: Int
+  articoloDescr: String
+  assestato: BigDecimal
+  capitolo: Int
+  capitoloDescr: String
+  capitoloStorico: String
+  categoria: String
+  categoriaDescr: String
+  cdc: String
+  cdcDscr: String
+  cdr: String
+  cdrCode: String
+  cdrDescr: String
+  codForn: String
+  cod_cig: String
+  contoF: String
+  contoFinanziario: String
+  descrizione: String
+  determinaId: BigInteger
+  disponibilita: BigDecimal
+  idPrenotazioneSIB: Int
+  impIniz: BigDecimal
+  impVar: BigDecimal
+  impegnato: BigDecimal
+  importo: BigDecimal
+  liquidato: BigDecimal
+  macroAggregato: String
+  macroaggregatoDescr: String
+  missione: String
+  missioneDescr: String
+  motivazione: String
+  numPrenotazioneSIBAssociata: Int
+  numSubAccertamento: Int
+  numSubImpegno: Int
+  numeroImpegno: Int
+  numeroNuovoImpegno: Int
+  numeroVincolo: String
+  prenotato: BigDecimal
+  programma: String
+  programmaDescr: String
+  sub: Int
+  tipo: String
+  tipologia: String
+  tipologiaDescr: String
+  titolo: Int
+  titoloDescr: String
+  validato: Boolean
+  vincolato: Boolean
+}
+
+input InvitatoAnacInputInput {
+  aggiudicatario: Boolean
+  codice_fiscale: String
+  form_anac_id: BigInteger
+  identificativoFiscaleEstero: String
+  ragione_sociale: String
+}
+
+input MovimentoInputInput {
+  accertato: BigDecimal
+  annoCompetenza: String
+  articolo: Int
+  articoloDescr: String
+  assestato: BigDecimal
+  capitolo: Int
+  capitoloDescr: String
+  capitoloStorico: String
+  categoria: String
+  categoriaDescr: String
+  cdc: String
+  cdcDscr: String
+  cdr: String
+  cdrCode: String
+  cdrDescr: String
+  codForn: String
+  cod_cig: String
+  contoF: String
+  contoFinanziario: String
+  descrizione: String
+  determinaId: BigInteger
+  disponibilita: BigDecimal
+  idPrenotazioneSIB: Int
+  impIniz: BigDecimal
+  impVar: BigDecimal
+  impegnato: BigDecimal
+  importo: BigDecimal
+  liquidato: BigDecimal
+  macroAggregato: String
+  macroaggregatoDescr: String
+  missione: String
+  missioneDescr: String
+  motivazione: String
+  numPrenotazioneSIBAssociata: Int
+  numSubAccertamento: Int
+  numSubImpegno: Int
+  numeroImpegno: Int
+  numeroNuovoImpegno: Int
+  numeroVincolo: String
+  prenotato: BigDecimal
+  programma: String
+  programmaDescr: String
+  sub: Int
+  tipo: String
+  tipologia: String
+  tipologiaDescr: String
+  titolo: Int
+  titoloDescr: String
+  validato: Boolean
+  vincolato: Boolean
+}
+
+input MovimentoUscitaInputInput {
+  accertato: BigDecimal
+  annoCompetenza: String
+  articolo: Int
+  articoloDescr: String
+  assestato: BigDecimal
+  capitolo: Int
+  capitoloDescr: String
+  capitoloStorico: String
+  categoria: String
+  categoriaDescr: String
+  cdc: String
+  cdcDscr: String
+  cdr: String
+  cdrCode: String
+  cdrDescr: String
+  codForn: String
+  cod_cig: String
+  contoF: String
+  contoFinanziario: String
+  descrizione: String
+  determinaId: BigInteger
+  disponibilita: BigDecimal
+  id: BigInteger
+  idPrenotazioneSIB: Int
+  impIniz: BigDecimal
+  impVar: BigDecimal
+  impegnato: BigDecimal
+  importo: BigDecimal
+  liquidato: BigDecimal
+  macroAggregato: String
+  macroaggregatoDescr: String
+  missione: String
+  missioneDescr: String
+  motivazione: String
+  numAccertamento: Int
+  numPrenotazioneSIBAssociata: Int
+  numSubAccertamento: Int
+  numSubImpegno: Int
+  numeroImpegno: Int
+  numeroNuovoImpegno: Int
+  numeroVincolo: String
+  prenotato: BigDecimal
+  programma: String
+  programmaDescr: String
+  sub: Int
+  tipo: String
+  tipo_movimento: String
+  tipologia: String
+  tipologiaDescr: String
+  titolo: Int
+  titoloDescr: String
+  validato: Boolean
+  vincolato: Boolean
+}
+
+input MultiMovimentoSoggettoUpdateInput {
+  movimentoUscitaInputList: [MovimentoUscitaInputInput]
+  soggettoInputList: [SoggettoInputInput]
+}
+
+input NotaInputInput {
+  attivitaId: BigInteger
+  determinaId: BigInteger
+  mittente: String
+  testo: String
+}
+
+input PrenotazioneInputInput {
+  accertato: BigDecimal
+  annoCompetenza: String
+  articolo: Int
+  articoloDescr: String
+  assestato: BigDecimal
+  capitolo: Int
+  capitoloDescr: String
+  capitoloStorico: String
+  categoria: String
+  categoriaDescr: String
+  cdc: String
+  cdcDscr: String
+  cdr: String
+  cdrCode: String
+  cdrDescr: String
+  codForn: String
+  cod_cig: String
+  contoF: String
+  contoFinanziario: String
+  descrizione: String
+  determinaId: BigInteger
+  disponibilita: BigDecimal
+  idPrenotazioneSIB: Int
+  impIniz: BigDecimal
+  impVar: BigDecimal
+  impegnato: BigDecimal
+  importo: BigDecimal
+  liquidato: BigDecimal
+  macroAggregato: String
+  macroaggregatoDescr: String
+  missione: String
+  missioneDescr: String
+  motivazione: String
+  numPrenotazioneSIBAssociata: Int
+  numSubAccertamento: Int
+  numSubImpegno: Int
+  numeroImpegno: Int
+  numeroNuovoImpegno: Int
+  numeroVincolo: String
+  prenotato: BigDecimal
+  programma: String
+  programmaDescr: String
+  sub: Int
+  tipo: String
+  tipologia: String
+  tipologiaDescr: String
+  titolo: Int
+  titoloDescr: String
+  validato: Boolean
+  vincolato: Boolean
+}
+
+input ProprietaOffuscataInputInput {
+  campo: ProprietaOffuscataCampo
+  offuscamento: String
+  offuscata: Boolean!
+}
+
+input ProprietaOffuscataMergeInputInput {
+  campo: ProprietaOffuscataCampo
+  id: BigInteger
+  offuscamento: String
+  offuscata: Boolean!
+}
+
+input ProprietaOffuscataSectionInputInput {
+  campo: ProprietaOffuscataCampo
+  id: BigInteger
+}
+
+input ReimputazioneInputInput {
+  accertato: BigDecimal
+  annoCompetenza: String
+  articolo: Int
+  articoloDescr: String
+  assestato: BigDecimal
+  capitolo: Int
+  capitoloDescr: String
+  capitoloStorico: String
+  categoria: String
+  categoriaDescr: String
+  cdc: String
+  cdcDscr: String
+  cdr: String
+  cdrCode: String
+  cdrDescr: String
+  codForn: String
+  cod_cig: String
+  contoF: String
+  contoFinanziario: String
+  descrizione: String
+  determinaId: BigInteger
+  disponibilita: BigDecimal
+  idPrenotazioneSIB: Int
+  impIniz: BigDecimal
+  impVar: BigDecimal
+  impegnato: BigDecimal
+  importo: BigDecimal
+  liquidato: BigDecimal
+  macroAggregato: String
+  macroaggregatoDescr: String
+  missione: String
+  missioneDescr: String
+  motivazione: String
+  numPrenotazioneSIBAssociata: Int
+  numSubAccertamento: Int
+  numSubImpegno: Int
+  numeroImpegno: Int
+  numeroNuovoImpegno: Int
+  numeroVincolo: String
+  prenotato: BigDecimal
+  programma: String
+  programmaDescr: String
+  sub: Int
+  tipo: String
+  tipologia: String
+  tipologiaDescr: String
+  titolo: Int
+  titoloDescr: String
+  validato: Boolean
+  vincolato: Boolean
+}
+
+input RiferimentiContabiliInputInput {
+  cca: String
+  cia: String
+  determinaId: BigInteger
+  tipoFinanziamento: String
+  ultimaValidazione: String
+}
+
+input SoggettoInputInput {
+  cap: String
+  cig: String
+  codObiettivo: String
+  codice: String
+  codiceFiscale: String
+  comune: String
+  cup: String
+  id: BigInteger
+  importo: String
+  indirizzo: String
+  motivoEsclusioneCig: String
+  movimentoId: BigInteger
+  nominativo: String
+  piva: String
+}
+
+input SortInputInput {
+  by: String
+  desc: Boolean = false
+}
+
+input SubAccertamentoInputInput {
+  accertato: BigDecimal
+  annoCompetenza: String
+  articolo: Int
+  articoloDescr: String
+  assestato: BigDecimal
+  capitolo: Int
+  capitoloDescr: String
+  capitoloStorico: String
+  categoria: String
+  categoriaDescr: String
+  cdc: String
+  cdcDscr: String
+  cdr: String
+  cdrCode: String
+  cdrDescr: String
+  codForn: String
+  cod_cig: String
+  contoF: String
+  contoFinanziario: String
+  descrizione: String
+  determinaId: BigInteger
+  disponibilita: BigDecimal
+  idPrenotazioneSIB: Int
+  impIniz: BigDecimal
+  impVar: BigDecimal
+  impegnato: BigDecimal
+  importo: BigDecimal
+  liquidato: BigDecimal
+  macroAggregato: String
+  macroaggregatoDescr: String
+  missione: String
+  missioneDescr: String
+  motivazione: String
+  numAccertamento: Int
+  numPrenotazioneSIBAssociata: Int
+  numSubAccertamento: Int
+  numSubImpegno: Int
+  numeroImpegno: Int
+  numeroNuovoImpegno: Int
+  numeroVincolo: String
+  prenotato: BigDecimal
+  programma: String
+  programmaDescr: String
+  sub: Int
+  tipo: String
+  tipologia: String
+  tipologiaDescr: String
+  titolo: Int
+  titoloDescr: String
+  validato: Boolean
+  vincolato: Boolean
+}
+
+input SubImpegnoInputInput {
+  accertato: BigDecimal
+  annoCompetenza: String
+  articolo: Int
+  articoloDescr: String
+  assestato: BigDecimal
+  capitolo: Int
+  capitoloDescr: String
+  capitoloStorico: String
+  categoria: String
+  categoriaDescr: String
+  cdc: String
+  cdcDscr: String
+  cdr: String
+  cdrCode: String
+  cdrDescr: String
+  codForn: String
+  cod_cig: String
+  contoF: String
+  contoFinanziario: String
+  descrizione: String
+  determinaId: BigInteger
+  disponibilita: BigDecimal
+  idPrenotazioneSIB: Int
+  impIniz: BigDecimal
+  impVar: BigDecimal
+  impegnato: BigDecimal
+  importo: BigDecimal
+  liquidato: BigDecimal
+  macroAggregato: String
+  macroaggregatoDescr: String
+  missione: String
+  missioneDescr: String
+  motivazione: String
+  numPrenotazioneSIBAssociata: Int
+  numSubAccertamento: Int
+  numSubImpegno: Int
+  numeroImpegno: Int
+  numeroNuovoImpegno: Int
+  numeroVincolo: String
+  prenotato: BigDecimal
+  programma: String
+  programmaDescr: String
+  sub: Int
+  tipo: String
+  tipologia: String
+  tipologiaDescr: String
+  titolo: Int
+  titoloDescr: String
+  validato: Boolean
+  vincolato: Boolean
+}
+
+input UtenteInputInput {
+  ssoId: String
+}

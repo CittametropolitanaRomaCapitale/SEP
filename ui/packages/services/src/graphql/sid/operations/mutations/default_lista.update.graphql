@@ -1,0 +1,5 @@
+mutation updateDefaultLista($id: BigInteger, $data: DefaultListeInputInput) {
+  aggiornaDefaultListe(id: $id, data: $data) {
+    id
+  }
+}

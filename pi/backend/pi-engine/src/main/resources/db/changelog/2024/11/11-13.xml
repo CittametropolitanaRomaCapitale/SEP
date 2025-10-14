@@ -1,0 +1,48 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="add_table_circolare_numero" author="Simone">
+        <createTable tableName="circolare_numero">
+            <column name="ID" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="ANNO" type="INT">
+                <constraints nullable="false" />
+            </column>
+            <column name="COUNT" type="BIGINT" />
+        </createTable>
+    </changeSet>
+
+    <changeSet id="add_column_utente_table_pec_peo" author="Lorenzo">
+    <addColumn tableName="PEC_PEO">
+      <column name="UTENTE" type="VARCHAR(255)">
+        <constraints nullable="true"/>
+      </column>
+    </addColumn>
+    </changeSet>
+    <changeSet id="remove_unique_table_pec_peo" author="Lorenzo">
+    <dropUniqueConstraint  constraintName="pec_peo_email_unique"
+                           schemaName="public"
+                           tableName="PEC_PEO"
+                           uniqueColumns="indirizzo_email"/>
+    </changeSet>
+    <changeSet id="rename_column_cdr_table_pec_peo" author="Lorenzo">
+    <renameColumn  newColumnName="CDR_CODE"
+                   oldColumnName="CDR"
+                   schemaName="public"
+                   tableName="PEC_PEO"/>
+    </changeSet>
+
+    <changeSet id="add_column_cdr_table_pec_peo" author="Lorenzo">
+    <addColumn tableName="PEC_PEO">
+      <column name="CDR" type="VARCHAR(255)">
+        <constraints nullable="true"/>
+      </column>
+    </addColumn>
+    </changeSet>
+</databaseChangeLog>
+
+

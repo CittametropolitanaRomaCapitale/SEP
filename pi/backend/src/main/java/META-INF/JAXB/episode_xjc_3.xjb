@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<bindings version="3.0" xmlns="https://jakarta.ee/xml/ns/jaxb">
+  <!--
+
+Questo file è stato generato dall'Eclipse Implementation of JAXB, v3.0.0 
+Vedere https://eclipse-ee4j.github.io/jaxb-ri 
+Qualsiasi modifica a questo file andrà persa durante la ricompilazione dello schema di origine. 
+Generato il: 2024.05.16 alle 11:56:28 AM CEST 
+
+  -->
+  <bindings scd="x-schema::tns" xmlns:tns="http://www.agid.gov.it/protocollo/">
+    <schemaBindings map="false">
+      <package name="it.gov.agid.protocollo"/>
+    </schemaBindings>
+    <bindings scd="~tns:IndirizzoPostaleType">
+      <class ref="it.gov.agid.protocollo.IndirizzoPostaleType"/>
+    </bindings>
+    <bindings scd="~tns:LivelloType">
+      <class ref="it.gov.agid.protocollo.LivelloType"/>
+    </bindings>
+    <bindings scd="~tns:SegnaturaInformaticaType">
+      <class ref="it.gov.agid.protocollo.SegnaturaInformaticaType"/>
+    </bindings>
+    <bindings scd="~tns:IntestazioneType">
+      <class ref="it.gov.agid.protocollo.IntestazioneType"/>
+    </bindings>
+    <bindings scd="~tns:RiferimentiType">
+      <class ref="it.gov.agid.protocollo.RiferimentiType"/>
+    </bindings>
+    <bindings scd="~tns:IdentificatoreType">
+      <class ref="it.gov.agid.protocollo.IdentificatoreType"/>
+    </bindings>
+    <bindings scd="~tns:CodiceIPA">
+      <class ref="it.gov.agid.protocollo.CodiceIPA"/>
+    </bindings>
+    <bindings scd="~tns:FascicoloType">
+      <class ref="it.gov.agid.protocollo.FascicoloType"/>
+    </bindings>
+    <bindings scd="~tns:ClassificaType">
+      <class ref="it.gov.agid.protocollo.ClassificaType"/>
+    </bindings>
+    <bindings scd="~tns:RiservatoType">
+      <class ref="it.gov.agid.protocollo.RiservatoType"/>
+    </bindings>
+    <bindings scd="~tns:DescrizioneType">
+      <class ref="it.gov.agid.protocollo.DescrizioneType"/>
+    </bindings>
+    <bindings scd="~tns:DestinatarioType">
+      <class ref="it.gov.agid.protocollo.DestinatarioType"/>
+    </bindings>
+    <bindings scd="~tns:DocumentoType">
+      <class ref="it.gov.agid.protocollo.DocumentoType"/>
+    </bindings>
+    <bindings scd="~tns:SignType">
+      <class ref="it.gov.agid.protocollo.SignType"/>
+    </bindings>
+    <bindings scd="~tns:DetachedType">
+      <class ref="it.gov.agid.protocollo.DetachedType"/>
+    </bindings>
+    <bindings scd="~tns:CollocazioneTelematicaType">
+      <class ref="it.gov.agid.protocollo.CollocazioneTelematicaType"/>
+    </bindings>
+    <bindings scd="~tns:SoggettoType">
+      <class ref="it.gov.agid.protocollo.SoggettoType"/>
+    </bindings>
+    <bindings scd="~tns:AmministrazioneType">
+      <class ref="it.gov.agid.protocollo.AmministrazioneType"/>
+    </bindings>
+    <bindings scd="~tns:AmministrazioneEsteraType">
+      <class ref="it.gov.agid.protocollo.AmministrazioneEsteraType"/>
+    </bindings>
+    <bindings scd="~tns:PersonaGiuridicaType">
+      <class ref="it.gov.agid.protocollo.PersonaGiuridicaType"/>
+    </bindings>
+    <bindings scd="~tns:ToponimoType">
+      <class ref="it.gov.agid.protocollo.ToponimoType"/>
+    </bindings>
+    <bindings scd="~tns:ComuneType">
+      <class ref="it.gov.agid.protocollo.ComuneType"/>
+    </bindings>
+    <bindings scd="~tns:ImprontaType">
+      <class ref="it.gov.agid.protocollo.ImprontaType"/>
+    </bindings>
+    <bindings scd="~tns:PersonaFisicaType">
+      <class ref="it.gov.agid.protocollo.PersonaFisicaType"/>
+    </bindings>
+    <bindings scd="~tns:ContattiType">
+      <class ref="it.gov.agid.protocollo.ContattiType"/>
+    </bindings>
+    <bindings scd="~tns:IndirizzoTelematicoType">
+      <class ref="it.gov.agid.protocollo.IndirizzoTelematicoType"/>
+    </bindings>
+  </bindings>
+  <bindings scd="x-schema::tns" xmlns:tns="http://www.w3.org/2000/09/xmldsig#">
+    <schemaBindings map="false">
+      <package name="org.w3._2000._09.xmldsig_"/>
+    </schemaBindings>
+    <bindings scd="~tns:SignatureType">
+      <class ref="org.w3._2000._09.xmldsig_.SignatureType"/>
+    </bindings>
+    <bindings scd="~tns:SignatureValueType">
+      <class ref="org.w3._2000._09.xmldsig_.SignatureValueType"/>
+    </bindings>
+    <bindings scd="~tns:SignedInfoType">
+      <class ref="org.w3._2000._09.xmldsig_.SignedInfoType"/>
+    </bindings>
+    <bindings scd="~tns:CanonicalizationMethodType">
+      <class ref="org.w3._2000._09.xmldsig_.CanonicalizationMethodType"/>
+    </bindings>
+    <bindings scd="~tns:SignatureMethodType">
+      <class ref="org.w3._2000._09.xmldsig_.SignatureMethodType"/>
+    </bindings>
+    <bindings scd="~tns:ReferenceType">
+      <class ref="org.w3._2000._09.xmldsig_.ReferenceType"/>
+    </bindings>
+    <bindings scd="~tns:TransformsType">
+      <class ref="org.w3._2000._09.xmldsig_.TransformsType"/>
+    </bindings>
+    <bindings scd="~tns:TransformType">
+      <class ref="org.w3._2000._09.xmldsig_.TransformType"/>
+    </bindings>
+    <bindings scd="~tns:DigestMethodType">
+      <class ref="org.w3._2000._09.xmldsig_.DigestMethodType"/>
+    </bindings>
+    <bindings scd="~tns:KeyInfoType">
+      <class ref="org.w3._2000._09.xmldsig_.KeyInfoType"/>
+    </bindings>
+    <bindings scd="~tns:KeyValueType">
+      <class ref="org.w3._2000._09.xmldsig_.KeyValueType"/>
+    </bindings>
+    <bindings scd="~tns:RetrievalMethodType">
+      <class ref="org.w3._2000._09.xmldsig_.RetrievalMethodType"/>
+    </bindings>
+    <bindings scd="~tns:X509DataType">
+      <class ref="org.w3._2000._09.xmldsig_.X509DataType"/>
+    </bindings>
+    <bindings scd="~tns:PGPDataType">
+      <class ref="org.w3._2000._09.xmldsig_.PGPDataType"/>
+    </bindings>
+    <bindings scd="~tns:SPKIDataType">
+      <class ref="org.w3._2000._09.xmldsig_.SPKIDataType"/>
+    </bindings>
+    <bindings scd="~tns:ObjectType">
+      <class ref="org.w3._2000._09.xmldsig_.ObjectType"/>
+    </bindings>
+    <bindings scd="~tns:ManifestType">
+      <class ref="org.w3._2000._09.xmldsig_.ManifestType"/>
+    </bindings>
+    <bindings scd="~tns:SignaturePropertiesType">
+      <class ref="org.w3._2000._09.xmldsig_.SignaturePropertiesType"/>
+    </bindings>
+    <bindings scd="~tns:SignaturePropertyType">
+      <class ref="org.w3._2000._09.xmldsig_.SignaturePropertyType"/>
+    </bindings>
+    <bindings scd="~tns:DSAKeyValueType">
+      <class ref="org.w3._2000._09.xmldsig_.DSAKeyValueType"/>
+    </bindings>
+    <bindings scd="~tns:RSAKeyValueType">
+      <class ref="org.w3._2000._09.xmldsig_.RSAKeyValueType"/>
+    </bindings>
+    <bindings scd="~tns:X509IssuerSerialType">
+      <class ref="org.w3._2000._09.xmldsig_.X509IssuerSerialType"/>
+    </bindings>
+  </bindings>
+</bindings>
+

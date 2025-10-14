@@ -1,0 +1,127 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <!--
+        Questo changeset è frutto di un approfondimento fatto con il team sul DB.
+        Abbiamo notato che le tabelle di storico non erano allineate,
+        quindi abbiamo pensato di fare revert e ricrearle ex novo a partire dalle
+        corrispettive tabelle non di storico.
+    -->
+
+    <changeSet id="drop_table_test" author="Salvatore Versienti">
+        <dropTable tableName="allegati_hist"/>
+        <dropTable tableName="protocolli_hist"/>
+        <dropTable tableName="referenti_esterni_hist"/>
+        <dropTable tableName="referenti_interni_hist"/>
+        <dropTable tableName="utenti_hist"/>
+    </changeSet>
+
+    <changeSet id="create_utenti_hist" author="Salvatore Versienti">
+        <createTable tableName="utenti_hist">
+            <column name="id" type="int8">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="nome" type="varchar(255)"/>
+            <column name="cognome" type="varchar(255)"/>
+            <column name="id_utente_last_operation" type="int8"/>
+            <column name="ts_creation" type="timestamp"/>
+            <column name="ts_start_vali" type="timestamp"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="create_protocolli_hist" author="Salvatore Versienti">
+        <createTable tableName="protocolli_hist">
+            <column name="id" type="int8">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="n_protocollo" type="varchar(255)"/>
+            <column name="id_mittente" type="int8"/>
+            <column name="id_assegnatari" type="varchar(1024)"/>
+            <column name="id_utente" type="int8">
+                <constraints nullable="false"/>
+            </column>
+            <column name="tipo_registrazione" type="varchar(255)"/>
+            <column name="oggetto" type="varchar(255)"/>
+            <column name="id_utente_last_operation" type="int8"/>
+            <column name="ts_creation" type="timestamp"/>
+            <column name="ts_start_vali" type="timestamp"/>
+            <column name="metodo_spedizione" type="varchar(255)"/>
+            <column name="protocollo_mittente" type="varchar(255)"/>
+            <column name="data_protocollo_mittente" type="timestamp"/>
+            <column name="note" type="varchar(500)"/>
+            <column name="bpmn_process_id" type="varchar(255)"/>
+            <column name="stato" type="varchar(255)"/>
+            <column name="n_protocollo_circolare" type="varchar(255)"/>
+            <column name="indirizzo_pec_peo" type="varchar(255)"/>
+            <column name="corpo_pec_peo" type="text"/>
+            <column name="invio_email_multiplo" type="int4"/>
+            <column name="cdr" type="varchar(255)"/>
+        </createTable>
+
+        <addUniqueConstraint columnNames="n_protocollo" constraintName="unique_n_protocollo_hist" tableName="protocolli_hist"/>
+        <addForeignKeyConstraint baseColumnNames="id_utente"
+                                 baseTableName="protocolli_hist"
+                                 constraintName="fk_protocolli_id_utente"
+                                 referencedColumnNames="id"
+                                 referencedTableName="utenti_hist"/>
+    </changeSet>
+
+    <changeSet id="create_allegati_hist" author="Salvatore Versienti">
+        <createTable tableName="allegati_hist">
+            <column name="id" type="int8">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="id_protocollo" type="int8"/>
+            <column name="id_utente" type="int8"/>
+            <column name="tipo_documento" type="varchar(255)"/>
+            <column name="oggetto" type="varchar(255)"/>
+            <column name="collocazione_telematica" type="varchar(255)"/>
+            <column name="id_utente_last_operation" type="int8"/>
+            <column name="ts_creation" type="timestamp"/>
+            <column name="ts_start_vali" type="timestamp"/>
+            <column name="riferimento_minio" type="varchar(255)"/>
+            <column name="is_main" type="bool"/>
+            <column name="nome" type="varchar(255)"/>
+            <column name="dimensione" type="int8"/>
+            <column name="estensione" type="varchar(15)"/>
+            <column name="id_email" type="int8"/>
+            <column name="impronta" type="varchar(64)"/>
+        </createTable>
+
+        <addForeignKeyConstraint baseColumnNames="id_protocollo"
+                                 baseTableName="allegati_hist"
+                                 constraintName="fk_allegati_id_protocollo"
+                                 referencedColumnNames="id"
+                                 referencedTableName="protocolli_hist"/>
+    </changeSet>
+
+    <changeSet id="create_referenti_esterni_hist" author="Salvatore Versienti">
+        <createTable tableName="referenti_esterni_hist">
+            <column name="id" type="int8">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="id_utente" type="int8"/>
+            <column name="nome" type="varchar(255)"/>
+            <column name="id_utente_last_operation" type="int8"/>
+            <column name="ts_creation" type="timestamp"/>
+            <column name="ts_start_vali" type="timestamp"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="create_referenti_interni_hist" author="Salvatore Versienti">
+        <createTable tableName="referenti_interni_hist">
+            <column name="id" type="int8">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="id_utente" type="int8"/>
+            <column name="nome" type="varchar(255)"/>
+            <column name="id_utente_last_operation" type="int8"/>
+            <column name="ts_creation" type="timestamp"/>
+            <column name="ts_start_vali" type="timestamp"/>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

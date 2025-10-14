@@ -1,0 +1,3 @@
+mutation deleteDetermina($id: BigInteger, $nota: NotaInputInput) {
+  annullaDetermina(id: $id, nota: $nota)
+}

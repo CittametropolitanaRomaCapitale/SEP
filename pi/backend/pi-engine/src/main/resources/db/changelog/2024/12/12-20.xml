@@ -1,0 +1,40 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="modify_type_tables" author="Andrea De Matteis">
+        <modifyDataType tableName="allegati" columnName="oggetto" newDataType="varchar(512)"/>
+        <modifyDataType tableName="allegati" columnName="collocazione_telematica" newDataType="varchar(512)"/>
+        <modifyDataType tableName="anagrafica" columnName="ragione_sociale" newDataType="varchar(512)"/>
+        <modifyDataType tableName="anagrafica" columnName="nome" newDataType="varchar(255)"/>
+        <modifyDataType tableName="anagrafica" columnName="cognome" newDataType="varchar(255)"/>
+        <modifyDataType tableName="anagrafica" columnName="indirizzo" newDataType="varchar(512)"/>
+        <modifyDataType tableName="anagrafica" columnName="citta" newDataType="varchar(255)"/>
+        <modifyDataType tableName="email" columnName="email_to" newDataType="text"/>
+        <modifyDataType tableName="email" columnName="email_cc" newDataType="text"/>
+        <modifyDataType tableName="email" columnName="oggetto" newDataType="varchar(1024)"/>
+        <modifyDataType tableName="email" columnName="email_from" newDataType="varchar(255)"/>
+        <modifyDataType tableName="email" columnName="classificazione" newDataType="varchar(50)"/>
+        <modifyDataType tableName="protocolli" columnName="destinatari" newDataType="text"/>
+        <modifyDataType tableName="protocolli" columnName="oggetto" newDataType="varchar(1024)"/>
+        <modifyDataType tableName="protocolli" columnName="note" newDataType="text"/>
+        <modifyDataType tableName="protocolli" columnName="mittente" newDataType="varchar(512)"/>
+        <modifyDataType tableName="protocolli" columnName="assegnatari" newDataType="text"/>
+        <modifyDataType tableName="registro_giornaliero" columnName="note" newDataType="text"/>
+        <modifyDataType tableName="storico" columnName="note" newDataType="text"/>
+        <modifyDataType tableName="storico" columnName="operazione" newDataType="varchar(512)"/>
+        <modifyDataType tableName="struttura_fascicolo_dipendente" columnName="nome" newDataType="varchar(255)"/>
+        <modifyDataType tableName="visibilita_titolario" columnName="note" newDataType="text"/>
+    </changeSet>
+
+    <changeSet id="drop_tables_unused" author="Andrea De Matteis">
+        <dropTable tableName="allegati_hist"/>
+        <dropTable tableName="protocolli_hist"/>
+        <dropTable tableName="referenti_interni"/>
+        <dropTable tableName="referenti_interni_hist"/>
+        <dropTable tableName="referenti_esterni"/>
+        <dropTable tableName="referenti_esterni_hist"/>
+    </changeSet>
+</databaseChangeLog>

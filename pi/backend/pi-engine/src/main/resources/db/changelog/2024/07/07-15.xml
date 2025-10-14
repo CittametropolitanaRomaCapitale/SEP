@@ -1,0 +1,29 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="modifica_drop_riferimenti_tabella_utenti" author="Gioacchino De Fusco">
+        <dropForeignKeyConstraint baseTableName="protocolli" constraintName="fk_protocolli_id_utente" />
+        <dropForeignKeyConstraint baseTableName="protocolli_hist" constraintName="fk_protocolli_id_utente" />
+        <dropForeignKeyConstraint baseTableName="log_exception" constraintName="fk_log_error_id_utente" />
+        <dropForeignKeyConstraint baseTableName="pec_peo" constraintName="fk_configurazione_pe_id_utente" />
+        <modifyDataType tableName="protocolli" columnName="id_utente" newDataType="VARCHAR(255)" />
+        <modifyDataType tableName="protocolli" columnName="id_utente_last_operation" newDataType="VARCHAR(255)" />
+        <modifyDataType tableName="protocolli_hist" columnName="id_utente" newDataType="VARCHAR(255)" />
+        <modifyDataType tableName="protocolli_hist" columnName="id_utente_last_operation" newDataType="VARCHAR(255)" />
+        <modifyDataType tableName="email" columnName="id_utente" newDataType="VARCHAR(255)" />
+        <modifyDataType tableName="allegati" columnName="id_utente" newDataType="VARCHAR(255)" />
+        <modifyDataType tableName="allegati" columnName="id_utente_last_operation" newDataType="VARCHAR(255)" />
+        <modifyDataType tableName="allegati_hist" columnName="id_utente" newDataType="VARCHAR(255)" />
+        <modifyDataType tableName="allegati_hist" columnName="id_utente_last_operation" newDataType="VARCHAR(255)" />
+        <modifyDataType tableName="log_exception" columnName="id_utente" newDataType="VARCHAR(255)" />
+        <modifyDataType tableName="pec_peo" columnName="id_utente" newDataType="VARCHAR(255)" />
+        <modifyDataType tableName="storico" columnName="id_utente" newDataType="VARCHAR(255)" />
+
+        <dropTable tableName="utenti" />
+        <dropTable tableName="utenti_hist" />
+    </changeSet>
+
+</databaseChangeLog>

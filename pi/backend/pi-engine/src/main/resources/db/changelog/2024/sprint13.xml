@@ -1,0 +1,27 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+
+    <changeSet id="modificaSalvataggioAllegato_03041817" author="Simone">
+        <!-- Rimuovi il vincolo non nullo dalla colonna id_protocollo -->
+        <dropNotNullConstraint tableName="ALLEGATI" columnName="id_protocollo" columnDataType="BIGINT"/>
+
+        <!-- Aggiunta di due nuove colonne -->
+        <addColumn tableName="ALLEGATI">
+            <column name="riferimento_minio" type="VARCHAR(255)"/>
+        </addColumn>
+        <addColumn tableName="ALLEGATI">
+            <column name="is_main" type="BOOLEAN"/>
+        </addColumn>
+    </changeSet>
+
+    <changeSet id="uniqueNumeroProtocollo_08041030" author="Simone">
+        <addUniqueConstraint
+                tableName="PROTOCOLLI"
+                columnNames="n_protocollo"
+                constraintName="unique_n_protocollo"/>
+    </changeSet>
+
+</databaseChangeLog>

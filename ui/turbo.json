@@ -1,0 +1,41 @@
+{
+  "pipeline": {
+    "build": {
+      "dependsOn": [
+        "^build",
+        "$NEXT_PUBLIC_API_URL",
+        "$NEXT_PUBLIC_SSO_API_URL",
+        "$NEXT_PUBLIC_PACKAGE_VERSION"
+      ],
+      "outputs": [
+        "dist/**",
+        ".next/**"
+      ]
+    },
+    "start": {
+      "dependsOn": [
+        "$NODE_ENV"
+      ],
+      "outputs": []
+    },
+    "start-test": {
+      "outputs": []
+    },
+    "lint": {
+      "outputs": []
+    },
+    "dev": {
+      "cache": false
+    },
+    "changelog": {
+      "dependsOn": [
+        "$NEXT_PUBLIC_PACKAGE_VERSION",
+        "$PACKAGE_VERSION"
+      ],
+      "cache": false
+    },
+    "test": {
+      "cache": false
+    }
+  }
+}

@@ -1,0 +1,104 @@
+query GetTitolario($dto: RicercaTitolarioDTOInput) {
+  getTitolario(dto: $dto) {
+    hasMore
+    currentPage
+    nextPage
+    lastIndex
+    lastIdTitolario
+    titolario {
+      id
+      idPadre
+      label
+      tipologia
+      note
+      leaf
+      tsCreation
+      tsChiusura
+      tsDeleted
+      closed
+      deleted
+      hierarchyString
+      write
+      immutable
+      fascicoloDipendente
+      numDocumenti
+      numProtocolli
+      visible
+      hierarchy {
+        id
+        idPadre
+        label
+        tipologia
+        leaf
+        fascicoloDipendente
+      }
+    }
+  }
+}
+
+query GetPathForTitolario($id: BigInteger!) {
+  getPathForTitolarioItem(id: $id)
+}
+
+query getAllProtocolliByFascicolo($idFascicolo: BigInteger!) {
+  getAllProtocolliByFascicolo(idFascicolo: $idFascicolo) {
+    ...ProtocolloNoAllegati
+  }
+}
+
+query getProtocolliByFascicolo($ricerca_protocolli: RicercaProtocolliDTOInput) {
+  getProtocolliByFascicolo(ricerca_protocolli: $ricerca_protocolli) {
+    pageCount
+    totalResults
+    protocolli {
+      ...ProtocolloBase
+    }
+  }
+}
+
+query getTitolarioById($idTitolario: BigInteger!) {
+  getTitolarioById(idTitolario: $idTitolario) {
+    ...TitolarioBase
+  }
+}
+
+query dettaglioTitolario($idTitolario: BigInteger!) {
+  dettaglioTitolario(idTitolario: $idTitolario) {
+    ...titolario_output_dto
+  }
+}
+
+query GetPermessiVisibilita(
+  $visibilitaDTO: RicercaPermessiVisibilitaDTOInput!
+) {
+  getPermessiVisibilita(visibilitaDTO: $visibilitaDTO) {
+    permessi {
+      id
+      titolario {
+        id
+      }
+      idUtente
+      cdr
+      cdrCode
+      tsCreation
+      write
+      tsUpdate
+      note
+      idUtenteLastOperation
+      usernameUtente
+      nomeUtente
+    }
+    pageCount
+    totalResults
+  }
+}
+
+query getClassificazioneStringByIdProtocollo($idProtocollo: BigInteger) {
+  getClassificazioneStringByIdProtocollo(idProtocollo: $idProtocollo) {
+    ...titolario_output_dto
+  }
+}
+
+query getMaxLivelloFascicolazioneForTitolario {
+  getMaxLivelloFascicolazioneForTitolario
+}

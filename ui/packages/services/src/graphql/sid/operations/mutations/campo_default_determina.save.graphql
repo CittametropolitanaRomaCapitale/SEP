@@ -1,0 +1,5 @@
+mutation saveCampoDefaultDetermina($data: DefaultDeterminaInputInput) {
+  mergeDefaultDetermina(data: $data) {
+    id
+  }
+}

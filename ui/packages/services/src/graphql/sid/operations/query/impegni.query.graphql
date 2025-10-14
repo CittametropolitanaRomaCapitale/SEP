@@ -1,0 +1,43 @@
+#import "../impegno.fragment.graphql"
+
+query getImpegni(
+  $annoImpegno: String
+  $numImpegno: String
+  $titolo: String
+  $capitolo: String
+  $articolo: String
+  $capitoloStorico: String
+  $numeroVincolo: String
+  $cdr: String
+  $tipoMovimento: String
+  $page: Int
+  $size: Int
+) {
+  impegno_accertamento_pages(
+    annoImpegno: $annoImpegno
+    numImpegno: $numImpegno
+    titolo: $titolo
+    capitolo: $capitolo
+    articolo: $articolo
+    capitoloStorico: $capitoloStorico
+    numeroVincolo: $numeroVincolo
+    cdr: $cdr
+    tipoMovimento: $tipoMovimento
+    size: $size
+  )
+  impegno_accertamento(
+    annoImpegno: $annoImpegno
+    numImpegno: $numImpegno
+    titolo: $titolo
+    capitolo: $capitolo
+    articolo: $articolo
+    capitoloStorico: $capitoloStorico
+    numeroVincolo: $numeroVincolo
+    cdr: $cdr
+    tipoMovimento: $tipoMovimento
+    page: $page
+    size: $size
+  ) {
+    ...impegno
+  }
+}

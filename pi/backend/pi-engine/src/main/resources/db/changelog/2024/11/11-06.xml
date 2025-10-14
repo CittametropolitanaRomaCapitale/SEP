@@ -1,0 +1,59 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="add_table_notifiche" author="Gioacchino De Fusco">
+        <createTable tableName="protocollo_notifiche">
+            <column name="ID" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="id_protocollo" type="INT" />
+            <column name="type" type="VARCHAR(32)" />
+            <column name="to" type="VARCHAR(255)" />
+            <column name="from" type="VARCHAR(255)" />
+            <column name="subject" type="VARCHAR(255)" />
+            <column name="content" type="VARCHAR(512)" />
+            <column name="state" type="VARCHAR(24)" />
+            <column name="ts_creation" type="TIMESTAMP" />
+            <column name="ts_sent" type="TIMESTAMP" />
+            <column name="ts_update" type="TIMESTAMP" />
+            <column name="read" type="BOOLEAN" />
+        </createTable>
+    </changeSet>
+    
+    <changeSet id="insert_peo_configurazione_per_invio_notifiche" author="Gioacchino De Fusco">
+        <insert tableName="configurazioni">
+            <column name="id" value="1" />
+            <column name="nome" value="emailAddressFromNotifiche" />
+            <column name="valore" value="protocollo@cittametropolitanaroma.it" />
+            <column name="tipo" value="email" />
+            <column name="categoria" value="notifiche" />
+        </insert>
+        <insert tableName="configurazioni">
+            <column name="id" value="2" />
+            <column name="nome" value="emailPasswordFromNotifiche" />
+            <column name="valore" value="" />
+            <column name="tipo" value="password" />
+            <column name="categoria" value="notifiche" />
+        </insert>
+        <insert tableName="configurazioni">
+            <column name="id" value="3" />
+            <column name="nome" value="smtpHostFromNotifiche" />
+            <column name="valore" value="smtps.aruba.it" />
+            <column name="tipo" value="text" />
+            <column name="categoria" value="notifiche" />
+        </insert>
+        <insert tableName="configurazioni">
+            <column name="id" value="4" />
+            <column name="nome" value="smtpPortFromNotifiche" />
+            <column name="valore" value="465" />
+            <column name="tipo" value="text" />
+            <column name="categoria" value="notifiche" />
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>
+
+

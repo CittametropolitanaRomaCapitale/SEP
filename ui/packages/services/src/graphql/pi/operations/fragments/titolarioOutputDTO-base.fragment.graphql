@@ -1,0 +1,19 @@
+fragment titolario_output_dto on TitolarioOutputDTO {
+  id
+  idPadre
+  label
+  tipologia
+  hierarchyString
+  note
+  tsChiusura
+  tsCreation
+  tsDeleted
+  nomeUtenteCreatore
+  cdr
+  closed
+  deleted
+  leaf
+  numDocumenti
+  numProtocolli
+  visible
+}

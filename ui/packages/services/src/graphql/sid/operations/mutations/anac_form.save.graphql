@@ -1,0 +1,5 @@
+mutation saveAnacForm($data: FormAnacInputInput) {
+  salvaFormAnac(data: $data) {
+    id
+  }
+}

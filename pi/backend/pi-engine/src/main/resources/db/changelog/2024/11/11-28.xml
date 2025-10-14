@@ -1,0 +1,82 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <!-- Creazione tabella STRUTTURA_FASCICOLO_DIPENDENTE e STRUTTURA_VISIBILITA -->
+    <changeSet id="create-STRUTTURA_FASCICOLO_DIPENDENTE" author="Gioacchino De Fusco">
+        <createTable tableName="STRUTTURA_FASCICOLO_DIPENDENTE">
+            <column name="id" type="BIGINT">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="nome" type="VARCHAR(128)" />
+            <column name="id_padre" type="BIGINT" />
+            <column name="tipologia" type="VARCHAR(32)" />
+            <column name="is_leaf" type="BOOLEAN" />
+        </createTable>
+
+        <createTable tableName="STRUTTURA_VISIBILITA_FASCICOLO_DIPENDENTE">
+            <column name="id" type="BIGINT">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="id_struttura_fascicolo_dipendente" type="BIGINT">
+                <constraints
+                        nullable="false"
+                        referencedTableName="STRUTTURA_FASCICOLO_DIPENDENTE"
+                        referencedColumnNames="id"
+                        foreignKeyName="fk_fascicolo_dip_vis_reference_fascicolo_dip_struct"
+                        />
+            </column>
+            <column name="id_ufficio" type="BIGINT">
+                <constraints
+                        nullable="true"
+                        referencedTableName="UFFICIO"
+                        referencedColumnNames="id"
+                        foreignKeyName="fk_fascicolo_dip_vis_reference_ufficio"
+                />
+            </column>
+            <column name="visibilita_utenti" type="VARCHAR(16)" />
+            <column name="visibilita_archivisti" type="VARCHAR(16)" />
+            <column name="visibilita_protocollatori" type="VARCHAR(16)" />
+            <column name="visibilita_dirigenti" type="VARCHAR(16)" />
+            <column name="visibilita_dipendente" type="VARCHAR(16)" />
+        </createTable>
+    </changeSet>
+
+    <changeSet id="create-relation-table-email-allegato" author="Simone">
+        <createTable tableName="email_allegati">
+            <column name="id_email" type="BIGINT">
+                <constraints nullable="false" />
+            </column>
+            <column name="id_allegato" type="BIGINT">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+
+        <addForeignKeyConstraint
+                baseTableName="email_allegati"
+                baseColumnNames="id_email"
+                constraintName="fk_id_email"
+                referencedTableName="email"
+                referencedColumnNames="id" />
+
+        <addForeignKeyConstraint
+                baseTableName="EMAIL_ALLEGATI"
+                baseColumnNames="id_allegato"
+                constraintName="fk_id_allegato"
+                referencedTableName="allegati"
+                referencedColumnNames="id" />
+
+    </changeSet>
+
+    <changeSet id="add-column-notificaProtocollo" author="Simone">
+        <addColumn tableName="email">
+            <column name="notifica_protocollo" type="BOOLEAN"/>
+        </addColumn>
+    </changeSet>
+
+</databaseChangeLog>
+
+
+

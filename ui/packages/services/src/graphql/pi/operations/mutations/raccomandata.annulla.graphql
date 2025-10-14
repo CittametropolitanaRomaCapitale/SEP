@@ -1,0 +1,3 @@
+mutation annullaRaccomandata($id: BigInteger!, $motivazione: String!) {
+  annullaRaccomandata(id: $id, motivazione: $motivazione)
+}

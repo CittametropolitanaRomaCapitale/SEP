@@ -1,0 +1,39 @@
+query getModelliAutomaticiByCdrCode($selectedOffice: String!) {
+    getModelliAutomaticiByCdrCode(selectedOffice: $selectedOffice) {
+        id
+        nomeModello
+        oggettoProtocollo
+        metodoSpedizione
+        tipoRegistrazione
+        cdrCode
+        titolario {
+            id
+            idPadre
+            nome
+        }
+        hierarchyStringTitolario
+        cdr
+    }
+}
+
+query searchModelliAutomatici($input: RicercaModelloAutomaticoDTOInput) {
+    searchModelliAutomatici(input: $input) {
+        pageCount
+        totalResults
+        modelloAutomaticoList {
+            id
+            nomeModello
+            oggettoProtocollo
+            metodoSpedizione
+            tipoRegistrazione
+            cdrCode
+            titolario {
+                id
+                idPadre
+                nome
+            }
+            hierarchyStringTitolario
+            cdr
+        }
+    }
+}

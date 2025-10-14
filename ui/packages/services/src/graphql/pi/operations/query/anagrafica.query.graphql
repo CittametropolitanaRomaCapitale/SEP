@@ -1,0 +1,27 @@
+# import "../anagraficaDTO.fragment.graphql"
+query getAllAnagrafica($ricercaAnagraficaDTO: RicercaAnagraficaDTOInput) {
+  getAllAnagrafica(ricercaAnagrafica: $ricercaAnagraficaDTO) {
+    anagraficaList {
+      ...AnagraficaDTO
+    }
+    pageCount
+    totalResults
+  }
+}
+
+query GetContattoInad($codiceFiscale: String!) {
+  getContattoInad(codiceFiscale: $codiceFiscale)
+}
+
+query getDettaglioAnagrafica($id: BigInteger) {
+  getDettaglioAnagrafica(id: $id) {
+    id
+    ragioneSociale
+    nome
+    cognome
+    indirizzo
+    citta
+    cap
+    provincia
+  }
+}

@@ -1,0 +1,9 @@
+fragment movimento_accertamento on Accertamento {
+  accertato
+  vincolato
+  numeroVincolo
+  disponibilita
+  disponibilitaStorni
+  numAccertamento
+  prenotato
+}

@@ -1,0 +1,75 @@
+query getDocumentList(
+  $page: Int
+  $size: Int
+  $sort: SortInputInput
+  $search: String
+  $anno: String
+  $ufficioSelezionato: [String]
+  $assegnato: [String]
+  $codProgrReg: String
+  $oggetto: String
+  $numeroProtocollo: String
+  $dataProtocolloDal: String
+  $dataProtocolloAl: String
+  $numeroDocumento: String
+  $dataEmissioneDal: String
+  $dataEmissioneAl: String
+  $cig: String
+  $motivoEsclusioneCig: String
+  $numeroDetermina: String
+  $annoDetermina: String
+  $creditore: String
+  $CFcreditore: String
+  $siglaPaese: String
+  $partitaIva: String
+  $identificativoSdi: String
+  $messageId: String
+  $nomeFileXml: String
+  $stato: [StatoDocumento]
+  $tipo: [TipoDocumento]
+  $dataNotificaDal: String
+  $dataNotificaAl: String
+  $dataStatoDal: String
+  $dataStatoAl: String
+  $filtroRicerca: FiltroRicerca
+  $scarica: ScaricaDtoInput
+) {
+  ricercaAvanzataDocumento(
+    page: $page
+    size: $size
+    sort: $sort
+    search: $search
+    anno: $anno
+    ufficioSelezionato: $ufficioSelezionato
+    assegnato: $assegnato
+    codProgrReg: $codProgrReg
+    oggetto: $oggetto
+    numeroProtocollo: $numeroProtocollo
+    dataProtocolloDal: $dataProtocolloDal
+    dataProtocolloAl: $dataProtocolloAl
+    numeroDocumento: $numeroDocumento
+    dataEmissioneDal: $dataEmissioneDal
+    dataEmissioneAl: $dataEmissioneAl
+    cig: $cig
+    motivoEsclusioneCig: $motivoEsclusioneCig
+    numeroDetermina: $numeroDetermina
+    annoDetermina: $annoDetermina
+    creditore: $creditore
+    CFcreditore: $CFcreditore
+    siglaPaese: $siglaPaese
+    partitaIva: $partitaIva
+    identificativoSdi: $identificativoSdi
+    messageId: $messageId
+    nomeFileXml: $nomeFileXml
+    stato: $stato
+    tipo: $tipo
+    dataNotificaDal: $dataNotificaDal
+    dataNotificaAl: $dataNotificaAl
+    dataStatoDal: $dataStatoDal
+    dataStatoAl: $dataStatoAl
+    filtroRicerca: $filtroRicerca
+    scarica: $scarica
+  ) {
+    ...DocumentList
+  }
+}

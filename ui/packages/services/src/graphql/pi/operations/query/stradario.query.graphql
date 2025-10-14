@@ -1,0 +1,19 @@
+query ListaCap($prefix: String!) {
+  listaCap(prefix: $prefix)
+}
+
+query CittaDaCap($cap: String!, $prefix: String!) {
+  cittaDaCap(cap: $cap, prefix: $prefix)
+}
+
+query VieDaCap($cap: String!, $prefix: String) {
+  vieDaCap(cap: $cap, prefix: $prefix)
+}
+
+query VieDaCitta($citta: String!) {
+  vieDaCitta(citta: $citta)
+}
+
+query ListaCapEsteso($prefix: String!, $citta: String!, $tipoRicerca: String!) {
+  listaCapEsteso(prefix: $prefix, citta: $citta, tipoRicerca: $tipoRicerca)
+}

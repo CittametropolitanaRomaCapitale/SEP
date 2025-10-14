@@ -1,0 +1,6 @@
+fragment default_determina on DefaultDetermina {
+  id
+  nomeCampo
+  valore
+  tipoDetermina
+}

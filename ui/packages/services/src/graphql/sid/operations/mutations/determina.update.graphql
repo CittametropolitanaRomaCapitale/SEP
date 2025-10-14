@@ -1,0 +1,5 @@
+mutation updateDetermina($id: BigInteger, $data: DeterminaInputInput) {
+  aggiornaDetermina(id: $id, data: $data) {
+    ...determina_base
+  }
+}

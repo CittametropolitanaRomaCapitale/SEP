@@ -1,0 +1,3 @@
+mutation notificaProtocollo($input: NotificaProtocolloPecPeoInputInput!) {
+  notificaProtocollo(input: $input)
+}

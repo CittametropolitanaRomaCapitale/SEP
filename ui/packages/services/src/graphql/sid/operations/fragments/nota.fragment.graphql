@@ -1,0 +1,4 @@
+fragment nota on Nota {
+  id
+  testo
+}

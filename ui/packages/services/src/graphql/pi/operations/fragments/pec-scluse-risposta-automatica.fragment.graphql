@@ -1,0 +1,5 @@
+fragment PecEscluseRispostaAutomaticaBase on PecEscluseRispostaAutomatica {
+  id
+  indirizzo
+  tsCreation
+}

@@ -1,0 +1,27 @@
+mutation assegnaProtocollo(
+  $idProtocollo: BigInteger
+  $assegnatari: [ReferenteProtocolloInputInput]
+  $selectedOffice: String!
+  $noteAssegnazione: String
+) {
+  assegnaProtocollo(
+    idProtocollo: $idProtocollo
+    assegnatari: $assegnatari
+    selectedOffice: $selectedOffice
+    noteAssegnazione: $noteAssegnazione
+  )
+}
+
+mutation assegnazioneProtocolloMassiva(
+  $numbers: [String!]!
+  $selectedOffice: String!
+  $referenti: [ReferenteProtocolloInputInput!]!
+  $noteAssegnazione: String
+) {
+  assegnazioneProtocolloMassiva(
+    numbers: $numbers
+    selectedOffice: $selectedOffice
+    assegnatari: $referenti
+    noteAssegnazione: $noteAssegnazione
+  )
+}

@@ -1,0 +1,3 @@
+mutation insertVisibilitaTitolario($visibilitaTitolarioInput: VisibilitaTitolarioInputInput!) {
+  insertVisibilitatitolario(visibilitaTitolarioInput: $visibilitaTitolarioInput)
+}

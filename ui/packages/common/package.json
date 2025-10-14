@@ -1,0 +1,17 @@
+{
+  "name": "@cmrc/common",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@reduxjs/toolkit": "1.8.2",
+    "react-redux": "^7.2.4",
+    "redux-thunk": "^2.3.0"
+  }
+}

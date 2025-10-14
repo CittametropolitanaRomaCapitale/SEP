@@ -1,0 +1,3 @@
+mutation deleteMovimento($id: BigInteger) {
+  eliminaMovimento(id: $id)
+}

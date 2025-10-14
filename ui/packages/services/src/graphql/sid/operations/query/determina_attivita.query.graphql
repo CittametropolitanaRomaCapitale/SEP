@@ -1,0 +1,7 @@
+query getDeterminaAttivita($id: BigInteger!) {
+  determina(id: $id) {
+    attivita_pendente {
+      id
+    }
+  }
+}

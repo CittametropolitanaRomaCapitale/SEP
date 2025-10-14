@@ -1,0 +1,3 @@
+query getDocumentNextStatus($id: BigInteger) {
+  getStatiSuccessivi(id: $id)
+}

@@ -1,0 +1,19 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="modifica_mittente_protocolli" author="Gioacchino De Fusco">
+        <modifyDataType tableName="protocolli" columnName="id_mittente" newDataType="VARCHAR(255)" />
+        <addColumn tableName="protocolli">
+            <column name="mittente" type="VARCHAR(255)" />
+        </addColumn>
+
+        <modifyDataType tableName="protocolli_hist" columnName="id_mittente" newDataType="VARCHAR(255)" />
+        <addColumn tableName="protocolli_hist">
+            <column name="mittente" type="VARCHAR(255)" />
+        </addColumn>
+    </changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,10 @@
+#import "../movimento_soggetto.fragment.graphql"
+
+mutation saveSubImpegno($annoCompetenza: String, $data: SubImpegnoInputInput) {
+  salvaSubImpegno(annoCompetenza: $annoCompetenza, data: $data) {
+    id
+    subRows: soggetti {
+      ...movimento_soggetto
+    }
+  }
+}

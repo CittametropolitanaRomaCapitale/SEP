@@ -1,0 +1,7 @@
+mutation updateStatoProtocollo($input: StatoProtocolloInputInput) {
+  updateStatoProtocollo(stato_protocollo_input: $input)
+}
+
+mutation presaInCaricoProtocolloMassiva($numbers: [String!], $selectedOffice: String!) {
+  presaInCaricoProtocolloMassiva(numbers: $numbers, selectedOffice: $selectedOffice)
+}

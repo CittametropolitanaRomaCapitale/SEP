@@ -1,0 +1,29 @@
+#import "../anac.fragment.graphql"
+
+query getAnac(
+  $page: Int
+  $size: Int
+  $search: String
+  $sort: SortInputInput
+  $anacStateFiler: StateFiler
+  $cdrCode: [String]
+) {
+  lista_determine_form_anac_paginato(
+    page: $page
+    size: $size
+    search: $search
+    sort: $sort
+    anacStateFiler: $anacStateFiler
+    cdrCode: $cdrCode
+  )
+  lista_determine_form_anac(
+    page: $page
+    size: $size
+    search: $search
+    sort: $sort
+    anacStateFiler: $anacStateFiler
+    cdrCode: $cdrCode
+  ) {
+    ...anac
+  }
+}

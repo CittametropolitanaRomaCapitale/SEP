@@ -1,0 +1,3 @@
+mutation inoltraRispondiEmail($dto: InoltraRispondiInput) {
+  inoltraRispondiEmail(dto: $dto)
+}

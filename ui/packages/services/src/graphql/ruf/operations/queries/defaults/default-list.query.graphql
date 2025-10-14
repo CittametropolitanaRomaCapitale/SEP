@@ -1,0 +1,19 @@
+query getDefaultList(
+  $page: Int
+  $size: Int
+  $sort: SortInputInput
+  $search: String
+  $cdr: String
+  $tipoLista: TipoLista
+) {
+  getAllDefaultLista(
+    page: $page
+    size: $size
+    sort: $sort
+    search: $search
+    cdr: $cdr
+    tipoLista: $tipoLista
+  ) {
+    ...DefaultList
+  }
+}

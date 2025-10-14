@@ -1,0 +1,15 @@
+fragment anac on DeterminaFormAnac {
+  determina_id
+  cig
+  numProposta
+  annoProposta
+  ruDetermina
+  annoDetermina
+  oggettoDetermina
+  statoDetermina
+  stato
+  tipoDetermina
+  tipo
+  cdr
+  statoAnac
+}

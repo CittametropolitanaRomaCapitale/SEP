@@ -1,0 +1,7 @@
+#import "../fascia_controllo.fragment.graphql"
+
+query getFasciaControllo($filter: FasciaDiControlloFilter) {
+  fascia_di_controllo_lista(filter: $filter) {
+    ...fascia_controllo
+  }
+}

@@ -1,0 +1,40 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+
+    <!-- La colonna invio_email_multiplo consente di specificare se
+    l'invio della PEC/PEO deve essere unico oppure uno per ogni TO -->
+    <changeSet id="invio_email_multiplo_04221132" author="Salvatore Versienti">
+        <addColumn tableName="PROTOCOLLI">
+            <column name="invio_email_multiplo" type="INT">
+            </column>
+        </addColumn>
+    </changeSet>
+
+    <changeSet id="changetype_id_assegnatari_04230933" author="Salvatore Versienti" >
+        <modifyDataType
+                columnName="id_assegnatari"
+                newDataType="varchar(1024)"
+                tableName="protocolli"/>
+    </changeSet>
+
+    <changeSet id="changetype_id_assegnatari_04230949" author="Salvatore Versienti" >
+        <modifyDataType
+                columnName="id_assegnatari"
+                newDataType="varchar(1024)"
+                tableName="protocolli_hist"/>
+    </changeSet>
+
+    <changeSet id="add_columns_into_email" author="Salvatore Versienti">
+        <addColumn tableName="email">
+            <column name="email_from" type="VARCHAR(128)" />
+        </addColumn>
+        <addColumn tableName="email">
+            <column name="email_direction" type="INTEGER" />
+        </addColumn>
+        <sql>ALTER TABLE email ADD CONSTRAINT chk_email_direction CHECK (email_direction IN (0, 1));</sql>
+    </changeSet>
+
+</databaseChangeLog>

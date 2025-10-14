@@ -1,0 +1,9 @@
+fragment movimento_sub_accertamento on SubAccertamento {
+  disponibilita
+  disponibilitaStorni
+  liquidato
+  numAccertamento
+  numSubAccertamento
+  vincolato
+  numeroVincolo
+}

@@ -1,0 +1,3 @@
+mutation exportStorico($dto: RicercaStoricoDTOInput!, $formato: String!) {
+  exportStorico(dto: $dto, formato: $formato)
+}

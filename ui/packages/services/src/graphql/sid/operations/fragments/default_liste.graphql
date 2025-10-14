@@ -1,0 +1,8 @@
+fragment default_liste on DefaultListe {
+  id
+  nomeCampo
+  tipoLista
+  cdr
+  descrizione
+  attivo
+}

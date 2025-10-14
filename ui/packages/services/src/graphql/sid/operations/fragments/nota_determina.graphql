@@ -1,0 +1,11 @@
+fragment nota_determina on Nota {
+  id
+  testo
+  mittente
+  richiestaRevisione
+  dataCreazione
+  dataCreazioneString
+  attivita {
+    referenceName
+  }
+}

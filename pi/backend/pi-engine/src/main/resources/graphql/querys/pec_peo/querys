@@ -1,0 +1,40 @@
+-- Ricerca delle configurazione pec / peo con paginazione e ricerca generale
+query getPecPeoConfigurations($RicercaConfigPEDTOInput: RicercaConfigPEDTOInput) {
+  getConfigurations(ricerca: $RicercaConfigPEDTOInput) {
+    pageCount
+    configurazioniPE {
+      id
+      cdr
+      username
+      indirizzoEmail
+      password
+      utente {
+        id
+        nome
+        cognome
+      }
+      configurazione {
+        id
+        tipologiaPosta
+        env
+      }
+    }
+  }
+}
+
+----
+Variabili per lanciare la query di esempio - è possibile usare anche il sort ma credo sia necessario per i test
+{
+  "RicercaConfigPEDTOInput": {
+  "search": null,
+  "page": 0,
+  "size": 5,
+  "cdr": [
+    "AV0000"
+  ],
+	"ufficio": null,
+  "utente": null,
+  "indirizzo": null,
+  "tipologiaPosta": null
+  }
+}

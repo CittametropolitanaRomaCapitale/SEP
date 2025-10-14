@@ -1,0 +1,5 @@
+query getCommitItem($id: BigInteger) {
+  getImpegno(id: $id) {
+    ...CommitItem
+  }
+}

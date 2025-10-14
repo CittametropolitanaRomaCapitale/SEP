@@ -1,0 +1,8 @@
+fragment fascia_controllo on FasciaDiControllo {
+  id
+  tipoDetermina
+  da
+  daString
+  a
+  aString
+}

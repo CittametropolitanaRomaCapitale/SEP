@@ -1,0 +1,9 @@
+mutation saveGruppo($gruppoAnagraficaDTO: GruppoAnagraficaDTOInput) {
+  saveGruppo(gruppoAnagraficaDTO: $gruppoAnagraficaDTO) {
+   ...GruppoBase
+  }
+}
+
+mutation AddContactsToGroup($groupId: BigInteger!, $contactIds: [BigInteger!]!) {
+  addContactsToGroup(groupId: $groupId, contactIds: $contactIds)
+}

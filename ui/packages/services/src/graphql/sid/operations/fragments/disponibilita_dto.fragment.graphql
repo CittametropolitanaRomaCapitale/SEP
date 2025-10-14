@@ -1,0 +1,8 @@
+fragment disponibilita_dto on CheckDisponibilitaDTO {
+  disponibilitaContabilita
+  disponibilitaEffettiva
+  totaleImpegnatoAccertato
+  determine {
+    ...determina
+  }
+}

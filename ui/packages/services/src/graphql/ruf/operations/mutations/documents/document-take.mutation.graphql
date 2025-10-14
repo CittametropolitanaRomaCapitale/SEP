@@ -1,0 +1,5 @@
+mutation takeInChargeDocument($id: BigInteger) {
+  presaInCaricoDocumento(id: $id) {
+    id
+  }
+}

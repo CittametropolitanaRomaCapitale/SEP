@@ -1,0 +1,3 @@
+mutation deletePecPeoConfiguration($id: BigInteger!) {
+  deleteConfiguration(id: $id)
+}

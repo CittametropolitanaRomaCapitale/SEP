@@ -1,0 +1,19 @@
+query getAllPecEscluse($search: String) {
+  getAllPecEscluse(search: $search) {
+    ...PecEscluseRispostaAutomaticaBase
+  }
+}
+
+query getPecEscluseList(
+  $searchPecEscluse: RicercaPecEscluseRispostaAutomaticaDTOInput
+) {
+  getPecEscluseList(searchPecEscluse: $searchPecEscluse) {
+    pecEscluseRispostaAutomaticaList {
+      id
+      indirizzo
+      tsCreation
+    }
+    pageCount
+    totalResults
+  }
+}

@@ -1,0 +1,4 @@
+fragment CommitItem on Impegno {
+  id
+  numero
+}

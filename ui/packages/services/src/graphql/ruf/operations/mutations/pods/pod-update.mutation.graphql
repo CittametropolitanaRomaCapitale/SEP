@@ -1,0 +1,5 @@
+mutation updatePod($id: BigInteger, $data: PodDtoInput) {
+  aggiornaPod(id: $id, data: $data) {
+    id
+  }
+}

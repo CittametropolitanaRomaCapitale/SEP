@@ -1,0 +1,3 @@
+mutation deleteAnacInvitato($id: BigInteger) {
+  eliminaInvitatoAnac(id: $id)
+}

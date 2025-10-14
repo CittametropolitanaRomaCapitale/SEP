@@ -1,0 +1,67 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+
+
+    <changeSet id="create_table_titolario" author="Francesco Canzaniello">
+        <createTable tableName="TITOLARIO">
+            <column name="ID" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="TIPOLOGIA_TITOLARIO" type="VARCHAR(50)"/>
+            <column name="TITOLO" type="VARCHAR(255)"/>
+            <column name="SEZIONE" type="VARCHAR(255)"/>
+            <column name="SOTTOSEZIONE" type="VARCHAR(255)"/>
+            <column name="NOME_FASCICOLO" type="VARCHAR(255)"/>
+            <column name="ID_FASCICOLO_PADRE" type="BIGINT"/>
+            <column name="IS_LEAF" type="BOOLEAN"/>
+            <column name="IS_OPENED" type="BOOLEAN"/>
+            <column name="TS_CREATION" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TS_UPDATE" type="TIMESTAMP"/>
+            <column name="TS_DELETED" type="TIMESTAMP"/>
+            <column name="ID_UTENTE_LAST_OPERATION" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="create_table_protocolli_classificazione" author="Francesco Canzaniello">
+        <createTable tableName="PROTOCOLLI_CLASSIFICAZIONE">
+            <column name="ID" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="ID_PROTOCOLLO" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ID_TITOLARIO" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TS_CREATION" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TS_UPDATE" type="TIMESTAMP"/>
+            <column name="TS_DELETED" type="TIMESTAMP"/>
+            <column name="ID_UTENTE_LAST_OPERATION" type="VARCHAR(255)"/>
+        </createTable>
+
+        <addForeignKeyConstraint
+                baseTableName="PROTOCOLLI_CLASSIFICAZIONE"
+                baseColumnNames="ID_TITOLARIO"
+                constraintName="fk_protocolli_classificazione_titolario"
+                referencedTableName="TITOLARIO"
+                referencedColumnNames="ID"/>
+
+        <addForeignKeyConstraint
+                baseTableName="PROTOCOLLI_CLASSIFICAZIONE"
+                baseColumnNames="ID_PROTOCOLLO"
+                constraintName="fk_protocolli_classificazione_protocolli"
+                referencedTableName="PROTOCOLLI"
+                referencedColumnNames="ID"/>
+    </changeSet>
+
+</databaseChangeLog>
+
+

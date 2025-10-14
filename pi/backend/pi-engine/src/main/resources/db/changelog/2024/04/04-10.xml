@@ -1,0 +1,19 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+
+    <!-- Aggiunge nuove colonne nella tabella allegati per avere più informazioni necessarie -->
+    <changeSet author="Lorenzo" id="add_columns_allegati-10-04-2024-0933">
+        <addColumn tableName="allegati">
+            <column name="nome" type="VARCHAR(255)"/>
+        </addColumn>
+        <addColumn tableName="allegati">
+            <column name="dimensione" type="BIGINT"/>
+        </addColumn>
+        <addColumn tableName="allegati">
+            <column name="estensione" type="VARCHAR(15)"/>
+        </addColumn>
+    </changeSet>
+</databaseChangeLog>

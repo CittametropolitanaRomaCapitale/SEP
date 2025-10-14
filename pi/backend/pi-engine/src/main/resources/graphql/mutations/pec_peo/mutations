@@ -1,0 +1,66 @@
+-- SALVATAGGIO DI UNA NUOVA MAIL (PEC / PEO)
+mutation savePecPeoConfiguration($input: PecPeoDTOInputInput) {
+  saveConfiguration(pecPeoDTOInput: $input) {
+    id
+  }
+}
+
+-----
+VARIABILI SALVATAGGIO_PE -
+1) usare una mail univoca
+2) importante! - non si mettono mai UTENTE e CDR insieme - perchè non è previsto dal sistema
+{
+  "input": {
+    "idUtente": null,
+    "tipologiaPosta": "PEC",
+    "cdr": "AVV0000",
+    "indirizzoEmail": "@info",
+    "username": "user",
+    "password": "password"
+  }
+}
+
+-----------------------------
+- CANCELLAZIONE CONFIGURAZIONE PE
+mutation deletePecPeoConfiguration($id: BigInteger!) {
+  deleteConfiguration(id: $id)
+}
+-----
+VARIABILI CANCELLAZIONE
+{
+  "id": 0
+}
+-----------------------------
+
+- AGIORNAMENTO CONFIGURAZIONE PE
+mutation updatePecPeoConfiguration($id: BigInteger, $input: PecPeoDTOInputInput) {
+  updateConfiguration(id: $id, input: $input) {
+    id
+    cdr
+    username
+    indirizzoEmail
+    configurazione{
+      id
+      tipologiaPosta
+      env
+    }
+    utente{
+      id
+      nome
+      cognome
+    }
+  }
+}
+
+- VARIABILI AGIORNAMENTO AGIORNAMENTO
+{
+  "id": 715,
+  "input": {
+    "idUtente": null,
+    "tipologiaPosta": "PEC",
+    "cdr": "AVV0000",
+    "indirizzoEmail": "beddrhazzu@info",
+    "username": "username",
+    "password": "password"
+  }
+}

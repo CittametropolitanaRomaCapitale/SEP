@@ -1,0 +1,26 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="create_storico_06262024-0348" author="Lorenzo Petraroli">
+        <createTable tableName="storico">
+            <column name="id" type="int8">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="id_utente" type="varchar(255)"/>
+            <column name="utente" type="varchar(255)"/>
+            <column name="operazione" type="varchar(255)"/>
+            <column name="ts_creation" type="timestamp"/>
+            <column name="id_protocollo" type="int8"/>
+        </createTable>
+
+        <addForeignKeyConstraint  baseColumnNames="id_protocollo"
+                                  baseTableName="storico"
+                                  constraintName="fk_id_protocollo_storico"
+                                  referencedColumnNames="id"
+                                  referencedTableName="protocolli"/>
+    </changeSet>
+
+</databaseChangeLog>

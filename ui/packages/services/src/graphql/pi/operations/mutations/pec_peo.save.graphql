@@ -1,0 +1,3 @@
+mutation savePecPeoConfiguration($input: PecPeoDTOInputInput) {
+  saveConfiguration(pecPeoDTOInput: $input)
+}

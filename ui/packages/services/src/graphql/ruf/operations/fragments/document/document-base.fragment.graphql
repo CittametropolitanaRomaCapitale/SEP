@@ -1,0 +1,22 @@
+fragment DocumentBase on Documento {
+  id
+  codProgrReg
+  oggetto
+  dataProtocollo
+  numeroProtocollo
+  dataNotificaSdi
+  contaGiorniNotificaSdi
+  tipo
+  dataEmissione
+  numero
+  importo
+  assegnato
+  assegnatoCode
+  stato
+  determina {
+    ...DetermineItem
+  }
+  creditore {
+    ...CreditorItem
+  }
+}

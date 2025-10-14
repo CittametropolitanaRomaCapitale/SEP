@@ -1,0 +1,9 @@
+fragment documento on Documento {
+  id
+  principale
+  oscurato
+  inPubblicazione
+  nonInPubblicazione
+  url
+  metaType
+}

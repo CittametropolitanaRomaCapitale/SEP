@@ -1,0 +1,39 @@
+#import "../attivita_light.fragment.graphql"
+
+query getAttivita(
+  $page: Int
+  $size: Int
+  $search: String
+  $utente: String
+  $filtro: FiltroAttivita
+  $cdr: [String]
+  $roles: [String]
+  $statoDetermina: [StatoDetermina]
+  $tipoDetermina: [TipoDetermina]
+  $sort: SortInputInput = { by: "dataInserimento", desc: true }
+) {
+  attivita_paginato(
+    utente: $utente
+    filtro: $filtro
+    cdr: $cdr
+    roles: $roles
+    statoDetermina: $statoDetermina
+    tipoDetermina: $tipoDetermina
+    search: $search
+    size: $size
+  )
+  attivita(
+    utente: $utente
+    filtro: $filtro
+    cdr: $cdr
+    roles: $roles
+    statoDetermina: $statoDetermina
+    tipoDetermina: $tipoDetermina
+    page: $page
+    size: $size
+    search: $search
+    sort: $sort
+  ) {
+    ...attivita_light
+  }
+}

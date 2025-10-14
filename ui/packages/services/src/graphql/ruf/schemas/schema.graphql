@@ -1,0 +1,556 @@
+type Allegato {
+  descrizione: String
+  documento: Documento
+  documentoContabile: Boolean
+  id: BigInteger
+  metadati: Boolean
+  notaContestazione: Boolean
+  p7m: Boolean
+  servizio: Boolean
+  style: Boolean
+  tipo: String
+  url: String
+  xml: Boolean
+}
+
+type Creditore {
+  codiceFiscale: String
+  id: BigInteger
+  nome: String
+  partitaIva: String
+  siglaPaese: String
+}
+
+type CreditoreJson {
+  codiceFiscale: String
+  id: BigInteger
+  nome: String
+  partitaIva: String
+  siglaPaese: String
+}
+
+type DefaultLista {
+  attivo: Boolean
+  cdr: String
+  descrizione: String
+  id: BigInteger
+  nomeCampo: String
+  tipoLista: TipoLista
+}
+
+type DefaultListaListDto {
+  element: Int!
+  list: [DefaultLista]
+  pageCount: Int!
+  pageRequest: Int!
+  pageSize: Int!
+}
+
+type Determina {
+  anno: String
+  cig: String
+  cup: String
+  id: BigInteger
+  motivoEsclusioneCig: String
+  numero: String
+  spesaRilevanteFiniIva: String
+}
+
+type DeterminaJson {
+  anno: String
+  cig: String
+  cup: String
+  id: BigInteger
+  motivoEsclusioneCig: String
+  numero: String
+  spesaRilevanteFiniIva: String
+}
+
+type Documento {
+  allegati: [Allegato]
+  anno: String
+  annoProgr: String
+  assegnato: String
+  assegnatoCode: String
+  codProgrReg: String
+  contaGiorniNotificaSdi: Int
+  creditore: Creditore
+  "ISO-8601"
+  dataAggiornamento: DateTime
+  "ISO-8601"
+  dataCreazione: DateTime
+  "ISO-8601"
+  dataDecorrenza: DateTime
+  "ISO-8601"
+  dataEmissione: DateTime
+  "ISO-8601"
+  dataMandato: DateTime
+  "ISO-8601"
+  dataNotificaSdi: DateTime
+  "ISO-8601"
+  dataPresaInCarico: DateTime
+  "ISO-8601"
+  dataProtocollo: DateTime
+  "ISO-8601"
+  dataProtocolloContestazione: DateTime
+  "ISO-8601"
+  dataScadenza: DateTime
+  "ISO-8601"
+  dataStato: DateTime
+  determina: Determina
+  esitoFascicolazione: Int
+  fattureConnesse: [Documento]
+  id: BigInteger
+  idFatturaConnessa: BigInteger
+  identificativoSdi: String
+  impegni: [Impegno]
+  importo: BigDecimal
+  indirizzoPecMittente: String
+  messageId: String
+  messaggioRevisione: String
+  motivoDecorrenza: String
+  nomeFileXml: String
+  numMandato: String
+  numRul: String
+  numero: String
+  numeroProtocollo: String
+  numeroProtocolloContestazione: String
+  oggetto: String
+  pagamenti: [Pagamento]
+  posizione: BigInteger
+  presaInCaricoDa: String
+  presaInCaricoDaId: String
+  progNotificaEsito: Int
+  progressivo: BigInteger
+  relazioneFatture: [Documento]
+  stato: StatoDocumento
+  tipo: TipoDocumento
+  tipoScadenza: String
+}
+
+type DocumentoJson {
+  assegnato: String
+  assegnatoCode: String
+  codProgrReg: String
+  contaGiorniNotificaSdi: Int
+  creditore: CreditoreJson
+  dataDecorrenza: String
+  dataEmissione: String
+  dataNotificaSdi: String
+  dataPresaInCarico: String
+  dataProtocollo: String
+  dataProtocolloContestazione: String
+  dataScadenza: String
+  dataStato: String
+  determina: DeterminaJson
+  esitoFascicolazione: Int
+  fattureConnesse: [FatturaConnessaJson]
+  id: BigInteger
+  identificativoSdi: String
+  importo: BigDecimal
+  messageId: String
+  messaggioRevisione: String
+  motivoDecorrenza: String
+  nomeFileXml: String
+  numero: String
+  numeroProtocollo: String
+  numeroProtocolloContestazione: String
+  oggetto: String
+  presaInCaricoDa: String
+  stato: String
+  tipo: String
+  tipoScadenza: String
+}
+
+type DocumentoListDto {
+  element: Int!
+  list: [Documento]
+  pageCount: Int!
+  pageRequest: Int!
+  pageSize: Int!
+}
+
+type FatturaConnessaJson {
+  dataEmissione: String
+  id: BigInteger
+  importo: BigDecimal
+  numero: String
+  oggetto: String
+  tipo: String
+}
+
+type Impegno {
+  documento: Documento
+  id: BigInteger
+  numero: String
+}
+
+type ImpegnoListDto {
+  element: Int!
+  list: [Impegno]
+  pageCount: Int!
+  pageRequest: Int!
+  pageSize: Int!
+}
+
+"Mutation root"
+type Mutation {
+  aggiornaAllegato(data: AllegatoDtoInput, id: BigInteger): Allegato
+  aggiornaCreditore(data: CreditoreDtoInput, id: BigInteger): Creditore
+  aggiornaDefaultLista(data: DefaultListaDtoInput, id: BigInteger): DefaultLista
+  aggiornaDetermina(data: DeterminaDtoInput, id: BigInteger): Determina
+  aggiornaDocumento(data: DocumentoDtoInput, id: BigInteger): Documento
+  aggiornaImpegno(data: ImpegnoDtoInput, id: BigInteger): Impegno
+  aggiornaPagamento(data: PagamentoDtoInput, id: BigInteger): Pagamento
+  aggiornaPod(data: PodDtoInput, id: BigInteger): Pod
+  aggiornaStorico(data: StoricoDtoInput, id: BigInteger): Storico
+  aggiornaUfficio(data: UfficioDtoInput, id: BigInteger): Ufficio
+  aggiornamentoMassivo(annoDetermina: String, assegnato: String, assegnatoCode: String, cia: String, cig: String, creditore: String, cui: String, cup: String, idDocumenti: [BigInteger], impegni: [String], motivoEsclusioneCig: String, numeroDetermina: String, oggetto: String, stato: StatoDocumento): [Documento]
+  eliminaAllegato(id: BigInteger): Boolean!
+  eliminaCreditore(id: BigInteger): Boolean!
+  eliminaDefaultLista(id: BigInteger): Boolean!
+  eliminaDetermina(id: BigInteger): Boolean!
+  eliminaDocumento(id: BigInteger): Boolean!
+  eliminaImpegno(id: BigInteger): Boolean!
+  eliminaPagamento(id: BigInteger): Boolean!
+  eliminaPod(id: BigInteger): Boolean!
+  eliminaStorico(id: BigInteger): Boolean!
+  eliminaUfficio(id: BigInteger): Boolean!
+  presaInCaricoDocumento(id: BigInteger): Documento
+  rilascioDocumento(id: BigInteger): Documento
+  salvaAllegato(data: AllegatoDtoInput): Allegato
+  salvaCreditore(data: CreditoreDtoInput): Creditore
+  salvaDefaultLista(data: DefaultListaDtoInput): DefaultLista
+  salvaDetermina(data: DeterminaDtoInput): Determina
+  salvaDocumento(data: DocumentoDtoInput): Documento
+  salvaImpegno(data: ImpegnoDtoInput): Impegno
+  salvaPagamento(data: PagamentoDtoInput): Pagamento
+  salvaPod(data: PodDtoInput, id: BigInteger): Pod
+  salvaPods(data: String, ufficioId: BigInteger): [Pod]
+  salvaStorico(data: StoricoDtoInput): Storico
+  salvaUfficio(data: UfficioDtoInput): Ufficio
+}
+
+type Office {
+  code: String
+  description: String
+  name: String
+  service: String
+}
+
+type Pagamento {
+  "ISO-8601"
+  data: DateTime
+  documento: Documento
+  id: BigInteger
+  numero: String
+}
+
+type PagamentoListDto {
+  element: Int!
+  list: [Pagamento]
+  pageCount: Int!
+  pageRequest: Int!
+  pageSize: Int!
+}
+
+type Pod {
+  codice: String
+  id: BigInteger
+  ufficio: Ufficio
+}
+
+type PodListDto {
+  element: Int!
+  list: [Pod]
+  pageCount: Int!
+  pageRequest: Int!
+  pageSize: Int!
+}
+
+"Query root"
+type Query {
+  getAllAllegato: [Allegato]
+  getAllCreditore: [Creditore]
+  getAllDefaultLista(cdr: String = "", page: Int = 0, search: String = "", size: Int = 50, sort: SortInputInput, tipoLista: TipoLista): DefaultListaListDto
+  getAllDefaultListaAttivi(cdr: String = "", search: String = "", sort: SortInputInput, tipiLista: [TipoLista]): [DefaultLista]
+  getAllDetermina: [Determina]
+  getAllDocumento(assegnatoCode: [String], page: Int = 0, size: Int = 50, sort: SortInputInput): DocumentoListDto
+  getAllImpegno(documentoId: BigInteger, page: Int = 0, size: Int = 50, sort: SortInputInput): ImpegnoListDto
+  getAllPagamento(documentoId: BigInteger, page: Int = 0, size: Int = 50, sort: SortInputInput): PagamentoListDto
+  getAllPod(page: Int = 0, search: String = "", size: Int = 50, sort: SortInputInput, ufficioId: BigInteger): PodListDto
+  getAllStorico(documentoId: BigInteger, page: Int = 0, size: Int = 50, sort: SortInputInput): StoricoListDto
+  getAllUfficiLiberi: [Office]
+  getAllUfficio(page: Int = 0, search: String = "", size: Int = 50, sort: SortInputInput): UfficioListDto
+  getAllegato(id: BigInteger): Allegato
+  getCreditore(id: BigInteger): Creditore
+  getDefaultLista(id: BigInteger!): DefaultLista
+  getDetermina(id: BigInteger): Determina
+  getDocumento(id: BigInteger): Documento
+  getImpegno(id: BigInteger): Impegno
+  getListaTipoDocumento: [TipoDocumento]
+  getPagamento(id: BigInteger): Pagamento
+  getPod(id: BigInteger): Pod
+  getStatiInLavorazione(cdrCode: String): [StatoDocumento]
+  getStatiSuccessivi(id: BigInteger): [StatoDocumento]
+  getStorico(id: BigInteger): Storico
+  getUfficio(id: BigInteger): Ufficio
+  ricercaAvanzataDocumento(CFcreditore: String = "", anno: String = "", annoDetermina: String = "", assegnato: [String], cig: String = "", codProgrReg: String = "", creditore: String = "", dataEmissioneAl: String, dataEmissioneDal: String, dataNotificaAl: String, dataNotificaDal: String, dataProtocolloAl: String, dataProtocolloDal: String, dataStatoAl: String, dataStatoDal: String, filtroRicerca: FiltroRicerca, identificativoSdi: String = "", messageId: String = "", motivoEsclusioneCig: String = "", nomeFileXml: String = "", numeroDetermina: String = "", numeroDocumento: String = "", numeroProtocollo: String = "", oggetto: String = "", page: Int = 0, partitaIva: String = "", scarica: ScaricaDtoInput, search: String = "", siglaPaese: String = "", size: Int = 50, sort: SortInputInput, stato: [StatoDocumento], tipo: [TipoDocumento], ufficioSelezionato: [String]): DocumentoListDto
+}
+
+type Storico {
+  assegnato: String
+  assegnatoCode: String
+  codiceUtente: String
+  commento: String
+  "ISO-8601"
+  data: DateTime
+  documento: Documento
+  id: BigInteger
+  jsonDocumento: DocumentoJson
+  nomeCampo: String
+  nomeUtente: String
+  nuovoStato: StatoDocumento
+  ruoloUtente: String
+  vecchioStato: StatoDocumento
+}
+
+type StoricoListDto {
+  element: Int!
+  list: [Storico]
+  pageCount: Int!
+  pageRequest: Int!
+  pageSize: Int!
+}
+
+type Ufficio {
+  cdr: String
+  cdrCode: BigInteger
+  descrizione: String
+  email: String
+  id: BigInteger
+  ipa: String
+  pathFascicolazione: String
+  pods: [Pod]
+}
+
+type UfficioListDto {
+  element: Int!
+  list: [Ufficio]
+  pageCount: Int!
+  pageRequest: Int!
+  pageSize: Int!
+}
+
+enum FiltroRicerca {
+  inLavorazione
+  none
+  presiInCarico
+  tuttiIDocumenti
+}
+
+enum StatoDocumento {
+  accettato
+  accettato_notificato
+  annullato
+  assegnato
+  compensazione_debito_credito
+  decorrenza_dei_termini
+  documento_duplicato
+  emesso_OIL
+  emesso_mandato_di_pagamento
+  emissione_reversale_incasso
+  errata_assegnazione
+  in_elaborazione
+  in_lavorazione_sil
+  in_liquidazione
+  non_assegnato
+  non_liquidabile
+  rifiutato
+  rifiuto_notificato
+  sospeso
+}
+
+enum TipoDocumento {
+  ACCONTO_SU_FATTURA
+  ACCONTO_SU_PARCELLA
+  AUTOFATTURA_REGOLARIZZAZIONE_FATTURE
+  AUTOFATTURA_SPLAFONAMENTO
+  CESSIONE_BENI_AMMORTIZZABILI
+  ESTRAZIONE_BENI_DA_DEPOSITO_IVA
+  ESTRAZIONE_BENI_DA_DEPOSITO_IVA_CON_VERS_IVA
+  FATTURA
+  FATTURA_AUTOCONSUMO_O_CESSIONI_GRATUITE
+  FATTURA_DIFFERITA_ART21_COMMA4_3P_LA
+  FATTURA_DIFFERITA_ART21_COMMA4_3P_LB
+  INTEGRAZIONE_ACQUISTO_BENI_EX_ART17
+  INTEGRAZIONE_ACQUISTO_BENI_INTRACOMUNITARI
+  INTEGRAZIONE_ACQUISTO_SERVIZI_DA_ESTERO
+  INTEGRAZIONE_FATTURA_REVERSE_CHANGE_INTERNO
+  NOTA_DI_CREDITO
+  NOTA_DI_DEBITO
+  PARCELLA
+  TD99
+}
+
+enum TipoLista {
+  motivo_decorrenza
+  motivo_esclusione
+  tipo_scadenza
+}
+
+input AllegatoDtoInput {
+  descrizione: String
+  documentoContabile: Boolean
+  documentoId: BigInteger
+  id: BigInteger
+  metadati: Boolean
+  notaContestazione: Boolean
+  p7m: Boolean
+  servizio: Boolean
+  style: Boolean
+  tipo: String
+  url: String
+  xml: Boolean
+}
+
+input CreditoreDtoInput {
+  codiceFiscale: String
+  id: BigInteger
+  nome: String
+  partitaIva: String
+  siglaPaese: String
+}
+
+input DefaultListaDtoInput {
+  attivo: Boolean
+  cdr: String
+  descrizione: String
+  nomeCampo: String
+  tipoLista: String
+}
+
+input DeterminaDtoInput {
+  anno: String
+  cig: String
+  cup: String
+  id: BigInteger
+  motivoEsclusioneCig: String
+  numero: String
+  spesaRilevanteFiniIva: String
+}
+
+input DocumentoDtoInput {
+  assegnato: String
+  assegnatoCode: String
+  codProgrReg: String
+  contaGiorniNotificaSdi: Int
+  creditore: CreditoreDtoInput
+  "ISO-8601"
+  dataDecorrenza: DateTime
+  "ISO-8601"
+  dataEmissione: DateTime
+  "ISO-8601"
+  dataNotificaSdi: DateTime
+  "ISO-8601"
+  dataPresaInCarico: DateTime
+  "ISO-8601"
+  dataProtocollo: DateTime
+  "ISO-8601"
+  dataProtocolloContestazione: DateTime
+  "ISO-8601"
+  dataScadenza: DateTime
+  "ISO-8601"
+  dataStato: DateTime
+  determina: DeterminaDtoInput
+  esitoFascicolazione: Int
+  id: BigInteger
+  idFatturaConnessa: BigInteger
+  identificativoSdi: String
+  importo: BigDecimal
+  indirizzoPecMittente: String
+  messageId: String
+  messaggioRevisione: String
+  motivoDecorrenza: String
+  nomeFileXml: String
+  numero: String
+  numeroProtocollo: String
+  numeroProtocolloContestazione: String
+  oggetto: String
+  presaInCaricoDa: String
+  stato: String
+  tipo: String
+  tipoScadenza: String
+}
+
+input ImpegnoDtoInput {
+  documentoId: BigInteger
+  id: BigInteger
+  numero: String
+}
+
+input PagamentoDtoInput {
+  "ISO-8601"
+  data: DateTime
+  documentoId: BigInteger
+  id: BigInteger
+  numero: String
+}
+
+input PodDtoInput {
+  codice: String
+  id: BigInteger
+  ufficioId: BigInteger
+}
+
+input ScaricaDtoInput {
+  assegnato: Boolean!
+  cig: Boolean!
+  codProgrReg: Boolean!
+  creditore: Boolean!
+  csv: Boolean!
+  cup: Boolean!
+  dataNotifica: Boolean!
+  determina: Boolean!
+  documento: Boolean!
+  excel: Boolean!
+  gg: Boolean!
+  impegno: Boolean!
+  importo: Boolean!
+  oggetto: Boolean!
+  protocollo: Boolean!
+  stato: Boolean!
+  tipo: Boolean!
+}
+
+input SortInputInput {
+  by: String
+  desc: Boolean = false
+}
+
+input StoricoDtoInput {
+  assegnato: String
+  assegnatoCode: String
+  codiceUtente: String
+  commento: String
+  "ISO-8601"
+  data: DateTime
+  documentoId: BigInteger
+  jsonDocumento: DocumentoDtoInput
+  nomeCampo: String
+  nomeUtente: String
+  nuovoStato: String
+  ruoloUtente: String
+  vecchioStato: String
+}
+
+input UfficioDtoInput {
+  cdr: String
+  cdrCode: BigInteger
+  descrizione: String
+  email: String
+  id: BigInteger
+  ipa: String
+  pathFascicolazione: String
+  pods: [PodDtoInput]
+}

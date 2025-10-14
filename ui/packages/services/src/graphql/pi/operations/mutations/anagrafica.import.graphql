@@ -1,0 +1,3 @@
+mutation ImportAnagrafica($fileBase64: String!) {
+  importAnagraficaFromBase64(fileBase64: $fileBase64)
+}

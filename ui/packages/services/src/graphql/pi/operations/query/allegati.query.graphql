@@ -1,0 +1,33 @@
+query getAllExtensions {
+  getAllExtensions
+}
+
+query GetAllegati($ricercaAllegatiDTO: RicercaAllegatiDTOInput!) {
+  getAllegati(ricercaAllegatiDTO: $ricercaAllegatiDTO) {
+    allegati {
+      id
+      idOriginal
+      idUtente
+      nome
+      dimensione
+      estensione
+      impronta
+    }
+    pageCount
+    totalResults
+  }
+}
+
+query GetAllegatiDiscarded($ricercaAllegatiDTO: RicercaAllegatiDTOInput!) {
+  getAllegatiDiscarded(ricercaAllegatiDTO: $ricercaAllegatiDTO) {
+    allegati {
+      nome
+      collocazioneTelematica
+      oggetto
+      id
+      idOriginal
+      estensione
+      dimensione
+    }
+  }
+}

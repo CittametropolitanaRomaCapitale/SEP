@@ -1,0 +1,18 @@
+fragment AllegatoBase on Allegato {
+    id
+    idUtente
+    tipoDocumento
+    oggetto
+    collocazioneTelematica
+    idUtenteLastOperation
+    tsCreation
+    tsStartVali
+    riferimentoMinio
+    isMain
+    nome
+    dimensione
+  	estensione
+    idEmail
+    impronta
+    idOriginal
+}

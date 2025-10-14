@@ -1,0 +1,14 @@
+query GetRegistroGiornaliero($ricercaRegistroDTO: RicercaRegistiGiornalieriDTOInput!) { 
+    getRegistroGiornaliero(ricercaRegistroDTO: $ricercaRegistroDTO) {
+        registri {
+        id
+        file
+        note
+        dataRegistro,
+        urn,
+        esitoVersamento
+        }
+        pageCount
+        totalResults
+    }
+}

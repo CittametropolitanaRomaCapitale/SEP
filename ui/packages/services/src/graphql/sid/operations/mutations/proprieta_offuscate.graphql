@@ -1,0 +1,6 @@
+mutation saveProprietaOffuscate(
+  $id: BigInteger
+  $data: [ProprietaOffuscataMergeInputInput]
+) {
+  salvaProprietaOffuscateDetermina(id: $id, data: $data)
+}

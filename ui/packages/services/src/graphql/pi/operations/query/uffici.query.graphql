@@ -1,0 +1,11 @@
+query getAllOffices {
+  getAllOffices {
+    pageCount
+    totalResults
+    uffici {
+      name
+      code
+      description
+    }
+  }
+}

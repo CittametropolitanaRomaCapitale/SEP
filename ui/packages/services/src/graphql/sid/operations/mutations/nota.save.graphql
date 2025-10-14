@@ -1,0 +1,5 @@
+mutation saveNota($data: NotaInputInput) {
+  salvaNota(data: $data) {
+    id
+  }
+}

@@ -1,0 +1,73 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+
+    <changeSet id="inserimento_IndirizzoPEC_PEO_CORPOPEC_PEO-04171050" author="Simone">
+        <addColumn tableName="PROTOCOLLI">
+            <column name="INDIRIZZO_PEC_PEO" type="VARCHAR(255)"/>
+        </addColumn>
+        <addColumn tableName="PROTOCOLLI">
+            <column name="CORPO_PEC_PEO" type="TEXT"/>
+        </addColumn>
+        <addColumn tableName="PROTOCOLLI_HIST">
+            <column name="INDIRIZZO_PEC_PEO" type="VARCHAR(255)"/>
+        </addColumn>
+        <addColumn tableName="PROTOCOLLI_HIST">
+            <column name="CORPO_PEC_PEO" type="TEXT"/>
+        </addColumn>
+    </changeSet>
+    
+    <changeSet id="refactorPecPeoAndPeConfigurazioneTables_04171305" author="Simone">
+        <renameTable oldTableName="ENV_PE" newTableName="PE_CONFIGURAZIONE"/>
+        <renameTable oldTableName="CONFIGURAZIONE_PE" newTableName="PEC_PEO"/>
+        <dropUniqueConstraint
+                constraintName="env_pe_tipologia_posta_key"
+                tableName="PE_CONFIGURAZIONE"/>
+        <addColumn tableName="PE_CONFIGURAZIONE">
+            <column name="ENV" type="VARCHAR(255)"/>
+        </addColumn>
+        <dropColumn
+                columnName="TIPOLOGIA_POSTA"
+                tableName="PEC_PEO"/>
+    </changeSet>
+
+    <changeSet id="changeNameColumnIdConfigurazione_04171540" author="Simone">
+        <renameColumn
+                oldColumnName="ID_ENV"
+                newColumnName="ID_CONFIGURAZIONE"
+                tableName="PEC_PEO" />
+    </changeSet>
+
+    <changeSet id="createEmailTable_04171515" author="Salvatore">
+        <createTable tableName="email">
+            <column name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="id_protocollo" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="tipo_email" type="VARCHAR(3)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="to" type="VARCHAR(255)"/>
+            <column name="cc" type="VARCHAR(255)"/>
+            <column name="oggetto" type="VARCHAR(500)"/>
+            <column name="corpo" type="TEXT"/>
+            <column name="ts_invio" type="TIMESTAMP"/>
+            <column name="stato" type="BIGINT"/>
+            <column name="note" type="VARCHAR(255)"/>
+            <column name="id_utente" type="BIGINT"/>
+            <column name="ts_creation" type="TIMESTAMP"/>
+            <column name="ts_start_vali" type="TIMESTAMP"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="aggiungi_colonna_id_email_04171519" author="Salvatore">
+        <addColumn tableName="allegati">
+            <column name="id_email" type="BIGINT"/>
+        </addColumn>
+    </changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,9 @@
+fragment DetermineItem on Determina {
+  id
+  anno
+  cig
+  cup
+  motivoEsclusioneCig
+  numero
+  spesaRilevanteFiniIva
+}

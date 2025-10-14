@@ -1,0 +1,9 @@
+fragment DefaultList on DefaultListaListDto {
+  element
+  pageCount
+  pageRequest
+  pageSize
+  list {
+    ...DefaultItem
+  }
+}

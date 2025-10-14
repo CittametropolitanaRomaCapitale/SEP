@@ -1,0 +1,29 @@
+#import "../disponibilita_dto.fragment.graphql"
+
+query getDisponibilitaCapitolo(
+  $capitolo: Int
+  $titolo: Int
+  $articolo: Int
+  $annoCompetenza: String
+  $entrata: Boolean
+  $assestato: BigDecimal
+  $impegnato: BigDecimal
+  $accertato: BigDecimal
+  $prenotato: BigDecimal
+  $determinaId: BigInteger
+) {
+  check_capitolo(
+    capitolo: $capitolo
+    titolo: $titolo
+    articolo: $articolo
+    annoCompetenza: $annoCompetenza
+    entrata: $entrata
+    assestato: $assestato
+    impegnato: $impegnato
+    accertato: $accertato
+    prenotato: $prenotato
+    determinaId: $determinaId
+  ) {
+    ...disponibilita_dto
+  }
+}

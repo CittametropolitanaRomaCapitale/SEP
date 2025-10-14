@@ -1,0 +1,28 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+
+    <changeSet id="nuova-colonna-attiva-1254-31052024" author="Lorenzo Petraroli">
+        <addColumn tableName="pec_peo">
+            <column name="attiva" type="BOOLEAN"/>
+        </addColumn>
+    </changeSet>
+
+    <changeSet id="creazione-tabella-destinatari_protocollo-1254-31052024" author="Lorenzo Petraroli">
+        <createTable tableName="destinatari_protocollo">
+            <column name="id" type="BIGINT">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="id_protocollo" type="BIGINT">
+                <constraints nullable="true" foreignKeyName="fk_id_protocollo" references="protocolli(id)" />
+            </column>
+            <column name="id_destinatario" type="BIGINT"/>
+            <column name="tipo_assegnazione" type="VARCHAR(50)"/>
+            <column name="tipo_destinatario" type="VARCHAR(50)"/>
+            <column name="ts_creation" type="TIMESTAMP"/>
+            <column name="ts_start_vali" type="TIMESTAMP"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

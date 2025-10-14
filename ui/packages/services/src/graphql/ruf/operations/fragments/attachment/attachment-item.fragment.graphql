@@ -1,0 +1,13 @@
+fragment AttachmentItem on Allegato {
+  id
+  url
+  xml
+  metadati
+  servizio
+  notaContestazione
+  documentoContabile
+  p7m
+  style
+  tipo
+  descrizione
+}

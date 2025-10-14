@@ -1,0 +1,7 @@
+mutation ImportProtocolliEmergenza($fileBase64: String!, $selectedOffice: String!, $cdr: String!) {
+  importProtocolliEmergenzaFromBase64(fileBase64: $fileBase64, selectedOffice: $selectedOffice, cdr: $cdr) {
+    nProtocollo
+    nProtocolloEmergenza
+    imported
+  }
+}

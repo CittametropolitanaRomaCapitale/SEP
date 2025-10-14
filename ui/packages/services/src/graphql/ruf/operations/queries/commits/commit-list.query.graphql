@@ -1,0 +1,15 @@
+query getCommitList(
+  $page: Int
+  $size: Int
+  $sort: SortInputInput
+  $documentoId: BigInteger
+) {
+  getAllImpegno(
+    page: $page
+    size: $size
+    sort: $sort
+    documentoId: $documentoId
+  ) {
+    ...CommitList
+  }
+}

@@ -1,0 +1,171 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+
+    <changeSet id="crazioneSequence" author="Simone">
+        <createSequence incrementBy="1" sequenceName="hibernate_sequence_pi" startValue="1"/>
+    </changeSet>
+    <!-- Script di creazione delle tabelle attive -->
+    <changeSet id="creazioneTabelleAttive" author="dematteisa">
+        <createTable tableName="UTENTI">
+            <column name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="nome" type="VARCHAR(255)"/>
+            <column name="cognome" type="VARCHAR(255)"/>
+            <column name="id_utente_last_operation" type="BIGINT"/>
+            <column name="ts_creation" type="TIMESTAMP"/>
+            <column name="ts_start_vali" type="TIMESTAMP"/>
+        </createTable>
+
+        <createTable tableName="PROTOCOLLI">
+            <column name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="n_protocollo" type="VARCHAR(255)"/>
+            <column name="id_mittente" type="BIGINT"/>
+            <column name="id_assegnatario" type="BIGINT"/>
+            <column name="id_utente" type="BIGINT">
+                <constraints nullable="false" foreignKeyName="fk_protocolli_id_utente" references="UTENTI(id)"/>
+            </column>
+            <column name="tipo_registrazione" type="VARCHAR(255)" />
+            <column name="oggetto" type="VARCHAR(255)"/>
+            <column name="id_utente_last_operation" type="BIGINT"/>
+            <column name="ts_creation" type="TIMESTAMP"/>
+            <column name="ts_start_vali" type="TIMESTAMP"/>
+            <column name="metodo_spedizione" type="VARCHAR(255)" />
+            <column name="protocollo_mittente" type="VARCHAR(255)"/>
+            <column name="data_protocollo_mittente" type="TIMESTAMP"/>
+            <column name="note" type="VARCHAR(500)"/>
+            <column name="bpmn_process_id" type="VARCHAR(255)"/>
+            <column name="stato" type="VARCHAR(255)"/>
+        </createTable>
+
+        <createTable tableName="ALLEGATI">
+            <column name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="id_protocollo" type="BIGINT">
+                <constraints nullable="false" foreignKeyName="fk_allegati_id_protocollo" references="PROTOCOLLI(id)"/>
+            </column>
+            <column name="id_utente" type="BIGINT"/>
+            <column name="tipo_documento" type="VARCHAR(255)" />
+            <column name="oggetto" type="VARCHAR(255)"/>
+            <column name="collocazione_telematica" type="VARCHAR(255)"/>
+            <column name="id_utente_last_operation" type="BIGINT"/>
+            <column name="ts_creation" type="TIMESTAMP"/>
+            <column name="ts_start_vali" type="TIMESTAMP"/>
+        </createTable>
+        
+        <createTable tableName="REFERENTI_INTERNI">
+            <column name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="id_utente" type="BIGINT"/>
+            <column name="nome" type="VARCHAR(255)"/>
+            <column name="id_utente_last_operation" type="BIGINT"/>
+            <column name="ts_creation" type="TIMESTAMP"/>
+            <column name="ts_start_vali" type="TIMESTAMP"/>
+        </createTable>
+
+        <createTable tableName="REFERENTI_ESTERNI">
+            <column name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="id_utente" type="BIGINT"/>
+            <column name="nome" type="VARCHAR(255)"/>
+            <column name="id_utente_last_operation" type="BIGINT"/>
+            <column name="ts_creation" type="TIMESTAMP"/>
+            <column name="ts_start_vali" type="TIMESTAMP"/>
+        </createTable>
+    </changeSet>
+
+    <!-- Script di creazione delle tabelle di storico -->
+    <changeSet id="creazioneTabelleStorico" author="dematteisa">
+        <createTable tableName="UTENTI_HIST">
+            <column name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="nome" type="VARCHAR(255)"/>
+            <column name="cognome" type="VARCHAR(255)"/>
+            <column name="id_utente_last_operation" type="BIGINT"/>
+            <column name="ts_creation" type="TIMESTAMP"/>
+            <column name="ts_start_vali" type="TIMESTAMP"/>
+            <column name="ts_end_vali" type="TIMESTAMP"/>
+            <column name="id_origin" type="BIGINT"/>
+        </createTable>
+
+        <createTable tableName="PROTOCOLLI_HIST">
+            <column name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="n_protocollo" type="BIGINT"/>
+            <column name="id_mittente" type="BIGINT"/>
+            <column name="id_assegnatario" type="BIGINT"/>
+            <column name="id_utente" type="BIGINT">
+                <constraints nullable="false" foreignKeyName="fk_protocolli_hist_id_utente" references="UTENTI_HIST(id)"/>
+            </column>
+            <column name="tipo_registrazione" type="VARCHAR(255)" />
+            <column name="oggetto" type="VARCHAR(255)"/>
+            <column name="id_utente_last_operation" type="BIGINT"/>
+            <column name="ts_creation" type="TIMESTAMP"/>
+            <column name="ts_start_vali" type="TIMESTAMP"/>
+            <column name="ts_end_vali" type="TIMESTAMP"/>
+            <column name="id_origin" type="BIGINT"/>
+            <column name="metodo_spedizione" type="VARCHAR(255)" />
+            <column name="protocollo_mittente" type="VARCHAR(255)"/>
+            <column name="data_protocollo_mittente" type="TIMESTAMP"/>
+            <column name="note" type="VARCHAR(500)"/>
+            <column name="bpmn_process_id" type="VARCHAR(255)"/>
+            <column name="stato" type="VARCHAR(255)"/>
+        </createTable>
+
+        <createTable tableName="ALLEGATI_HIST">
+            <column name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="id_protocollo" type="BIGINT">
+                <constraints nullable="false" foreignKeyName="fk_allegati_hist_id_protocollo" references="PROTOCOLLI_HIST(id)"/>
+            </column>
+            <column name="id_utente" type="BIGINT"/>
+            <column name="tipo_documento" type="VARCHAR(255)"/>
+            <column name="oggetto" type="VARCHAR(255)"/>
+            <column name="collocazione_telematica" type="VARCHAR(255)"/>
+            <column name="id_utente_last_operation" type="BIGINT"/>
+            <column name="ts_creation" type="TIMESTAMP"/>
+            <column name="ts_start_vali" type="TIMESTAMP"/>
+            <column name="ts_end_vali" type="TIMESTAMP"/>
+            <column name="id_origin" type="BIGINT"/>
+        </createTable>
+
+        <createTable tableName="REFERENTI_INTERNI_HIST">
+            <column name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="id_utente" type="BIGINT"/>
+            <column name="nome" type="VARCHAR(255)"/>
+            <column name="id_utente_last_operation" type="BIGINT"/>
+            <column name="ts_creation" type="TIMESTAMP"/>
+            <column name="ts_start_vali" type="TIMESTAMP"/>
+            <column name="ts_end_vali" type="TIMESTAMP"/>
+            <column name="id_origin" type="BIGINT"/>
+        </createTable>
+
+        <createTable tableName="REFERENTI_ESTERNI_HIST">
+            <column name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="id_utente" type="BIGINT"/>
+            <column name="nome" type="VARCHAR(255)"/>
+            <column name="id_utente_last_operation" type="BIGINT"/>
+            <column name="ts_creation" type="TIMESTAMP"/>
+            <column name="ts_start_vali" type="TIMESTAMP"/>
+            <column name="ts_end_vali" type="TIMESTAMP"/>
+            <column name="id_origin" type="BIGINT"/>
+        </createTable>
+
+    </changeSet>
+
+</databaseChangeLog>

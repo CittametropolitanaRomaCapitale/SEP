@@ -1,0 +1,9 @@
+fragment PodList on PodListDto {
+  element
+  pageCount
+  pageRequest
+  pageSize
+  list {
+    ...PodItem
+  }
+}

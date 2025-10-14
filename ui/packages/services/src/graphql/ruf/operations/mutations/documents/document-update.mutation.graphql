@@ -1,0 +1,5 @@
+mutation updateDocument($id: BigInteger, $data: DocumentoDtoInput) {
+  aggiornaDocumento(id: $id, data: $data) {
+    id
+  }
+}

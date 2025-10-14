@@ -1,0 +1,17 @@
+fragment gpp on DeterminaFormGpp {
+  determina_id
+  numProposta
+  annoProposta
+  ruDetermina
+  annoDetermina
+  oggettoDetermina
+  statoDetermina
+  stato
+  tipoDetermina
+  tipo
+  cdr
+  statoGpp
+  formGpp {
+    totale
+  }
+}

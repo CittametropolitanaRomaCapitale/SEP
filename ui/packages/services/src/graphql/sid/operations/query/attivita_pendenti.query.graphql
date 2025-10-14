@@ -1,0 +1,33 @@
+#import "../sid_process.fragment.graphql"
+
+query getAttivitaPendenti(
+  $page: Int
+  $size: Int
+  $search: String
+  $cdr: [String]
+  $roles: [String]
+  $statoDetermina: [StatoDetermina]
+  $tipoDetermina: [TipoDetermina]
+  $sort: SortInputInput = { by: "dataInserimento", desc: true }
+) {
+  attivita_pendenti_paginato_new(
+    cdr: $cdr
+    roles: $roles
+    statoDetermina: $statoDetermina
+    tipoDetermina: $tipoDetermina
+    search: $search
+    size: $size
+  )
+  attivita_pendenti_new(
+    cdr: $cdr
+    roles: $roles
+    statoDetermina: $statoDetermina
+    tipoDetermina: $tipoDetermina
+    page: $page
+    size: $size
+    search: $search
+    sort: $sort
+  ) {
+    ...sid_process
+  }
+}

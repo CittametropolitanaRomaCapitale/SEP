@@ -1,0 +1,5 @@
+mutation updateAnacForm($id: BigInteger, $data: FormAnacInputInput) {
+  aggiornaFormAnac(id: $id, data: $data) {
+    id
+  }
+}

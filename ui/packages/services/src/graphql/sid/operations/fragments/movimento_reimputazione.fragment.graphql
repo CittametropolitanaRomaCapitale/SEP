@@ -1,0 +1,8 @@
+fragment movimento_reimputazione on Reimputazione {
+  liquidato
+  disponibilita
+  disponibilitaStorni
+  vincolato
+  numeroVincolo
+  numeroImpegno
+}

@@ -1,0 +1,19 @@
+#import "../disponibilita_dto.fragment.graphql"
+
+query getDisponibilitaPrenotazione(
+  $numPrenotazione: Int
+  $assestato: BigDecimal
+  $variazioni: BigDecimal
+  $determinaId: BigInteger
+  $annoCompetenza: String
+) {
+  check_prenotazione(
+    numPrenotazione: $numPrenotazione
+    assestato: $assestato
+    variazioni: $variazioni
+    determinaId: $determinaId
+    annoCompetenza: $annoCompetenza
+  ) {
+    ...disponibilita_dto
+  }
+}

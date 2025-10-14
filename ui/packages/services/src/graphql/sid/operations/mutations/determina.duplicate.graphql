@@ -1,0 +1,5 @@
+mutation duplicaDetermina($id: BigInteger, $data: DeterminaInputInput) {
+  duplicaDetermina(id: $id, data: $data) {
+    id
+  }
+}

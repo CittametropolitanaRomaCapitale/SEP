@@ -1,0 +1,10 @@
+fragment gpp_categoria on GppCategoria {
+  id
+  macro_categoria
+  categoria
+  quantita
+  quantita_gpp
+  totale
+  anno
+  descrizione
+}

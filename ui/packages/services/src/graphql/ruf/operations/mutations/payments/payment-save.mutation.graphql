@@ -1,0 +1,5 @@
+mutation savePayment($data: PagamentoDtoInput) {
+  salvaPagamento(data: $data) {
+    id
+  }
+}

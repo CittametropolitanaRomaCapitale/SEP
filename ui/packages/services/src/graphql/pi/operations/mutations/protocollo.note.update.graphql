@@ -1,0 +1,3 @@
+mutation updateNoteProtocollo($input: ProtocolloUpdateInputInput) {
+  updateNoteProtocollo(updateInput: $input)
+}

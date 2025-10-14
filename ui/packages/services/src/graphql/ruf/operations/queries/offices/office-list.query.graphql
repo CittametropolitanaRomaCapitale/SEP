@@ -1,0 +1,10 @@
+query getOfficeList(
+  $page: Int
+  $size: Int
+  $sort: SortInputInput
+  $search: String
+) {
+  getAllUfficio(page: $page, size: $size, sort: $sort, search: $search) {
+    ...OfficeList
+  }
+}

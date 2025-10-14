@@ -1,0 +1,33 @@
+mutation completaAttivita(
+  $taskName: TipoAttivita
+  $taskId: String
+  $determinaId: BigInteger
+  $revisione: Boolean
+  $nota: NotaInputInput
+  $avanzaStatoDetermina: Boolean
+  $attribuzioniOrizzontali: AttribuzioniOrizzontaliInputInput
+  $approvazioneBilancioInput: ApprovazioneBilancioInputInput
+  $remote_sign: Boolean
+  $firmaInput: FirmaInputInput
+  $omissis: Boolean
+  $roles: [String]
+  $titoloScelto: Int
+) {
+  completaAttivita(
+    taskName: $taskName
+    taskId: $taskId
+    determinaId: $determinaId
+    revisione: $revisione
+    nota: $nota
+    avanzaStatoDetermina: $avanzaStatoDetermina
+    attribuzioniOrizzontali: $attribuzioniOrizzontali
+    approvazioneBilancioInput: $approvazioneBilancioInput
+    remote_sign: $remote_sign
+    firmaInput: $firmaInput
+    omissis: $omissis
+    roles: $roles
+    titoloScelto: $titoloScelto
+  ) {
+    id
+  }
+}

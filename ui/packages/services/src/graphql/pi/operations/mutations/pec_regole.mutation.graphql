@@ -1,0 +1,10 @@
+mutation addRegola($input: PecRegolaInputDTOInput!) {
+  savePecRegola(input: $input) {
+    idEmail
+    idCategoriaRegola
+  }
+}
+
+mutation deleteRegola($idEmail: BigInteger!, $idCategoria: BigInteger!) {
+  deletePecRegola(idEmail: $idEmail, idCategoria: $idCategoria)
+}

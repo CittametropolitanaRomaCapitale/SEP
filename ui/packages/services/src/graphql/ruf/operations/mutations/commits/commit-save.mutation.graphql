@@ -1,0 +1,5 @@
+mutation saveCommit($data: ImpegnoDtoInput) {
+  salvaImpegno(data: $data) {
+    id
+  }
+}

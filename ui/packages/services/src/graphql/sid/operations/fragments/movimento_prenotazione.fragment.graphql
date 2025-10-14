@@ -1,0 +1,11 @@
+fragment movimento_prenotazione on Prenotazione {
+  impegnato
+  prenotato
+  vincolato
+  numeroVincolo
+  impIniz
+  impVar
+  disponibilita
+  disponibilitaStorni
+  numeroImpegno
+}

@@ -1,0 +1,8 @@
+fragment PostaEConfigruationFragment on PeConfigurazione {
+    tipologiaPosta
+    smtpHost
+    smtpPort
+    useTls
+    connectionTimeout
+    env
+}

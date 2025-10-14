@@ -1,0 +1,5 @@
+query getPaymentItem($id: BigInteger) {
+  getPagamento(id: $id) {
+    ...PaymentItem
+  }
+}

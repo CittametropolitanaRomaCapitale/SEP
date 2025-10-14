@@ -1,0 +1,5 @@
+mutation saveAnacInvitato($data: InvitatoAnacInputInput) {
+  salvaInvitatoAnac(data: $data) {
+    id
+  }
+}

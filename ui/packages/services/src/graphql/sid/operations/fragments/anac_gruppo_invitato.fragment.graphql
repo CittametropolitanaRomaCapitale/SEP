@@ -1,0 +1,9 @@
+fragment anac_gruppo_invitato on GruppoInvitatoAnac {
+  id
+  form_anac_id
+  aggiudicatario
+  ragione_sociale
+  codice_fiscale
+  identificativoFiscaleEstero
+  ruolo
+}

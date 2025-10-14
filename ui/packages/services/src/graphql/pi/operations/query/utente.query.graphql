@@ -1,0 +1,47 @@
+query getAllUsers {
+  getAllUsers {
+    pageCount
+    totalResults
+    utenti {
+      id
+      nome
+      cognome
+    }
+  }
+}
+
+query GetAllUsersWithRoleAndCdr($roles: [String!], $cdr: String!, $search: String, $size: Int!) {
+  forceGetAllUsersWithRoleAndCdr(
+    roles: $roles
+    cdr: $cdr
+    search: $search
+    size: $size
+  ) {
+    utenti {
+      id
+      nome
+      cognome
+      username
+    }
+    datiUtenteSSO {
+      auth_id
+      firstName
+      lastName
+      username
+      userOffices {
+        office {
+          name
+          code
+          description
+        }
+        roles {
+          full_name
+          name
+          hierarchy_level
+        }
+      }
+    }
+    pageCount
+    totalResults
+  }
+}

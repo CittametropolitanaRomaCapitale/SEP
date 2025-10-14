@@ -1,0 +1,9 @@
+fragment soggetto on RecordSoggetto {
+  nominativo
+  partitaiva
+  codicefiscale
+  comune
+  indirizzo
+  cap
+  codSubject
+}

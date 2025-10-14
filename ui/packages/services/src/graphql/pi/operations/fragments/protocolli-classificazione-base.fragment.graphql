@@ -1,0 +1,8 @@
+fragment ProtocolliClassificazioneBase on ProtocolliClassificazione{
+  id
+  idTitolario
+  idUtenteLastOperation
+  tsCreation
+  tsDeleted
+  tsUpdate
+}

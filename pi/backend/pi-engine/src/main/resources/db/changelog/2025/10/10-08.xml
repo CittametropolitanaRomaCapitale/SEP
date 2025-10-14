@@ -1,0 +1,16 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="add-index-id-protocollo-on-allegati" author="Gioacchino De Fusco">
+        <createIndex indexName="idx_allegati_id_protocollo" tableName="allegati" >
+                <column name="id_protocollo" />
+        </createIndex>
+        <createIndex indexName="idx_storico_id_protocollo" tableName="storico" >
+            <column name="id_protocollo" />
+        </createIndex>
+    </changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,58 @@
+fragment movimento on Movimento {
+  id
+  annoCompetenza
+  articolo
+  assestato
+  capitolo
+  capitoloStorico
+  disponibilita
+  importo
+  numeroImpegno
+  titolo
+  tipologia
+  metaType
+  missione
+  programma
+  macroAggregato
+  cdr
+  cdrCode
+  cdc
+  categoria
+  contoF
+  contoFinanziario
+  missioneDescr
+  programmaDescr
+  titoloDescr
+  macroaggregatoDescr
+  articoloDescr
+  cdrDescr
+  cdcDscr
+  tipologiaDescr
+  categoriaDescr
+  tipo
+  validato
+  motivazione
+  prenotato
+  sub
+  impegnoData {
+    ...movimento_impegno
+  }
+  prenotazioneData {
+    ...movimento_prenotazione
+  }
+  accertamentoData {
+    ...movimento_accertamento
+  }
+  subImpegnoData {
+    ...movimento_sub_impegno
+  }
+  subAccertamentoData {
+    ...movimento_sub_accertamento
+  }
+  reimputazioneData {
+    ...movimento_reimputazione
+  }
+  subRows: soggetti {
+    ...movimento_soggetto
+  }
+}

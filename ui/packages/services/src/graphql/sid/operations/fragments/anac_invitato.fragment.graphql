@@ -1,0 +1,8 @@
+fragment anac_invitato on InvitatoAnac {
+  id
+  form_anac_id
+  aggiudicatario
+  ragione_sociale
+  codice_fiscale
+  identificativoFiscaleEstero
+}

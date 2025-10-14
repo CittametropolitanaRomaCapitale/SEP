@@ -1,0 +1,43 @@
+#import "../capitolo.fragment.graphql"
+
+query getCapitoli(
+  $annoCompetenza: String
+  $annoBilancio: String
+  $titolo: String
+  $capitolo: String
+  $articolo: String
+  $capitoloVecchio: String
+  $vincolo: String
+  $cdr: String
+  $tipoMovimento: String
+  $page: Int
+  $size: Int
+) {
+  capitolo_pages(
+    annoCompetenza: $annoCompetenza
+    annoBilancio: $annoBilancio
+    titolo: $titolo
+    capitolo: $capitolo
+    articolo: $articolo
+    capitoloVecchio: $capitoloVecchio
+    vincolo: $vincolo
+    cdr: $cdr
+    tipoMovimento: $tipoMovimento
+    size: $size
+  )
+  capitolo(
+    annoCompetenza: $annoCompetenza
+    annoBilancio: $annoBilancio
+    titolo: $titolo
+    capitolo: $capitolo
+    articolo: $articolo
+    capitoloVecchio: $capitoloVecchio
+    vincolo: $vincolo
+    cdr: $cdr
+    tipoMovimento: $tipoMovimento
+    page: $page
+    size: $size
+  ) {
+    ...capitolo
+  }
+}

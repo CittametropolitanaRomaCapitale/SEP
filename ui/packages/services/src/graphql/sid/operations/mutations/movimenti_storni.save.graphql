@@ -1,0 +1,3 @@
+mutation saveMovimentiStorni($data: MultiMovimentoSoggettoUpdateInput) {
+  salvaMultiMovimentoSoggettoStorni(data: $data)
+}

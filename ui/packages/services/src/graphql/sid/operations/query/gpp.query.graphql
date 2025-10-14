@@ -1,0 +1,41 @@
+#import "../gpp.fragment.graphql"
+
+query getGpp(
+  $page: Int
+  $size: Int
+  $search: String
+  $sort: SortInputInput
+  $gppStateFiler: StateFiler
+  $macro_categoria: [String]
+  $categoria: [String]
+  $da: String
+  $a: String
+  $cdrCode: [String]
+) {
+  lista_determine_form_gpp_paginato(
+    page: $page
+    size: $size
+    search: $search
+    sort: $sort
+    gppStateFiler: $gppStateFiler
+    macro_categoria: $macro_categoria
+    categoria: $categoria
+    da: $da
+    a: $a
+    cdrCode: $cdrCode
+  )
+  lista_determine_form_gpp(
+    page: $page
+    size: $size
+    search: $search
+    sort: $sort
+    gppStateFiler: $gppStateFiler
+    macro_categoria: $macro_categoria
+    categoria: $categoria
+    da: $da
+    a: $a
+    cdrCode: $cdrCode
+  ) {
+    ...gpp
+  }
+}

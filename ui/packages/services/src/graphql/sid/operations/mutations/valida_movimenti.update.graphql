@@ -1,0 +1,11 @@
+mutation updateValidaMovimenti($determina_id: BigInteger) {
+  valida_capitolo(determina_id: $determina_id) {
+    ...validazione_dto
+  }
+  valida_prenotazione(determina_id: $determina_id) {
+    ...validazione_dto
+  }
+  valida_subImpegnoAccertamento(determina_id: $determina_id) {
+    ...validazione_dto
+  }
+}

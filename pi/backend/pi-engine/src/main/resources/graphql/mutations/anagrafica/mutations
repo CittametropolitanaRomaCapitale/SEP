@@ -1,0 +1,39 @@
+---------INSERT CONTATTO IN ANAGRAFICA-------------------------
+mutation saveContatto($anagraficaInput: AnagraficaInputInput) {
+  saveContatto(anagraficaInput: $anagraficaInput) {
+    ragioneSociale
+    nome
+    cognome
+    cfPiva
+    indirizzo
+    citta
+    cap
+    provincia
+    email
+    pec
+    telefono
+    fax
+    note
+    tsCreation
+    tsStartVali
+    cancellato
+  }
+}
+-----------VARIABILI----------------------------------------
+{
+  "anagraficaInput": {
+    "ragioneSociale": "Società",
+    "nome": "nome",
+    "cognome": "Cognome",
+    "cfPiva": "4234234",
+    "indirizzo": "indirizzo",
+    "citta": "citta",
+    "cap": "7238",
+    "provincia": "PV",
+    "email": "email",
+    "pec": "pec",
+    "telefono": "0000000",
+    "fax": "3430000",
+    "note": "note"
+  }
+}

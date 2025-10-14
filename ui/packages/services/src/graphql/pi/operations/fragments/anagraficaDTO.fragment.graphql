@@ -1,0 +1,23 @@
+fragment AnagraficaDTO on AnagraficaDTO {
+  id
+  ragioneSociale
+  nome
+  cognome
+  cfPiva
+  indirizzo
+  citta
+  cap
+  provincia
+  email
+  pec
+  telefono
+  fax
+  note
+  tsCreation
+  tsStartVali
+  certificato
+  gruppi {
+    id
+    nome
+  }
+}

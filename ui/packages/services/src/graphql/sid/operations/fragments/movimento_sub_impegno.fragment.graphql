@@ -1,0 +1,9 @@
+fragment movimento_sub_impegno on SubImpegno {
+  disponibilita
+  disponibilitaStorni
+  liquidato
+  numeroImpegno
+  numSubImpegno
+  vincolato
+  numeroVincolo
+}

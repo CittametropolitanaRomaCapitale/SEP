@@ -1,0 +1,5 @@
+fragment UfficioFragment on Ufficio {
+  id
+  cdr
+  cdrCode
+}

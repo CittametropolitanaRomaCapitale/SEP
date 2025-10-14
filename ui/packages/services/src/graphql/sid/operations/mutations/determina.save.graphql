@@ -1,0 +1,10 @@
+#import "../attivita_pendente_dto.fragment.graphql"
+
+mutation saveDetermina($data: DeterminaInputInput, $fastMode: Boolean) {
+  salvaDetermina(data: $data, fastMode: $fastMode) {
+    id
+    attivita_pendente {
+      ...attivita_pendente_dto
+    }
+  }
+}

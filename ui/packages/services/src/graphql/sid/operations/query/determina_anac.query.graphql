@@ -1,0 +1,7 @@
+#import "../determina_anac.fragment.graphql"
+
+query getDeterminaAnac($id: BigInteger!) {
+  determina(id: $id) {
+    ...determina_anac
+  }
+}

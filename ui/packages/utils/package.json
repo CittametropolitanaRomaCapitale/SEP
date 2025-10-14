@@ -1,0 +1,12 @@
+{
+  "name": "@cmrc/utils",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@playwright/test": "1.22.1",
+    "@xstate/test": "0.5.1",
+    "lodash": "4.17.21",
+    "xstate": "4.32.1"
+  }
+}

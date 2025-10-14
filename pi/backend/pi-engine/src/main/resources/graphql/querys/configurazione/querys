@@ -1,0 +1,11 @@
+-- getLoginConservazione: recupero delle credenziali della conservazione
+query getLoginConservazione{
+  getLoginConservazione{
+    url
+    username
+    password
+    ambiente
+    ente
+    struttura
+  }
+}

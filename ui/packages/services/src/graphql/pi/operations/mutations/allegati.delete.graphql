@@ -1,0 +1,3 @@
+mutation DiscardAllegato($idAllegato: BigInteger!) {
+  discardAllegato(idAllegato: $idAllegato)
+}

@@ -1,0 +1,7 @@
+#import "../determina_detail.fragment.graphql"
+
+query getDeterminaDetails($id: BigInteger!) {
+  determina(id: $id) {
+    ...determina_detail
+  }
+}

@@ -1,0 +1,31 @@
+fragment capitolo on RecordCapitolo {
+  eS
+  codCapitoloNew
+  articoloNew
+  ntit
+  annoRiferimento
+  assestato
+  impegnato
+  accertato
+  prenotato
+  codCapitolo
+  descrizioneArticolo
+  nmis
+  nprog
+  ntipmac
+  cdr
+  cdrNew
+  cdcVero
+  ncateg
+  ncontof
+  ncontofinanziario
+  nmissione
+  nprogramma
+  ndesctit
+  ndesctipmac
+  descCdr
+  descCdc
+  ndesccateg
+  vincolato
+  numeroVincolo
+}

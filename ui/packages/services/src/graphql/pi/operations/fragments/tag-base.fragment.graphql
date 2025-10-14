@@ -1,0 +1,4 @@
+fragment TagBase on Tag {
+  id
+  nome
+}

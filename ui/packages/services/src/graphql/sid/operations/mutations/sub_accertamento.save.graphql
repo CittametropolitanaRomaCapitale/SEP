@@ -1,0 +1,10 @@
+#import "../movimento_soggetto.fragment.graphql"
+
+mutation saveSubAccertamento($data: SubAccertamentoInputInput) {
+  salvaSubAccertamento(data: $data) {
+    id
+    subRows: soggetti {
+      ...movimento_soggetto
+    }
+  }
+}

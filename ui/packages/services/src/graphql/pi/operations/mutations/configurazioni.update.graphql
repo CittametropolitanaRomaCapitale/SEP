@@ -1,0 +1,7 @@
+mutation updateLoginRaccomandata($loginInput: LoginRaccomandataDTOInput!) {
+  updateLoginRaccomandata(loginInput: $loginInput)
+}
+
+mutation updateLoginConservazione($loginInput: LoginConservazioneDTOInput!) {
+  updateLoginConservazione(loginInput: $loginInput)
+}

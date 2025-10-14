@@ -1,0 +1,11 @@
+mutation saveCampiDefaultDetermina(
+  $vistiDiLegge: DefaultDeterminaInputInput
+  $preseDatto: DefaultDeterminaInputInput
+) {
+  vistiDiLegge: mergeDefaultDetermina(data: $vistiDiLegge) {
+    id
+  }
+  preseDatto: mergeDefaultDetermina(data: $preseDatto) {
+    id
+  }
+}

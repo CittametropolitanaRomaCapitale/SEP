@@ -1,0 +1,5 @@
+mutation saveDocument($data: DocumentoDtoInput) {
+  salvaDocumento(data: $data) {
+    id
+  }
+}

@@ -1,0 +1,8 @@
+query getDocumentItem($id: BigInteger) {
+  getDocumento(id: $id) {
+    ...DocumentItem
+    allegati {
+      ...AttachmentItem
+    }
+  }
+}

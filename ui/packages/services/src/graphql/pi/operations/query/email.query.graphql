@@ -1,0 +1,10 @@
+#import "../email-base.fragment.graphql"
+query getEmails($ricerca: RicercaEmailDTOInput) {
+  getEmails(ricerca: $ricerca) {
+    pageCount
+    totalResults
+    email {
+    ...EmailBase
+    }
+  }
+}

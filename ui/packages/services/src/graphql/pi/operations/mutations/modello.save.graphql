@@ -1,0 +1,17 @@
+mutation createModelloAutomatico($input: ModelloAutomaticoInputDTOInput) {
+    createModelloAutomatico(input: $input) {
+        id
+        nomeModello
+        oggettoProtocollo
+        metodoSpedizione
+        tipoRegistrazione
+        cdrCode
+        titolario {
+            id
+            idPadre
+            nome
+        }
+        hierarchyStringTitolario
+        cdr
+    }
+}

@@ -1,0 +1,3 @@
+mutation setMaxLivelloFascicolazioneForTitolario($livello: Int!) {
+  setMaxLivelloFascicolazioneForTitolario(livello: $livello)
+}

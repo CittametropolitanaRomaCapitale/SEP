@@ -1,0 +1,8 @@
+mutation saveGppCategoria(
+  $determinaId: BigInteger
+  $data: GppCategoriaInputInput
+) {
+  salvaGppCategoria(determinaId: $determinaId, data: $data) {
+    id
+  }
+}

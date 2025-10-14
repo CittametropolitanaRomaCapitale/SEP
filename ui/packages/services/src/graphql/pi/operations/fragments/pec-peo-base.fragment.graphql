@@ -1,0 +1,20 @@
+fragment PecPeoFragment on PecPeo {
+  id
+  idUtente
+  utente
+  username
+  indirizzoEmail
+  tsCreation
+  password
+  attiva
+  saveToSent
+  readPec
+  deleteMessages
+  mustSendRispostaAutomatica
+  configurazione {
+    ...PostaEConfigruationFragment
+  }
+  uffici {
+    ...UfficioFragment
+  }
+}

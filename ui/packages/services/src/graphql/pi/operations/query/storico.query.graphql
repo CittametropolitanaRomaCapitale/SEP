@@ -1,0 +1,32 @@
+# import "../storico-base.fragment.graphql"
+# import "../storico-titolario-base.fragment.graphql"
+
+query getStoricoProtocollo($ricercaStoricoDTO: RicercaStoricoDTOInput) {
+  getStoricoProtocollo(ricerca_storico: $ricercaStoricoDTO) {
+    logStorici {
+      ...StoricoBase
+    }
+    pageCount
+    totalResults
+  }
+}
+
+query getStoricoTitolario($ricercaStoricoDTO: RicercaStoricoDTOInput) {
+  getStoricoTitolario(ricerca_storico: $ricercaStoricoDTO) {
+    logStorici {
+      ...StoricoTitolarioBase
+    }
+    pageCount
+    totalResults
+  }
+}
+
+query getStoricoRegistroGiornaliero($ricercaStoricoDTO: RicercaStoricoDTOInput) {
+  getStoricoRegistroGiornaliero(ricerca_storico: $ricercaStoricoDTO) {
+    logStorici {
+      ...StoricoRegistroGiornalieroBase
+    }
+    pageCount
+    totalResults
+  }
+}

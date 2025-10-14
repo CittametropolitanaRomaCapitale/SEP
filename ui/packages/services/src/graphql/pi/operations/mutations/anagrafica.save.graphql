@@ -1,0 +1,5 @@
+mutation saveContatto($anagraficaInput: AnagraficaInputInput) {
+  saveContatto(anagraficaInput: $anagraficaInput) {
+   ...AnagraficaBase
+  }
+}

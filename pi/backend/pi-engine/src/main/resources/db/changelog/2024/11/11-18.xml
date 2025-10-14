@@ -1,0 +1,19 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="add_column_creation_option_to_referenti_protocollo" author="Simone">
+        <addColumn tableName="referenti_protocollo">
+            <column name="creation_option" type="BOOLEAN"/>
+        </addColumn>
+    </changeSet>
+
+    <changeSet id="drop_column_cdr_and_cdrCode_from_PEC_PEO" author="Lorenzo">
+        <dropColumn tableName="PEC_PEO" columnName="CDR"/>
+        <dropColumn tableName="PEC_PEO" columnName="CDR_CODE"/>
+    </changeSet>
+</databaseChangeLog>
+
+

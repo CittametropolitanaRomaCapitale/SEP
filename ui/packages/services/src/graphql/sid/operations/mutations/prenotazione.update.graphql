@@ -1,0 +1,5 @@
+mutation updatePrenotazione($id: BigInteger, $data: PrenotazioneInputInput) {
+  aggiornaPrenotazione(id: $id, data: $data) {
+    id
+  }
+}

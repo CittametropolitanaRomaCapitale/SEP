@@ -1,0 +1,7 @@
+mutation DeleteGruppo($groupId: BigInteger!) {
+  deleteGruppo(groupId:$groupId) 
+}
+
+mutation RemoveContactFromGroup($groupId: BigInteger!, $contactId: BigInteger!) {
+  removeContactFromGroup(groupId: $groupId, contactId: $contactId)
+}

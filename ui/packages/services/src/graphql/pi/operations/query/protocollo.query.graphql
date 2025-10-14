@@ -1,0 +1,109 @@
+#import "../protocollo-base.fragment.graphql"
+
+query GetProtocolli($ricercaProtocolliDTO: RicercaProtocolliDTOInput) {
+  getProtocolli(ricerca_protocolli: $ricercaProtocolliDTO) {
+    pageCount
+    totalResults
+    protocolli {
+      ...ProtocolloBase
+    }
+  }
+}
+
+query getProtocolloByNumero($nProtocollo: String) {
+  protocolloByNumero(nProtocollo: $nProtocollo) {
+    ...ProtocolloBase
+  }
+}
+
+query getProtocolloById($id: BigInteger!) {
+  getProtocolloById(id: $id) {
+    id
+    nProtocollo
+  }
+}
+
+query generateBarcode($nProtocollo: String) {
+  generateBarcode(nProtocollo: $nProtocollo)
+}
+
+query generateRicevuta($nProtocollo: String) {
+  generateRicevuta(nProtocollo: $nProtocollo)
+}
+
+#import "../allegato-base.fragment.graphql"
+query getAllegatoPrincipale($nProtocollo: String) {
+  getProtocolloAllegatoPrincipale(nProtocollo: $nProtocollo) {
+    ...AllegatoBase
+  }
+}
+
+#import "../titolario-base.fragment.graphql"
+query dettaglioProtocollo($nProtocollo: String, $selectedOffice: String) {
+  dettaglioProtocollo(
+    nProtocollo: $nProtocollo
+    selectedOffice: $selectedOffice
+  ) {
+    destinatariCompetenza {
+      label
+      idDestinatario
+      tipo
+    }
+    destinatariConoscenza {
+      label
+      idDestinatario
+      tipo
+    }
+    protocollo {
+      ...ProtocolloBase
+    }
+    titolario {
+      ...titolario_output_dto
+    }
+    statoProtocollo
+    assegna
+    rifiuta
+    annulla
+    richiestaAnnullamento
+    gestioneAnnullamento
+    protocolAuthor
+    authorized
+    canPrendereInCaricoFromPec
+    canViewFromPec
+    tagList {
+      id
+      nome
+    }
+  }
+}
+
+query cercaRaccomandate($ricercaRaccomandate: RicercaRaccomandataDTOInput!) {
+  cercaRaccomandate(ricercaRaccomandate: $ricercaRaccomandate) {
+    raccomandate {
+      ...RaccomandataBase
+    }
+    pageCount
+    totalResults
+  }
+}
+
+query getAssegnatariTooltipForProtocollo($idProtocollo: BigInteger) {
+  getAssegnatariTooltipForProtocollo(idProtocollo: $idProtocollo) {
+    nomeDestinatario
+    ufficioLavorazione
+    statoProtocollo
+  }
+}
+
+query getMittenteFileds {
+  getMittenteFileds {
+    mittente
+    dipartimentoServizio
+    indirizzo
+    civico
+    presso
+    citta
+    cap
+    provincia
+  }
+}

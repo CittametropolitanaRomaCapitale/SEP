@@ -1,0 +1,3 @@
+fragment determina_anac on Determina {
+  ...determina_base
+}

@@ -1,0 +1,5 @@
+mutation updateAccertamento($id: BigInteger, $data: AccertamentoInputInput) {
+  aggiornaAccertamento(id: $id, data: $data) {
+    id
+  }
+}

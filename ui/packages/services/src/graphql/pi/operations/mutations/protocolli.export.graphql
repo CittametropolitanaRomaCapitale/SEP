@@ -1,0 +1,11 @@
+mutation exportListaProtocolli(
+  $dto: RicercaProtocolliDTOInput!
+  $formato: String!
+  $idProtocolliSelezionati: [BigInteger]
+) {
+  exportListaProtocolli(
+    dto: $dto
+    formato: $formato
+    idProtocolliSelezionati: $idProtocolliSelezionati
+  )
+}

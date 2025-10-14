@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.7.xsd"
+        objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+
+    <changeSet id="1732738947382-1" author="arlias">
+       <addColumn tableName="office">
+           <column name="dirigente_user_id" type="BIGINT"/>
+           <column name="start" type="DATETIME"/>
+           <column name="end" type="DATETIME"/>
+           <column name="last_update" type="DATETIME"/>
+       </addColumn>
+
+        <addForeignKeyConstraint baseTableName="office" baseColumnNames="dirigente_user_id" constraintName="office_user_fk" referencedTableName="user_account"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+
+    <changeSet id="1732738947382-2" author="arlias">
+        <addColumn tableName="permit">
+            <column name="father_permit_id" type="BIGINT"/>
+            <column name="note" type="CLOB"/>
+        </addColumn>
+
+        <addForeignKeyConstraint baseTableName="permit" baseColumnNames="father_permit_id" constraintName="permission_delegation_fk" referencedTableName="permit"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+
+    <changeSet id="1732738947382-3" author="arlias">
+        <addColumn tableName="user_history">
+            <column name="father_permit_id" type="BIGINT"/>
+            <column name="note" type="CLOB"/>
+        </addColumn>
+    </changeSet>
+
+</databaseChangeLog>

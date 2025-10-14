@@ -1,0 +1,24 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="add_column_assegnatari_to_protocolli" author="Gioacchino De Fusco">
+        <addColumn tableName="protocolli">
+            <column name="assegnatari" type="VARCHAR(512)">
+                <constraints nullable="true" />
+            </column>
+        </addColumn>
+    </changeSet>
+    <changeSet id="add_column_ulteriore_dato_mittente_to_protocolli_raccomandate" author="Simone">
+        <addColumn tableName="protocolli_raccomandate">
+            <column name="ulteriore_dato_mittente" type="VARCHAR(128)">
+                <constraints nullable="true" />
+            </column>
+        </addColumn>
+    </changeSet>
+
+</databaseChangeLog>
+
+

@@ -1,0 +1,18 @@
+fragment riferimenti_contabili on RiferimentiContabili {
+  id
+  cia
+  cca
+  tipoFinanziamento
+  totImporto
+  ultimaValidazione
+  ultimaValidazioneString
+  capitoli {
+    ...movimento
+  }
+  prenotazioni {
+    ...movimento
+  }
+  impegniAccertamenti {
+    ...movimento
+  }
+}

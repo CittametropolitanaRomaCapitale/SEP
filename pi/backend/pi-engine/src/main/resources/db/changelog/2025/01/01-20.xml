@@ -1,0 +1,38 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="create-gruppi-table" author="Simone Spinelli">
+        <createTable tableName="GRUPPI">
+            <column name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="NOME" type="VARCHAR(255)"/>
+            <column name="NOTE" type="VARCHAR(255)"/>
+            <column name="ID_UTENTE_LAST_OPERATION" type="VARCHAR(255)"/>
+            <column name="TS_CREATION" type="TIMESTAMP"/>
+            <column name="TS_UPDATE" type="TIMESTAMP"/>
+            <column name="TS_DELETED" type="TIMESTAMP"/>
+        </createTable>
+
+    </changeSet>
+
+    <changeSet id="create-gruppi-anagrafica-table" author="Simone Spinelli">
+        <createTable tableName="GRUPPI_ANAGRAFICA">
+            <column name="GRUPPO_ID" type="BIGINT"/>
+            <column name="ANAGRAFICA_ID" type="BIGINT"/>
+        </createTable>
+
+        <addPrimaryKey columnNames="GRUPPO_ID, ANAGRAFICA_ID" tableName="GRUPPI_ANAGRAFICA" constraintName="PK_GRUPPI_ANAGRAFICA"/>
+
+        <addForeignKeyConstraint constraintName="FK_GRUPPI_ANAGRAFICA_GRUPPO"
+                                 baseTableName="GRUPPI_ANAGRAFICA" baseColumnNames="GRUPPO_ID"
+                                 referencedTableName="GRUPPI" referencedColumnNames="ID"/>
+
+        <addForeignKeyConstraint constraintName="FK_GRUPPI_ANAGRAFICA_ANAGRAFICA"
+                                 baseTableName="GRUPPI_ANAGRAFICA" baseColumnNames="ANAGRAFICA_ID"
+                                 referencedTableName="ANAGRAFICA" referencedColumnNames="ID"/>
+    </changeSet>
+</databaseChangeLog>

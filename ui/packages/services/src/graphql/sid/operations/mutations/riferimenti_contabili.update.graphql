@@ -1,0 +1,8 @@
+mutation updateRiferimentiContabili(
+  $id: BigInteger
+  $data: RiferimentiContabiliInputInput
+) {
+  aggiornaRiferimentiContabili(id: $id, data: $data) {
+    id
+  }
+}

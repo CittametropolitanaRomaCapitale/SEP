@@ -1,0 +1,21 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="modify_type_protocolli" author="Andrea De Matteis">
+        <modifyDataType tableName="protocolli" columnName="oggetto" newDataType="text"/>
+        <modifyDataType tableName="protocolli" columnName="mittente" newDataType="varchar(512)"/>
+    </changeSet>
+
+    <changeSet id="modify_type_allegati" author="Andrea De Matteis">
+        <modifyDataType tableName="allegati" columnName="nome" newDataType="varchar(512)"/>
+        <modifyDataType tableName="allegati" columnName="riferimento_minio" newDataType="varchar(1024)"/>
+    </changeSet>
+
+    <changeSet id="modify_type_email" author="Andrea De Matteis">
+        <modifyDataType tableName="email" columnName="email_from" newDataType="varchar(512)"/>
+    </changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,10 @@
+fragment gpp_form on FormGpp {
+  id
+  determina_id
+  totale
+  totaleGpp
+  completato
+  categorie {
+    ...gpp_categoria
+  }
+}

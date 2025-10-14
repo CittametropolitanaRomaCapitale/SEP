@@ -1,0 +1,9 @@
+fragment PaymentList on PagamentoListDto {
+  element
+  pageCount
+  pageRequest
+  pageSize
+  list {
+    ...PaymentItem
+  }
+}

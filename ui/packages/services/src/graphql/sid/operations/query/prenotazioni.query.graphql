@@ -1,0 +1,40 @@
+#import "../prenotazione.fragment.graphql"
+
+query getPrenotazioni(
+  $annoPrenotazione: String
+  $numeroPrenotazione: String
+  $titolo: String
+  $capitolo: String
+  $articolo: String
+  $capitoloStorico: String
+  $numeroVincolo: String
+  $cdr: String
+  $page: Int
+  $size: Int
+) {
+  prenotazione_pages(
+    annoPrenotazione: $annoPrenotazione
+    numeroPrenotazione: $numeroPrenotazione
+    titolo: $titolo
+    capitolo: $capitolo
+    articolo: $articolo
+    capitoloStorico: $capitoloStorico
+    numeroVincolo: $numeroVincolo
+    cdr: $cdr
+    size: $size
+  )
+  prenotazione_sib(
+    annoPrenotazione: $annoPrenotazione
+    numeroPrenotazione: $numeroPrenotazione
+    titolo: $titolo
+    capitolo: $capitolo
+    articolo: $articolo
+    capitoloStorico: $capitoloStorico
+    numeroVincolo: $numeroVincolo
+    cdr: $cdr
+    page: $page
+    size: $size
+  ) {
+    ...prenotazione
+  }
+}

@@ -1,0 +1,21 @@
+mutation saveProtocollo($data: ProtocolloInputInput!) {
+  saveProtocollo(protocollo_input: $data) {
+    id
+    nProtocollo
+  }
+}
+
+mutation saveProtocolloByEmail($idEmail: BigInteger!) {
+  saveProtocolloByEmail(idEmail: $idEmail) {
+    id
+    nProtocollo
+    stato
+    indirizzoPecPeo
+  }
+}
+
+mutation insertRaccomandata($input: RaccomandataProtocolloInputInput!) {
+  insertRaccomandata(input: $input) {
+    id
+  }
+}

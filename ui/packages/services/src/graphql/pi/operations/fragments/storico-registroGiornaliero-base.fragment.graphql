@@ -1,0 +1,8 @@
+fragment StoricoRegistroGiornalieroBase on Storico {
+  tsCreation
+  idUtente
+  utente
+  note
+  operazione
+  idRegistroGiornaliero
+}
