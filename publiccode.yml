@@ -46,9 +46,9 @@ description:
       - sso/screenshot/SSO_dettaglio_utente.png
       
 
-    developmentStatus: stable
-    usedBy:
-      - Città Metropolitana di Roma Capitale
+developmentStatus: stable
+usedBy:
+  - Città Metropolitana di Roma Capitale
 it:
   conforme:
     gdpr: true
