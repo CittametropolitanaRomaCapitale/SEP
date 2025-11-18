@@ -1,4 +1,4 @@
-# SEP - DEVELOP
+# SEP
 Smart E-governament Platform
 
 ## Architettura

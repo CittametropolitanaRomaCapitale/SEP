@@ -2,7 +2,7 @@
 # metadata file that makes public software easily discoverable.
 # More info at https://github.com/italia/publiccode.yml
 
-publiccodeYmlVersion: '0.4'
+publiccodeYmlVersion: '0.5'
 categories:
   - document-management
 description:
@@ -86,4 +86,4 @@ releaseDate: '2025-09-29'
 softwareType: standalone/web
 softwareVersion: '1.0.166'
 url: 'https://github.com/CittametropolitanaRomaCapitale/SEP'
-logo: 'https://raw.githubusercontent.com/CittametropolitanaRomaCapitale/SEP/main/LogoSEP.png'
+logo: 'https://raw.githubusercontent.com/CittametropolitanaRomaCapitale/SEP/refs/heads/main/logoSEP.png'
