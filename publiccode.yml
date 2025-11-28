@@ -21,18 +21,6 @@ description:
       tecnologica in maggiore efficienza, efficacia e soddisfazione per cittadini e imprese.
       La piattaforma presenta una struttura modulare, con funzionalità integrate e completamente interoperabili grazie all’utilizzo di API.
     screenshots:
-      - https://github.com/CittametropolitanaRomaCapitale/SEP/blob/main/pi/screenshot/PI_dettaglio_protocollo.png
-      - https://github.com/CittametropolitanaRomaCapitale/SEP/blob/main/pi/screenshot/PI_configurazioni.png
-      - https://github.com/CittametropolitanaRomaCapitale/SEP/blob/main/pi/screenshot/PI_lista_PEC.png
-      - https://github.com/CittametropolitanaRomaCapitale/SEP/blob/main/pi/screenshot/PI_lista_protocolli.png
-      - https://github.com/CittametropolitanaRomaCapitale/SEP/blob/main/pi/screenshot/PI_ricerca_avanzata_protocolli.png
-      - https://github.com/CittametropolitanaRomaCapitale/SEP/blob/main/pi/screenshot/PI_titolario.png
-      - https://github.com/CittametropolitanaRomaCapitale/SEP/blob/main/sso/screenshot/SSO_dettaglio_permessi_utente.png
-      - https://github.com/CittametropolitanaRomaCapitale/SEP/blob/main/sso/screenshot/SSO_lista_uffici.png
-      - https://github.com/CittametropolitanaRomaCapitale/SEP/blob/main/sso/screenshot/SSO_dettaglio_uffici.png
-      - https://github.com/CittametropolitanaRomaCapitale/SEP/blob/main/sso/screenshot/SSO_lista_utenti.png
-      - https://github.com/CittametropolitanaRomaCapitale/SEP/blob/main/sso/screenshot/SSO_dettaglio_utente.png
-
       - pi/screenshot/PI_dettaglio_protocollo.png
       - pi/screenshot/PI_configurazioni.png
       - pi/screenshot/PI_lista_PEC.png
